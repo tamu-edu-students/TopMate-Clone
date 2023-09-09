@@ -1,11 +1,11 @@
 # TopMate-Clone
 
-|           | TopMate-Clone                   |
-|-----------|---------------------------------|
-| Owner:    | Texas A&M University            |
-| Course:   | CSCE 606 - Software Engineering |
-| Client:   | Manik Taneja                    |
-| Dev Team: | [See the Team](#Dev-Team)       |
+|               | TopMate-Clone                   |
+|---------------|---------------------------------|
+| Organization: | Texas A&M University            |
+| Course:       | CSCE 606 - Software Engineering |
+| Client:       | Manik Taneja                    |
+| Dev Team:     | [See the Team](#Dev-Team)       |
 
 ## Running Project
 
