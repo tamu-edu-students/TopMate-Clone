@@ -23,6 +23,7 @@ default: &default
 
 development:
   <<: *default
+  username: postgres
   database: topmate_clone_development
 
   # The specified database role being used to connect to postgres.
