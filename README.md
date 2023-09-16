@@ -11,7 +11,7 @@
 
 ### Clone Repo
 ```
-git clone <url>
+git clone git@github.com:tamu-edu-students/TopMate-Clone.git
 cd TopMate-Clone
 ```
 
@@ -20,39 +20,24 @@ cd TopMate-Clone
 rails server
 ```
 
+## Iteration Documents
+### [Iteration 0](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/documentation/Fall2023):
+- Defined initial requirements
+- Set up project tracker and repository
+- Determined weekly meeting with client
+- Created 20+ user stories
+- Designed 4 Lo-Fi Mockups
+
 ## Dev Team
 [Dalton Avery](https://github.com/dalton-avery)\
 [Ashutosh Punyani](https://github.com/ashutoshspunyani99-tamu)\
 [Braeden Smith](https://github.com/BraedenSmith29)\
 [Geetesh Challur](https://github.com/geeteshtamu)\
 [Zepu Ma](https://github.com/zepuma-tamu)\
-[Sudhanva Rajesh](https://github.com/sudhanvarajesh-tamu)  
+[Sudhanva Rajesh](https://github.com/sudhanvarajesh-tamu)
 
 Under the direction of:
 
 [Dr. Philip Ritchey](https://github.com/philipritchey)\
 [Tian Liu](https://github.com/tian1327)
 
-
-<!-- This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
