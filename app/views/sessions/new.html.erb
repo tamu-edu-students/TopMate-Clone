@@ -17,15 +17,15 @@
           <%= label_tag :password %>
           <%= password_field_tag :password %>
         </div>
+        <% if flash[:error] %>
+          <div class="flash-error">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
         <div>
           <%= submit_tag 'Login' %>
         </div>
       <% end %>
     </div>
-    <% flash.each do |key, message|%>
-        <div class="alert">
-          <%= message%>
-        </div>
-      <%end%>
   </body>
 </html>
