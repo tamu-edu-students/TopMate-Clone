@@ -9,9 +9,8 @@ class EmailSubmissionController < ApplicationController
     end
 
     def isEmailAssociated(email)
-        user = User.find_by(email: email)
-        if user
-            generateResetSession(user)
+        if  User.exists?(email: email)
+            generateResetSession(User.find_by(email: email))
             true
         else
             false
@@ -19,8 +18,9 @@ class EmailSubmissionController < ApplicationController
     end
 
     def generateResetSession(user)
+        puts "Generating reset session for user #{user.id}"
         session_token = SecureRandom.uuid
-        CreateResetPasswordSessions.create(user_id: user.id, session_token: session_token)
+        ResetPasswordSession.create(user_id: user.id, session_token: session_token)
         session_token
     end
 end

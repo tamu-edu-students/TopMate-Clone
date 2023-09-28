@@ -3,7 +3,8 @@ module ResetPassEmailSubmissionStepHelper
     if emailtype == 'unassociated'
       'unassociated@gmail.com'
     elsif emailtype == 'valid'
-      'testuser@gmail.com'
+      User.create!(id: 123, email: 'user1@example.com', password: 'password')
+      'user1@example.com'
     end
   end
 end
@@ -34,5 +35,5 @@ Then("I am redirected to the login page") do
 end
 
 Then("a reset session is generated") do
-  assert true
+  expect(ResetPasswordSession.count).to eq(1)
 end
