@@ -19,8 +19,10 @@ class EmailSubmissionController < ApplicationController
 
     def generateResetSession(user)
         puts "Generating reset session for user #{user.id}"
-        session_token = SecureRandom.uuid
-        ResetPasswordSession.create(user_id: user.id, session_token: session_token)
-        session_token
+        # send email
+        PasswordMailer.with(user: user).reset.deliver_later
+        # session_token = SecureRandom.uuid
+        # ResetPasswordSession.create(user_id: user.id, session_token: session_token)
+        # session_token
     end
 end
