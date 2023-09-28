@@ -1,0 +1,31 @@
+<!-- new.html.erb -->
+<html>
+  <head>
+    <title>Login</title>
+    <%= stylesheet_link_tag 'login', media: 'all' %>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+
+      <%= form_tag sessions_new_path do %>
+        <div>
+          <%= label_tag :email %>
+          <%= text_field_tag :email %>
+        </div>
+        <div>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+        <div>
+          <%= submit_tag 'Login' %>
+        </div>
+      <% end %>
+    </div>
+    <% flash.each do |key, message|%>
+        <div class="alert">
+          <%= message%>
+        </div>
+      <%end%>
+  </body>
+</html>
