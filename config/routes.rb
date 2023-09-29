@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   get 'passward/reset/edit', to 'password_resets#edit'
   patch 'passward/reset/edit', to 'password_resets#update'
 
-  root 'welcome#index'
+  root 'home#index'
+
+  get '/login', to: 'sessions#new' , as: 'sessions_new'
+  post '/login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+
+  get '/dashboard', to: 'dashboard#main', as: 'dashboard'
 end
