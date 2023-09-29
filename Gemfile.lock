@@ -311,6 +311,7 @@ DEPENDENCIES
   debug
   factory_bot_rails (~> 6.0)
   faker (~> 2.18)
+  globalid
   importmap-rails
   jbuilder
   pg (~> 1.5.4)
