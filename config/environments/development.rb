@@ -71,6 +71,9 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   
+  # Change the email address to the one you want to use for testing
+  ActionMailer::Base.default :from => 'default@development-server.com'
+  
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
