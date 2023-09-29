@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Forgot Password</title>
+    <%= stylesheet_link_tag 'email_submission_styles', media: 'all' %>
+  </head>
+  <body class="email-submit-body">
+    <%= form_with(url: '/send_email', method: 'post', class: 'email-submit-body') do |form| %>
+        <h1 class="email-submit-header">Enter your email</h1><br>
+        <%= form.email_field :email, name:'Email Address', class: 'email-input-box', placeholder: "user@example.com" %><br>
+        <%= form.submit 'Send Email', class: 'email-submit-button' %><br>
+        <% if flash[:error].present? %>
+            <div class="email-valid-invalid">
+                <%= flash[:error] %>
+            </div>
+        <% end %>
+        <% if flash[:success].present? %>
+                <div class="email-valid-invalid">
+                    <%= flash[:success] %>
+                </div>
+        <% end %>
+        <%= link_to "Return to Login", root_path, class: 'return-to-login'%>
+    <% end %>
+    </body>
+</html>

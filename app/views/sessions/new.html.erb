@@ -23,7 +23,10 @@
           </div>
         <% end %>
         <div>
-          <%= submit_tag 'Login' %>
+          <%= submit_tag 'Login', class: 'button'  %>
+        </div>
+        <div>
+          <%= link_to 'Forgot Password', submitemail_path, class: 'button' %>
         </div>
       <% end %>
     </div>

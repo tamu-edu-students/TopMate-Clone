@@ -1,0 +1,50 @@
+.email-submit-body {
+    background-color: #565656;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.email-submit-header {
+    font-size: 3vw;
+    margin: 0;
+    margin-bottom: 5vh;
+}
+
+.email-input-box {
+    border: none;
+    border-radius: 5px;
+    width: 65%;
+    height: 4%;
+    font-size: 1vw;
+    text-align: center;
+}
+
+.email-submit-button {
+    background-color: #f0f0f0;
+    color: #525252;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.return-to-login {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.5vw;
+    margin-top: 5vh;
+}
+
+.return-to-login:hover {
+    text-decoration: underline;
+}
+
+.email-valid-invalid {
+    font-size: 1vw;
+}
