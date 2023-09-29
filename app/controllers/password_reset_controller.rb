@@ -1,0 +1,28 @@
+class PasswordResetController < ApplicationController
+    def change_password
+        puts "resetting password for token #{params[:token]}"
+
+        sessionToken = ResetPasswordSession.find_by(session_token: params[:token])
+        if sessionToken
+          # Reset password logic
+          puts "retrieved session token id is #{sessionToken.id}"
+          user = User.find(sessionToken.user_id)
+          puts "retrieved user name is #{user.name}"
+          user.password = params[:password]
+          
+          user.save
+
+          flash[:success] = 'Password changed'
+          sessionToken.destroy
+          puts "session deleted"
+
+        else
+          puts "session not found for token #{params[:token]}"
+
+          flash[:error] = "user does not exist"
+        end
+        redirect_back(fallback_location: root_path)
+    end
+end
+
+

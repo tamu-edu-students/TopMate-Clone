@@ -1,0 +1,88 @@
+<html class="email-submit-body">
+
+
+
+
+<%= form_with(url: '/submit_reset', method: "post", class: 'reset-body') do |f| %>
+  <h1 class="reset-header">Password Reset</h1>
+  
+  <%= f.hidden_field :token, value: params[:token] %>
+
+  <%= f.label :password, class:"label-class" %>
+  <%= f.password_field :password, class: 'reset-input-box',required: true, id: 'password-field' %>
+
+  <div id="password-complex-message" class="text-muted warning" style="visibility:hidden;">
+  Password does not meet all criteria
+</div>
+
+  <%= f.label :password_confirmation, class:"label-class" %>
+  <%= f.password_field :password_confirmation,class: 'reset-input-box', required: true, id:'password-confirmation-field' %>
+
+  <div id="password-identical-message" class="text-muted warning" style="visibility:hidden;">
+    Passwords do not match
+  </div>
+
+  <%= f.submit "Reset Password", class: 'reset-button',id: 'reset-password-button' %>
+
+  <% if flash[:error].present? %>
+            <div class="email-valid-invalid">
+                <%= flash[:error] %>
+            </div>
+        <% end %>
+        <% if flash[:success].present? %>
+                <div class="reset-valid-invalid">
+                    <%= flash[:success] %>
+                </div>
+        <% end %>
+        
+<% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const passwordField = document.getElementById("password-field");
+    const confirmationField = document.getElementById("password-confirmation-field");
+    const submitButton = document.getElementById("reset-password-button");
+    const identicalMessage = document.getElementById("password-identical-message");
+    const complexMessage = document.getElementById("password-complex-message");
+
+    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/;
+
+    const checkPasswordMatch = () => {
+      const password = passwordField.value;
+      const confirmation = confirmationField.value;
+      const isPasswordValid = passwordRegex.test(password);
+
+    if(password == confirmation&&isPasswordValid) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+      if (password == confirmation) {
+        identicalMessage.style.visibility = "hidden";
+      }else if (confirmation!="") {
+        identicalMessage.style.visibility = "visible";
+
+      }
+    else{
+        identicalMessage.style.visibility = "hidden";
+    }
+
+
+       if(isPasswordValid){
+        complexMessage.style.visibility = "hidden";
+      }else if(password!=""){
+        complexMessage.style.visibility = "visible";
+      }else{
+        complexMessage.style.visibility = "hidden";
+      }
+    };
+    
+    passwordField.addEventListener("input", checkPasswordMatch);
+    confirmationField.addEventListener("input", checkPasswordMatch);
+  });
+</script>
+
+    
+</html>
+
+

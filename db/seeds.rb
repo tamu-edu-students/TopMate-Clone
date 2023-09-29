@@ -10,4 +10,9 @@ users = [
     { name: 'user1', email: 'user1@example.com', password: 'password1', about: 'abcd' },
     { name: 'user2', email: 'user2@example.com', password: 'password2', about: 'abcd' }
   ]
-  User.create(users)
+  # User.create(users)
+
+sessions = [{
+  user_id: 1, session_token: '5abb5ecc-5e93-11ee-8c99-0242ac120002'
+}]
+ ResetPasswordSession.create(sessions)
