@@ -1,8 +1,18 @@
-<h1>Welcome to the Home Page</h1>
+<html>
+  <head>
+    <title>Login</title>
+    <%= stylesheet_link_tag 'index', media: 'all' %>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Welcome to the Home Page</h1>
 
 <% flash.each do |key, message|%>
         <div class="alert">
           <%= message%>
         </div>
       <%end%>
-<%= link_to 'Login', login_path %>
+<%= link_to 'Login', login_path, class: 'button' %>
+</div>
+  </body>
+</html>
