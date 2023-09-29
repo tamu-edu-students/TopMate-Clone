@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  # get 'passward/reset/edit', to 'password_resets#edit'
-  # patch 'passward/reset/edit', to 'password_resets#update'
+  get 'passward/reset/edit', to 'password_resets#edit'
+  patch 'passward/reset/edit', to 'password_resets#update'
 
   root 'welcome#index'
 end
