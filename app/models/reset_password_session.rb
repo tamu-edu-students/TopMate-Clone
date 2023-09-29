@@ -1,0 +1,2 @@
+class ResetPasswordSession < ApplicationRecord
+end
