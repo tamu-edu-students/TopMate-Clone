@@ -3,7 +3,7 @@ module ResetPassEmailSubmissionStepHelper
     if emailtype == 'unassociated'
       'unassociated@gmail.com'
     elsif emailtype == 'valid'
-      User.create!(id: 123, email: 'user1@example.com', password: 'password')
+      User.create!(fname:"user_fname",lname:"user_lname", email: 'user1@example.com', password: 'password')
       'user1@example.com'
     end
   end

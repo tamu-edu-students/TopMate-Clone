@@ -5,5 +5,11 @@ Rails.application.routes.draw do
   post 'send_email', to: 'email_submission#send_email'
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'welcome#index'
+  root 'home#index'
+
+  get '/login', to: 'sessions#new' , as: 'sessions_new'
+  post '/login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+
+  get '/dashboard', to: 'dashboard#main', as: 'dashboard'
 end
