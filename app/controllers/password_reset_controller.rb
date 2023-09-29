@@ -19,7 +19,7 @@ class PasswordResetController < ApplicationController
         else
           puts "session not found for token #{params[:token]}"
 
-          flash[:error] = "user does not exist"
+          flash[:error] = "Reset session does not exist"
         end
         redirect_back(fallback_location: root_path)
     end
