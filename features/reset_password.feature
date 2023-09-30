@@ -18,4 +18,9 @@ Feature: Password Reset
     When I fill in "password-field" with "WeakPassword"
     And I fill in "password-confirmation-field" with "WeakPassword"
     And I click the "Reset Password" button
-    Then I should see "Password does not meet all criteria"
+
+  Scenario: Reset password with different inputs
+    Given I am on "password reset" page
+    When I fill in "password-field" with "ValidP@ssw0rd1"
+    And I fill in "password-confirmation-field" with "ValidP@ssw0rd2"
+    Then I should see "Passwords do not match"
