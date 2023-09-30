@@ -1,31 +1,16 @@
-# # require 'rails_helper'
+Before do
+    user = User.create(email: 'userfortestingreset@gmail.com', password: 'jkjk1234$', fname: 'Test', lname: 'user', id: '8268aa66-f830-4470-b7df-bff71fdc1cb9')
+    user.save!
+end
+Given("I am on {string} page") do |page|
+    session=ResetPasswordSession.create(user_id: '8268aa66-f830-4470-b7df-bff71fdc1cb9', session_token: '5abb5ecc-5e93-11ee-8c99-0242ac120002')
+    session.save!
+    visit '/password_reset_edit_url/5abb5ecc-5e93-11ee-8c99-0242ac120002'
+  end
 
-# RSpec.feature 'Password Reset', type: :feature, js: true do
-#   scenario 'User resets password with valid inputs' do
-#     visit '/password_reset' # Adjust the path as needed
+  
 
-#     # Fill in form fields
-#     fill_in 'password-field', with: 'ValidP@ssw0rd'
-#     fill_in 'password-confirmation-field', with: 'ValidP@ssw0rd'
 
-#     # Submit the form
-#     click_button 'Reset Password'
+  
 
-#     # Add expectations based on the expected behavior after a successful password reset
-#     expect(page).to have_text('Password successfully reset.')
-#   end
 
-#   scenario 'User resets password with invalid inputs' do
-#     visit '/password_reset' # Adjust the path as needed
-
-#     # Fill in form fields with invalid inputs
-#     fill_in 'password-field', with: 'WeakPassword'
-#     fill_in 'password-confirmation-field', with: 'WeakPassword'
-
-#     # Submit the form
-#     click_button 'Reset Password'
-
-#     # Add expectations based on the expected behavior after an invalid password reset attempt
-#     expect(page).to have_text('Password does not meet all criteria')
-#   end
-# end
