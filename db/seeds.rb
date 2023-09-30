@@ -11,4 +11,9 @@ users = [
   { fname: 'user1_fname', lname: 'user1_lname', email: 'user1@example.com', password: 'password1', about: 'abcd' },
   { fname: 'user2_fname', lname: 'user1_lname', email: 'user2@example.com', password: 'password2', about: 'abcd' }
 ]
-User.create(users)
+# User.create(users)
+
+sessions = [{
+  user_id: '8268aa66-f830-4470-b7df-bff71fdc1cb9', session_token: '5abb5ecc-5e93-11ee-8c99-0242ac120002'
+}]
+ResetPasswordSession.create(sessions)
