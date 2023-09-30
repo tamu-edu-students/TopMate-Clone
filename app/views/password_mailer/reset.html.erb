@@ -4,6 +4,6 @@
 
   If this was you, please click the link below to reset your password.This link will expire automatically in 15 minutes.
   If you did not request a password reset, please ignore this email.
-  
-  <%= link_to 'Reset password', password_reset_edit_url(token: @token) %>
+
+  <%= link_to 'Reset password', "reset/#{@token}" %>
 
