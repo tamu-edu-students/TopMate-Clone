@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_162327) do
   enable_extension "uuid-ossp"
 
   create_table "reset_password_sessions", force: :cascade do |t|
-    t.bigint "user_id"
+    t.uuid "user_id"
     t.string "session_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

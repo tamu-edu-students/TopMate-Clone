@@ -6,8 +6,11 @@ class PasswordResetController < ApplicationController
         if sessionToken
           # Reset password logic
           puts "retrieved session token id is #{sessionToken.id}"
+          puts sessionToken.inspect
+        
           user = User.find(sessionToken.user_id)
-          puts "retrieved user name is #{user.name}"
+          puts user.inspect
+          puts "retrieved user name is #{user.fname}"
           user.password = params[:password]
           
           user.save
