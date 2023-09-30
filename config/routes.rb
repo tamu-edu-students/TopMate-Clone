@@ -7,5 +7,15 @@ Rails.application.routes.draw do
   post 'submit_reset', to: 'password_reset#change_password'
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'welcome#index'
+
+  get 'passward/reset/edit', to: 'password_resets#edit'
+  patch 'passward/reset/edit', to: 'password_resets#update'
+
+  root 'home#index'
+
+  get '/login', to: 'sessions#new' , as: 'sessions_new'
+  post '/login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+
+  get '/dashboard', to: 'dashboard#main', as: 'dashboard'
 end

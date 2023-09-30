@@ -1,0 +1,18 @@
+<html>
+  <head>
+  <title>Dashboard</title>
+    <%= stylesheet_link_tag 'index', media: 'all' %>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Welcome to the Dashboard Page</h1>
+<p>Logged in as <%= current_user.email %></p>
+<% flash.each do |key, message|%>
+        <div class="alert">
+          <%= message%>
+        </div>
+      <%end%>
+<%= link_to 'Logout', logout_path, method: :delete,  class: 'button'%>
+</div>
+  </body>
+</html>

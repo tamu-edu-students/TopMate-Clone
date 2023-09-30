@@ -10,6 +10,7 @@ class EmailSubmissionController < ApplicationController
 
     def isEmailAssociated(email)
         if  User.exists?(email: email)
+            PasswordMailer.with(user: uer).reset.deliver_later
             generateResetSession(User.find_by(email: email))
             true
         else

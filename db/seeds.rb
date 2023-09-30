@@ -5,14 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+# Create a User with email and password
+# Create multiple users using an array
 users = [
-    { name: 'user1', email: 'user1@example.com', password: 'password1', about: 'abcd' },
-    { name: 'user2', email: 'user2@example.com', password: 'password2', about: 'abcd' }
-  ]
-  # User.create(users)
+  { fname: 'user1_fname', lname: 'user1_lname', email: 'user1@example.com', password: 'password1', about: 'abcd' },
+  { fname: 'user2_fname', lname: 'user1_lname', email: 'user2@example.com', password: 'password2', about: 'abcd' }
+]
+User.create(users)
 
 sessions = [{
   user_id: 1, session_token: '5abb5ecc-5e93-11ee-8c99-0242ac120002'
 }]
- ResetPasswordSession.create(sessions)
+ResetPasswordSession.create(sessions)
