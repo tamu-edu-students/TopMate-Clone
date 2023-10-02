@@ -17,7 +17,7 @@ cd TopMate-Clone
 
 ### Run Rails Server
 ```
-rails server
+bin/rails server
 ```
 
 ## Iteration Documents
@@ -27,6 +27,11 @@ rails server
 - Determined weekly meeting with client
 - Created 20+ user stories
 - Designed 4 Lo-Fi Mockups
+
+### [Iteration 1](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/documentation/Fall2023):
+- Added log-in functionality
+- Added forgot password screens
+- Setup sending email functionality
 
 ## Dev Team
 [Dalton Avery](https://github.com/dalton-avery)\
@@ -40,4 +45,3 @@ Under the direction of:
 
 [Dr. Philip Ritchey](https://github.com/philipritchey)\
 [Tian Liu](https://github.com/tian1327)
-
