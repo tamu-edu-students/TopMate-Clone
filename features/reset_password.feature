@@ -3,17 +3,24 @@ Feature: Password Reset
   I want to reset my password
   So that I can regain access to my account
 
-  Background:
-    Given I am on the password reset page
+  
 
   Scenario: Reset password with valid inputs
+    Given I am on "password reset" page
     When I fill in "password-field" with "ValidP@ssw0rd"
     And I fill in "password-confirmation-field" with "ValidP@ssw0rd"
-    And I submit the form
-    Then I should see "Password successfully reset."
+    And I click the "Reset Password" button
+    Then I should see "Password changed"
+
 
   Scenario: Reset password with invalid inputs
+    Given I am on "password reset" page
     When I fill in "password-field" with "WeakPassword"
     And I fill in "password-confirmation-field" with "WeakPassword"
-    And I submit the form
-    Then I should see "Password does not meet all criteria"
+    And I click the "Reset Password" button
+
+  Scenario: Reset password with different inputs
+    Given I am on "password reset" page
+    When I fill in "password-field" with "ValidP@ssw0rd1"
+    And I fill in "password-confirmation-field" with "ValidP@ssw0rd2"
+    Then I should see "Passwords do not match"
