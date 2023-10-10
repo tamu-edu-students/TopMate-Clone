@@ -8,9 +8,10 @@
         <h1>Services</h1>
         <% @services.each do |service| %>
         <div class="service-card">
+
             <h3><%= service.name %></h3>
-            <p><%= service.description %></p>
-            <h4><%= service.duration %></h4>
+            <p><strong>Description:  </strong><%= service.description %></p>
+            <p><strong>Duration:  </strong><%= service.duration %> mins</p>
         </div>
         <% end %>
 
