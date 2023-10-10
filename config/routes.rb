@@ -21,5 +21,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#main', as: 'dashboard'
 
+  post '/services', to: 'services#create', as: 'services'
+  get '/services', to: 'services#new'
+
+
   get 'public/:username', to: 'public_page#show', as: 'public_page'
 end
