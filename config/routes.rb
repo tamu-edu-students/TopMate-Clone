@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#main', as: 'dashboard'
 
-  post '/services', to: 'services#create', as: 'services'
+  post '/services', to: 'services#create'
   get '/services', to: 'services#new'
+
+  get '/servicesindex', to: 'services#index'
 
 end

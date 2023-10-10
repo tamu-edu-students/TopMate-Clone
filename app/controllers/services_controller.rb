@@ -13,7 +13,12 @@ class ServicesController < ApplicationController
         render :new
       end
     end
-  
+
+    def index
+      @current_user ||= User.find_by(user_id: session[:user_id])
+      @services = @current_user.services
+    end
+
     private
   
     def service_params
