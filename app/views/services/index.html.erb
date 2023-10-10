@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Service</title>
+    <%= stylesheet_link_tag 'service', media: 'all' %>
+  </head>
+  <body>
+    <div class="service-container">
+        <h1>Services</h1>
+        <% @services.each do |service| %>
+        <div class="service-card">
+            <h3><%= service.name %></h3>
+            <p><%= service.description %></p>
+            <h4><%= service.duration %></h4>
+        </div>
+        <% end %>
+
+        <p><%= link_to 'Create New Service', services_path, class: 'button' %></p>
+    </div>
+  </body>
+</html>
