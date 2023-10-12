@@ -1,10 +1,13 @@
 class ServicesController < ApplicationController
     def new
+      @current_user ||= User.find_by(user_id: session[:user_id])
+      redirect_to login_url if @current_user.nil?
       @service = Service.new
     end
   
     def create
       @current_user ||= User.find_by(user_id: session[:user_id])
+      redirect_to login_url if @current_user.nil?
       @service = @current_user.services.new(service_params)
       @service.user_id = @current_user.user_id
       if @service.save
@@ -16,6 +19,7 @@ class ServicesController < ApplicationController
 
     def index
       @current_user ||= User.find_by(user_id: session[:user_id])
+      redirect_to login_url if @current_user.nil?
       @services = @current_user.services
     end
 
