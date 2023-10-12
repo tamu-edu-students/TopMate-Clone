@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   get '/dashboard', to: 'dashboard#main', as: 'dashboard'
+
+  post '/services', to: 'services#create'
+  get '/services', to: 'services#new'
+
+  get '/servicesindex', to: 'services#index'
+
 end
