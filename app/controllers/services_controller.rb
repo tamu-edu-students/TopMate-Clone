@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
     private
   
     def service_params
-      params.require(:service).permit(:name, :description, :duration)
+      params.require(:service).permit(:name, :description, :price, :duration)
     end
 end
  
