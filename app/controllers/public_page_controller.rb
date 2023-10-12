@@ -6,8 +6,6 @@ class PublicPageController < ApplicationController
     @user = User.find_by(fname: username)
     if @user.present?
       @services = Service.all
-      puts @user.inspect
-      puts @services.inspect
       render 'public_page/user_public_page'
     else
       render 'public_page/user_not_found'
