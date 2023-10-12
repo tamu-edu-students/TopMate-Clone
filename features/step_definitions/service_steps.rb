@@ -8,13 +8,11 @@ Given("I have multiple services listed under me") do
   end
   
   When("I visit the dashboard page") do
-    # @user = User.create(fname: "John", lname: "Doe", email: "test@example.com", password: "password")
-
-    # ApplicationController.prepend_before_action do
-    #   session[:user_id] = @user.user_id
-    # end
-  
-    visit dashboard_path
+    @user = User.create(fname: "John", lname: "Doe", email: "test@example.com", password: "password")
+    visit login_path
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
   end
 
   And("I click on the {string} button") do |button_text|
@@ -46,7 +44,13 @@ Given("I have multiple services listed under me") do
   # Step definitions for Scenario 2: Adding a new service
 
   Given("I am on the services page") do
-    visit services_path
+    @user = User.create(fname: "John", lname: "Doe", email: "test@example.com", password: "password")
+    visit login_path
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
+
+    visit servicesindex_path
   end
   
   When("I click {string}") do |button_text|
@@ -61,7 +65,7 @@ Given("I have multiple services listed under me") do
   end
   
   And("I submit the form by clicking on {string}") do |button_text|
-    click_button("button_text")
+    click_button(button_text)
   end
   
   Then("the new service should be added to my services") do
