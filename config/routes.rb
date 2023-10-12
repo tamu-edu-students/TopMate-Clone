@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   get '/dashboard', to: 'dashboard#main', as: 'dashboard'
+  get '/dashboard/hours', to: 'hours#index', as: 'hours'
 end
