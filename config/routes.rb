@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#main', as: 'dashboard'
   get '/dashboard/hours', to: 'hours#index', as: 'hours'
+  get '/dashboard/hours/new', to: 'hours#new', as: 'new_hour'
+  post '/dashboard/hours', to: 'hours#create', as: 'create_hour'
 end
