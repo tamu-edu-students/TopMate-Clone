@@ -26,6 +26,5 @@ Rails.application.routes.draw do
 
   get '/servicesindex', to: 'services#index'
 
-
   get 'public/:username', to: 'public_page#show', as: 'public_page'
 end
