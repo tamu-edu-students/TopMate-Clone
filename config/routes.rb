@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get '/dashboard/hours', to: 'hours#index', as: 'hours'
   get '/dashboard/hours/new', to: 'hours#new', as: 'new_hour'
   post '/dashboard/hours', to: 'hours#create', as: 'create_hour'
+  delete '/dashboard/hours', to: 'hours#destroy', as: 'delete_hour'
 end

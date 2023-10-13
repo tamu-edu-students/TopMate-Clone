@@ -1,13 +1,12 @@
 <div id="<%= dom_id hour %>">
 
   <p>
-    <strong>Start time:</strong>
-    <%= hour.start_time %>
+    <strong>Time:</strong>
+    <%= hour.start_time.strftime("%l:%M%P") %>
+     - 
+    <%= hour.end_time.strftime("%l:%M%P") %>
   </p>
 
-  <p>
-    <strong>End time:</strong>
-    <%= hour.end_time %>
-  </p>
+  <%= button_to 'Delete', delete_hour_path, method: :delete, params: {id: hour.id} %>
 
 </div>
