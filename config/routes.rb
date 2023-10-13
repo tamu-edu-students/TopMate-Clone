@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'edit_public_page/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get 'submitemail', to: 'email_submission#index'

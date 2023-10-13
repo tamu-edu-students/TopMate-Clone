@@ -4,6 +4,7 @@
     <%= stylesheet_link_tag 'index', media: 'all' %>
   </head>
   <body>
+    <%= render partial: "layouts/dashboard_sidebar" %>
     <div class="login-container">
       <h1>Welcome to the Dashboard Page</h1>
 <p>Logged in as <%= current_user.email %></p>
