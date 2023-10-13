@@ -8,6 +8,7 @@ class HoursController < ApplicationController
       redirect_to login_url
     else
       @hours = Hour.where(user_id: @current_user.user_id)
+      @days = @hours.group_by(&:day).sort
     end
   end
 

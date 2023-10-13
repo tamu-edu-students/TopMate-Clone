@@ -1,10 +1,16 @@
+<%= stylesheet_link_tag 'hour', media: 'all' %>
 <p style="color: green"><%= notice %></p>
 
 <h1>Hours</h1>
 
-<div id="hours">
-  <% @hours.each do |hour| %>
-    <%= render hour %>
+<div id="days">
+  <% @days.each do |day, hours| %>
+    <div class="day-container">
+      <h2><%= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][day] %></h2>
+      <% hours.each do |hour| %>
+        <%= render hour %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
