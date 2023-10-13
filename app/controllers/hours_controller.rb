@@ -3,7 +3,12 @@ class HoursController < ApplicationController
 
   # GET /hours or /hours.json
   def index
-    @hours = Hour.all
+    @current_user ||= User.find_by(user_id: session[:user_id])
+    if @current_user.nil?
+      redirect_to login_url
+    else
+      @hours = Hour.where(user_id: @current_user.user_id)
+    end
   end
 
   # GET /hours/1 or /hours/1.json
@@ -21,15 +26,20 @@ class HoursController < ApplicationController
 
   # POST /hours or /hours.json
   def create
-    @hour = Hour.new(hour_params)
-
-    respond_to do |format|
-      if @hour.save
-        format.html { redirect_to hour_url(@hour), notice: "Hour was successfully created." }
-        format.json { render :show, status: :created, location: @hour }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @hour.errors, status: :unprocessable_entity }
+    @current_user ||= User.find_by(user_id: session[:user_id])
+    if @current_user.nil?
+      redirect_to login_url
+    else
+      @hour = Hour.new(hour_params)
+      @hour.user_id = @current_user.user_id
+      respond_to do |format|
+        if @hour.save
+          format.html { redirect_to hours_url(@hour), notice: "Hour was successfully created." }
+          format.json { render :show, status: :created, location: @hour }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @hour.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
