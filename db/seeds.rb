@@ -17,13 +17,13 @@ users = [{
 User.create(users)
 
 services = [{
-  user_id: User.find_by(fname: 'John').id, title: 'Service 1', price: 10.00, duration: 30, is_published: true, description: 'This is a service'
+  user_id: User.find_by(fname: 'John').id, name: 'Service 1', price: 10.00, duration: 30, is_published: true, description: 'This is a service'
 }, {
-  user_id: User.find_by(fname: 'John').id, title: 'Service 2', price: 20.00, duration: 60, is_published: false, description: 'This is another service'
+  user_id: User.find_by(fname: 'John').id, name: 'Service 2', price: 20.00, duration: 60, is_published: false, description: 'This is another service'
 }, {
-  user_id: User.find_by(fname: 'John').id, title: 'Service 3', price: 20.00, duration: 60, is_published: true, description: 'This is another service'
+  user_id: User.find_by(fname: 'John').id, name: 'Service 3', price: 20.00, duration: 60, is_published: true, description: 'This is another service'
 }, {
-  user_id: User.find_by(fname: 'John').id, title: 'Service 4', price: 20.00, duration: 60, is_published: false, description: 'This is another service'
+  user_id: User.find_by(fname: 'John').id, name: 'Service 4', price: 20.00, duration: 60, is_published: false, description: 'This is another service'
 }]
 Service.create(services)
 
