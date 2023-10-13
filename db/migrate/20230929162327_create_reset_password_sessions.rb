@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateResetPasswordSessions < ActiveRecord::Migration[7.0]
   def change
     create_table 'reset_password_sessions' do |t|

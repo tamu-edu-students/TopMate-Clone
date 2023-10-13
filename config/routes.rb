@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/login', to: 'sessions#new' , as: 'sessions_new'
+  get '/login', to: 'sessions#new', as: 'sessions_new'
   post '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
 
@@ -28,4 +30,5 @@ Rails.application.routes.draw do
 
   get '/servicesindex', to: 'services#index'
 
+  get 'public/:username', to: 'public_page#show', as: 'public_page'
 end
