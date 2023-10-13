@@ -6,13 +6,14 @@
   <body>
     <div class="login-container">
       <h1>Welcome to the Dashboard Page</h1>
-<p>Logged in as <%= current_user.email %></p>
-<% flash.each do |key, message|%>
+      <p>Logged in as <%= current_user.email %></p>
+      <% flash.each do |key, message|%>
         <div class="alert">
           <%= message%>
         </div>
       <%end%>
-<%= link_to 'Logout', logout_path, method: :delete,  class: 'button'%>
-</div>
+      <%= link_to 'Hours', hours_path, class: 'button'%>
+      <%= link_to 'Logout', logout_path, method: :delete,  class: 'button'%>
+    </div>
   </body>
 </html>
