@@ -24,6 +24,17 @@ ActiveRecord::Schema[7.0].define(version: 20_231_012_151_055) do
     t.datetime 'updated_at', null: false
   end
 
+  create_table "services", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.integer "duration"
+    t.boolean "is_published", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table 'services', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
     t.uuid 'user_id', null: false
     t.string 'name'
