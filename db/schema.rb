@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_032218) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "hours", force: :cascade do |t|
+  create_table "hours", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.uuid "user_id"
     t.integer "day"
     t.time "start_time"
@@ -31,15 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_032218) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "services", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "duration"
-    t.uuid "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", primary_key: "user_id", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string "fname", null: false
     t.string "email"
@@ -50,5 +41,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_032218) do
     t.string "lname", default: "", null: false
   end
 
-  add_foreign_key "services", "users", primary_key: "user_id"
+  add_foreign_key "hours", "users", primary_key: "user_id"
 end

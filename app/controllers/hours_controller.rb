@@ -25,6 +25,8 @@ class HoursController < ApplicationController
 
   # POST /hours or /hours.json
   def create
+    dayObject = Struct.new(:id, :day)
+    @days = Date::DAYNAMES.map.with_index { |day, index| dayObject.new(index, day) }
     @current_user ||= User.find_by(user_id: session[:user_id])
     if @current_user.nil?
       redirect_to login_url
