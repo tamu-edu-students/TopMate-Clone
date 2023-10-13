@@ -24,4 +24,8 @@ Rails.application.routes.draw do
 
   get '/servicesindex', to: 'services#index'
 
+  
+  post '/editService/:token', to: 'services#edit'
+  get 'editService/:token', to: 'services#edit_intial', as: 'edit_service' 
+
 end

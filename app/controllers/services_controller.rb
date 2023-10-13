@@ -32,10 +32,63 @@ class ServicesController < ApplicationController
       end
     end
 
+
+    def edit_intial
+      @service = Service.find_by(id: params[:token])
+      
+      if @service.nil?
+        render plain: "Service with ID #{params[:token]} does not exist."
+      else 
+        render :edit_service
+      end
+    end
+      
+      
+    def edit
+
+      puts "inside edit post route"
+
+      @service = Service.find_by(id: params[:token])
+
+      puts "searched for the service"
+
+      if @service.nil?
+        puts "service not available" 
+        flash[:error] = "Service not found"
+        render plain: "Service with ID #{params[:token]} does not exist."
+
+        # redirect_back(fallback_location: root_path)
+      else
+        # Update service attributes one by one
+        puts "updating the services"
+        
+        # @service.name = params[:name] if params[:name].present?
+        # @service.description = params[:description] if params[:description].present?
+        # @service.price = params[:price] if params[:price].present?
+        # @service.duration = params[:duration] if params[:duration].present?
+
+
+    
+        if @service.update(service_params)
+          puts "updated the service succesfully"
+          redirect_to servicesindex_url
+        else
+          flash[:error] = "Failed to update service"
+          redirect_back(fallback_location: root_path)
+        end
+      end
+      puts "completed redirecting"
+    end
+
+
     private
   
     def service_params
       params.require(:service).permit(:name, :description, :price, :duration)
     end
+
+    
 end
+
+
  
