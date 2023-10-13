@@ -2,5 +2,5 @@
 
 class User < ApplicationRecord
   has_secure_password
-  has_many :service
+  has_many :services
 end
