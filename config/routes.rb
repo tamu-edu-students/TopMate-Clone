@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   get '/dashboard', to: 'dashboard#main', as: 'dashboard'
+  get '/dashboard/hours', to: 'hours#index', as: 'hours'
+  get '/dashboard/hours/new', to: 'hours#new', as: 'new_hour'
+  post '/dashboard/hours', to: 'hours#create', as: 'create_hour'
+  delete '/dashboard/hours', to: 'hours#destroy', as: 'delete_hour'
 
   post '/services', to: 'services#create'
   get '/services', to: 'services#new'

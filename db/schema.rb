@@ -15,6 +15,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_151055) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
+  create_table "hours", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.uuid "user_id"
+    t.integer "day"
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reset_password_sessions", force: :cascade do |t|
     t.uuid "user_id"
     t.string "session_token"
@@ -43,5 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_151055) do
     t.string "lname", default: "", null: false
   end
 
+  add_foreign_key "hours", "users", primary_key: "user_id"
   add_foreign_key "services", "users", primary_key: "user_id"
 end
