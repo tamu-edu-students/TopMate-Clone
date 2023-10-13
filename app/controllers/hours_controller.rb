@@ -7,8 +7,12 @@ class HoursController < ApplicationController
     if @current_user.nil?
       redirect_to login_url
     else
-      @hours = Hour.where(user_id: @current_user.user_id)
-      @days = @hours.group_by(&:day).sort
+      hours = Hour.where(user_id: @current_user.user_id)
+      sorted = Array.new(7) { [] }
+      hours.each do |h|
+        sorted[h.day] << h
+      end
+      @days = sorted
     end
   end
 

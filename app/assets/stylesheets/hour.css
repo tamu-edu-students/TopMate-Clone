@@ -1,3 +1,20 @@
+.days-container {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  margin: 8px 0px;
+}
 .day-container {
-  background-color: grey;
+  flex: 1;
+  text-align: center;
+  background-color: #c0c0c0;
+  padding: 20px;
+  border: 1px solid #737171;
+  border-radius: 5px;
+}
+.time-container {
+  padding: 20px;
+  border: 1px solid #737171;
+  border-radius: 5px;
+  background-color: #f7f7f7;
 }
