@@ -7,10 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # Create a User with email and password
 # Create multiple users using an array
-users = [
-  { fname: 'user1_fname', lname: 'user1_lname', email: 'user1@example.com', password: 'password1', about: 'abcd' },
-  { fname: 'user2_fname', lname: 'user1_lname', email: 'user2@example.com', password: 'password2', about: 'abcd' }
-]
+users = User.create(fname: 'user1_fname', lname: 'user1_lname', email: 'topmateclone@gmail.com', password: 'password1', about: 'abcd' )
 # User.create(users)
 
 sessions = [{
