@@ -12,8 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :day, style: "display: block" %>
-    <%= form.number_field :day %>
+    <%= form.collection_select :day, @days, :id, :day %>
   </div>
 
   <div>

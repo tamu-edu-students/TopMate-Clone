@@ -19,6 +19,8 @@ class HoursController < ApplicationController
   # GET /hours/new
   def new
     @hour = Hour.new
+    dayObject = Struct.new(:id, :day)
+    @days = Date::DAYNAMES.map.with_index { |day, index| dayObject.new(index, day) }
   end
 
   # POST /hours or /hours.json
