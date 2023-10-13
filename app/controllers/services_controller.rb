@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
         @service = Service.find_by(id: params[:token])
       
         if @service.nil?
-          render plain: "Service with ID #{params[:token]} does not exist."
+          render plain: "Service does not exist."
         else 
           render :edit_service
         end
@@ -66,19 +66,14 @@ class ServicesController < ApplicationController
             if @service.nil?
               puts "service not available" 
               flash[:error] = "Service not found"
-              render plain: "Service with ID #{params[:token]} does not exist."
+              render plain: "Service does not exist."
       
               # redirect_back(fallback_location: root_path)
             else
               # Update service attributes one by one
               puts "updating the services"
               
-              # @service.name = params[:name] if params[:name].present?
-              # @service.description = params[:description] if params[:description].present?
-              # @service.price = params[:price] if params[:price].present?
-              # @service.duration = params[:duration] if params[:duration].present?
-      
-      
+
           
               if @service.update(service_params)
                 puts "updated the service succesfully"
