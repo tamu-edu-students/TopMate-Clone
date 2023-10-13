@@ -11,17 +11,9 @@ class HoursController < ApplicationController
     end
   end
 
-  # GET /hours/1 or /hours/1.json
-  def show
-  end
-
   # GET /hours/new
   def new
     @hour = Hour.new
-  end
-
-  # GET /hours/1/edit
-  def edit
   end
 
   # POST /hours or /hours.json
@@ -44,19 +36,6 @@ class HoursController < ApplicationController
     end
   end
 
-  # PATCH/PUT /hours/1 or /hours/1.json
-  def update
-    respond_to do |format|
-      if @hour.update(hour_params)
-        format.html { redirect_to hour_url(@hour), notice: "Hour was successfully updated." }
-        format.json { render :show, status: :ok, location: @hour }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @hour.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /hours/1 or /hours/1.json
   def destroy
     @hour.destroy
@@ -75,6 +54,6 @@ class HoursController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hour_params
-      params.require(:hour).permit(:user_id, :day, :start_time, :end_time)
+      params.require(:hour).permit(:day, :start_time, :end_time)
     end
 end
