@@ -1,0 +1,16 @@
+<html class='public-page-html'>
+    <head class='public-page-head'>
+        <%= stylesheet_link_tag "public_page.css" %>
+    </head>
+    <body class='public-page-body'>
+        <aside class='public-page-aside'>
+            <h2 class="user-full-name"><%= "#{@user.fname} #{@user.lname}" %> </h2>
+            <p class="user-description"><%= @user.about %></p>
+        </aside>
+        <main class='public-page-main'>
+            <ul class="service-list">
+                <%= render partial: 'service', collection: @services %>
+            </ul>
+        </main>
+    </body>
+</html>
