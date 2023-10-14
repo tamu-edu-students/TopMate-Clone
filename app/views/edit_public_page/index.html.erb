@@ -1,2 +1,42 @@
-<h1>EditPublicPage#index</h1>
-<p>Find me in app/views/edit_public_page/index.html.erb</p>
+<html>
+  <head>
+    <title>Edit Public Page</title>
+    <%= stylesheet_link_tag 'service', media: 'all' %>
+  </head>
+  <body>
+    <div class="service-container">
+      <h1>User Public Edit Information</h1>
+
+      <%= form_for @user , url: edit_public_page_update_path, method: :patch do |form| %>
+    <%#   form_with(model: @user, url: services_path(@user), local: true) do |form|  %>
+        <%= form.label :fname %>
+        <%= form.text_field :fname %>
+
+        <%= form.label :lname %>
+        <%= form.text_field :lname %>
+
+         <%= form.label :about %>
+        <%= form.text_area :about %>
+
+         <%= form.label :username %>
+        <%= form.text_field :username %>
+
+        <%= form.submit "Update User Public Profile", class: 'button' %>
+       
+      <% end %>
+
+       <% if flash[:error].present? %>
+            <div class="alert-update">
+                <%= flash[:error] %>
+            </div>
+        <% end %>
+        <% if flash[:success].present? %>
+                <div class="success-update">
+                    <%= flash[:success] %>
+                </div>
+        <% end %>
+
+        <%= link_to "Return to Dashboard", root_path, class: 'button'%>
+    </div>
+  </body>
+</html>

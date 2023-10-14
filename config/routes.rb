@@ -32,4 +32,8 @@ Rails.application.routes.draw do
   get '/servicesindex', to: 'services#index'
 
   get 'public/:username', to: 'public_page#show', as: 'public_page'
+  get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
+
+  patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
+
 end
