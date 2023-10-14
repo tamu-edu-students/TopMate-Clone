@@ -205,6 +205,11 @@
           2,
           null,
           2,
+          0,
+          null,
+          null,
+          null,
+          2,
           null,
           null
         ]
@@ -215,6 +220,14 @@
           null,
           1,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/reset_password_session.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null
         ]
@@ -469,19 +482,9 @@
         ],
         "branches": {
         }
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/reset_password_session.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1697250678
+    "timestamp": 1697254220
   },
   "Cucumber Features": {
     "coverage": {
@@ -869,6 +872,11 @@
           0,
           null,
           0,
+          0,
+          null,
+          null,
+          null,
+          0,
           null,
           null
         ]
@@ -900,7 +908,7 @@
           1,
           null,
           1,
-          2,
+          4,
           null,
           null,
           1,
@@ -908,7 +916,7 @@
           null,
           null,
           1,
-          2,
+          4,
           null,
           null
         ]
@@ -949,6 +957,6 @@
         ]
       }
     },
-    "timestamp": 1697250690
+    "timestamp": 1697254167
   }
 }

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'submitemail', to: 'email_submission#index'
   post 'send_email', to: 'email_submission#send_email'
-  get 'password_reset_edit_url/:token', to: 'password_reset#reset'
+  get 'reset/:token', to: 'password_reset#reset'
   post 'submit_reset', to: 'password_reset#change_password'
   # Defines the root path route ("/")
   # root "articles#index"
