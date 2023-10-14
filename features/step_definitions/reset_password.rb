@@ -1,3 +1,5 @@
+
+# frozen_string_literal: true
 Given("I am on {string} page") do |page|
     user = User.create(email: 'userfortestingreset@gmail.com', password: 'jkjk1234$', fname: 'Test', lname: 'user', id: '8268aa66-f830-4470-b7df-bff71fdc1cb9')
     user.save!

@@ -20,6 +20,26 @@ cd TopMate-Clone
 bin/rails server
 ```
 
+## Running Tests
+
+cd TopMate-Clone
+```
+rspec
+```
+```
+cucumber
+```
+
+Current Coverage: 84%
+
+## Deployment Information
+
+#### Deployed to Heroku
+- [TopMate Clone Deployed App](https://topmate-clone-779709a9559a.herokuapp.com/)
+- Postgres DB (Heroku)
+- Gmail STMP Server
+
+
 ## Iteration Documents
 ### [Iteration 0](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/documentation/Fall2023):
 - Defined initial requirements
@@ -32,6 +52,14 @@ bin/rails server
 - Added log-in functionality
 - Added forgot password screens
 - Setup sending email functionality
+
+### [Iteration 2](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/documentation/Fall2023):
+- Added public pages for users
+- Users can edit their profiles
+- Users can create services
+- Users can edit their services
+- Users can set their availability
+- Added gmail stmp server for resetting passwords
 
 ## Dev Team
 [Dalton Avery](https://github.com/dalton-avery)\
