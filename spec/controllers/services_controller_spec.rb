@@ -74,7 +74,7 @@ RSpec.describe ServicesController, type: :controller do
         { service: { name: 'Test Service new', description: 'test service description new', price: 12, duration: 1 } }
       end
 
-      it 'edits a new service' do
+      it 'edits an existing service' do
         expect do
           post :create, params: valid_params
         end
