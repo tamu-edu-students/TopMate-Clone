@@ -63,17 +63,17 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'gmail.com',
-    user_name:            'topmateclone@gmail.com',
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    user_name: 'topmateclone@gmail.com',
     # password:           'topmate123!',
-    password:             'txyl pvnu ooxa othk',
-    authentication:       'plain',
+    password: 'txyl pvnu ooxa othk',
+    authentication: 'plain',
     enable_starttls_auto: true,
-    open_timeout:         5,
-    read_timeout:         5 }
-
+    open_timeout: 5,
+    read_timeout: 5
+  }
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true

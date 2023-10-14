@@ -17,13 +17,13 @@ ActiveRecord::Schema[7.0].define(version: 20_231_012_151_055) do
   enable_extension 'plpgsql'
   enable_extension 'uuid-ossp'
 
-  create_table "hours", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid "user_id"
-    t.integer "day"
-    t.time "start_time"
-    t.time "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'hours', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
+    t.uuid 'user_id'
+    t.integer 'day'
+    t.time 'start_time'
+    t.time 'end_time'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
   create_table 'reset_password_sessions', force: :cascade do |t|
@@ -33,15 +33,15 @@ ActiveRecord::Schema[7.0].define(version: 20_231_012_151_055) do
     t.datetime 'updated_at', null: false
   end
 
-  create_table "services", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid "user_id", null: false
-    t.string "name"
-    t.text "description"
-    t.decimal "price"
-    t.integer "duration"
-    t.boolean "is_published", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'services', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
+    t.uuid 'user_id', null: false
+    t.string 'name'
+    t.text 'description'
+    t.decimal 'price'
+    t.integer 'duration'
+    t.boolean 'is_published', default: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
   create_table 'services', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
@@ -65,6 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 20_231_012_151_055) do
     t.string 'lname', default: '', null: false
   end
 
-  add_foreign_key "hours", "users", primary_key: "user_id"
+  add_foreign_key 'hours', 'users', primary_key: 'user_id'
   add_foreign_key 'services', 'users', primary_key: 'user_id'
 end

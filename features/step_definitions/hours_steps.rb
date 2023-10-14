@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Given('I am on the hours page') do
-  @user = User.create(fname: "John", lname: "Doe", email: "test@example.com", password: "password")
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'
@@ -8,11 +10,11 @@ Given('I am on the hours page') do
 end
 
 When('I click on {string}') do |string|
-    click_button string
+  click_button string
 end
 
 Given('I am on the add hours page') do
-  @user = User.create(fname: "John", lname: "Doe", email: "test@example.com", password: "password")
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'

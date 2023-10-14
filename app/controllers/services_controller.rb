@@ -25,62 +25,53 @@ class ServicesController < ApplicationController
     end
   end
 
-
-
   def edit_intial
     @current_user ||= User.find_by(user_id: session[:user_id])
     if @current_user.nil?
-      redirect_to login_url 
+      redirect_to login_url
     else
       @service = Service.find_by(id: params[:token])
 
       if @service.nil?
-        render plain: "Service does not exist."
-      else 
+        render plain: 'Service does not exist.'
+      else
         render :edit_service
       end
     end
-
   end
 
-
   def edit
-
-
-    puts "inside edit post route"
+    puts 'inside edit post route'
 
     @current_user ||= User.find_by(user_id: session[:user_id])
     if @current_user.nil?
-      redirect_to login_url 
+      redirect_to login_url
     else
-          @service = Service.find_by(id: params[:token])
+      @service = Service.find_by(id: params[:token])
 
-          puts "searched for the service"
+      puts 'searched for the service'
 
-          if @service.nil?
-            puts "service not available" 
-            flash[:error] = "Service not found"
-            render plain: "Service does not exist."
+      if @service.nil?
+        puts 'service not available'
+        flash[:error] = 'Service not found'
+        render plain: 'Service does not exist.'
 
-            # redirect_back(fallback_location: root_path)
-          else
-            # Update service attributes one by one
-            puts "updating the services"
+        # redirect_back(fallback_location: root_path)
+      else
+        # Update service attributes one by one
+        puts 'updating the services'
 
-
-
-            if @service.update(service_params)
-              puts "updated the service succesfully"
-              redirect_to servicesindex_url
-            else
-              flash[:error] = "Failed to update service"
-              redirect_back(fallback_location: root_path)
-            end
-          end
+        if @service.update(service_params)
+          puts 'updated the service succesfully'
+          redirect_to servicesindex_url
+        else
+          flash[:error] = 'Failed to update service'
+          redirect_back(fallback_location: root_path)
+        end
+      end
     end
 
-
-    puts "completed redirecting"
+    puts 'completed redirecting'
   end
 
   def index
@@ -98,4 +89,3 @@ class ServicesController < ApplicationController
     params.require(:service).permit(:name, :description, :price, :duration)
   end
 end
-
