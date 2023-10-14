@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Service</title>
+
     <%= stylesheet_link_tag 'service', media: 'all' %>
   </head>
   <body>
@@ -13,6 +14,10 @@
             <p><strong>Description:  </strong><%= service.description %></p>
             <p><strong>Price:  </strong><%= service.price %></p>
             <p><strong>Duration:  </strong><%= service.duration %> mins</p>
+
+            <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %><p>
+
+            
         </div>
         <% end %>
 
