@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    puts 'inside edit post route'
+    # puts 'inside edit post route'
 
     @current_user ||= User.find_by(user_id: session[:user_id])
     if @current_user.nil?
@@ -49,7 +49,7 @@ class ServicesController < ApplicationController
     else
       @service = Service.find_by(id: params[:token])
 
-      puts 'searched for the service'
+      # puts 'searched for the service'
 
       if @service.nil?
         puts 'service not available'
@@ -59,10 +59,10 @@ class ServicesController < ApplicationController
         # redirect_back(fallback_location: root_path)
       else
         # Update service attributes one by one
-        puts 'updating the services'
+        # puts 'updating the services'
 
         if @service.update(service_params)
-          puts 'updated the service succesfully'
+          # puts 'updated the service succesfully'
           redirect_to servicesindex_url
         else
           flash[:error] = 'Failed to update service'
@@ -71,7 +71,7 @@ class ServicesController < ApplicationController
       end
     end
 
-    puts 'completed redirecting'
+    # puts 'completed redirecting'
   end
 
   def index
