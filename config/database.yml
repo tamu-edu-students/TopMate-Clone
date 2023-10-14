@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  username: myusername
+  username: postgres
   database: topmate_clone_development
 
   # The specified database role being used to connect to postgres.
@@ -33,16 +33,16 @@ development:
   #username: topmate_clone
 
   # The password associated with the postgres role (username).
-  password: mypassword
+  password: <%= ENV['LOCALHOST_DB_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  host: localhost
+  #host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  #port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -59,11 +59,9 @@ development:
 test:
   <<: *default
   database: topmate_clone_test
+  username: postgres
+  password: <%= ENV['LOCALHOST_DB_PASSWORD'] %>
 
-  host: localhost
-  port: 5432
-  username: myusername
-  password: mypassword
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.

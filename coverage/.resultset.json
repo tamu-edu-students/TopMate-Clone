@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/application_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,7 +9,13 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/email_submission_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
         "lines": [
           null,
           null,
@@ -17,7 +23,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/public_page_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -25,7 +31,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/services_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/services_helper.rb": {
         "lines": [
           null,
           null,
@@ -33,7 +39,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/welcome_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -41,16 +47,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/service.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/application_record.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/service.rb": {
         "lines": [
           null,
           null,
@@ -59,7 +56,16 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/user.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -70,7 +76,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/public_page_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
         "lines": [
           null,
           null,
@@ -88,7 +94,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/application_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -96,7 +102,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/services_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/services_controller.rb": {
         "lines": [
           null,
           null,
@@ -141,37 +147,37 @@
           null,
           null,
           1,
-          0,
           null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
           null,
           0,
           0,
           0,
           null,
           0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
           0,
           null,
           null,
           null,
           null,
+          null,
+          null,
           0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -191,7 +197,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/password_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
@@ -214,7 +220,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -224,7 +230,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/reset_password_session.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/reset_password_session.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +238,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/dashboard_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -257,7 +263,46 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/email_submission_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
         "lines": [
           null,
           null,
@@ -293,7 +338,7 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/home_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -317,7 +362,7 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/hours_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
           null,
           null,
@@ -394,7 +439,7 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/password_reset_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
           null,
@@ -431,7 +476,7 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/sessions_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -467,7 +512,7 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/hour.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
@@ -484,11 +529,11 @@
         }
       }
     },
-    "timestamp": 1697254220
+    "timestamp": 1697257320
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/user.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -499,7 +544,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/application_record.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -508,7 +553,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/sessions_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -517,103 +562,164 @@
           1,
           null,
           1,
-          10,
-          10,
-          8,
-          8,
-          null,
-          2,
-          2,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/application_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/email_submission_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/public_page_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/services_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/helpers/welcome_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/dashboard_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          18,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
+          11,
+          11,
+          9,
           9,
           null,
+          2,
+          2,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/service.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/services_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          10,
+          null,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          0,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          4,
+          4,
+          4,
+          3,
+          3,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/service.rb": {
         "lines": [
           null,
           null,
@@ -622,7 +728,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/services_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/services_controller.rb": {
         "lines": [
           null,
           null,
@@ -667,37 +773,37 @@
           null,
           null,
           1,
-          1,
+          null,
           null,
           1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
           1,
           0,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
           0,
           0,
           null,
           null,
           null,
           null,
+          null,
+          null,
           1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -717,7 +823,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/hours_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
           null,
           null,
@@ -792,7 +898,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/hour.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
@@ -806,25 +912,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/public_page_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          3,
-          3,
-          3,
-          2,
-          2,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/email_submission_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
         "lines": [
           null,
           null,
@@ -858,7 +946,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/password_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
@@ -881,7 +969,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -891,7 +979,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/reset_password_session.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/reset_password_session.rb": {
         "lines": [
           null,
           null,
@@ -899,7 +987,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/home_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -921,7 +1009,7 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/password_reset_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
           null,
@@ -957,6 +1045,6 @@
         ]
       }
     },
-    "timestamp": 1697254167
+    "timestamp": 1697256617
   }
 }

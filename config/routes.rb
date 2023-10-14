@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'edit_public_page/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get 'submitemail', to: 'email_submission#index'
@@ -34,4 +35,8 @@ Rails.application.routes.draw do
   get 'editService/:token', to: 'services#edit_intial', as: 'edit_service'
 
   get 'public/:username', to: 'public_page#show', as: 'public_page'
+  get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
+
+  patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
+
 end
