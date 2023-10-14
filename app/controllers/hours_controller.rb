@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class HoursController < ApplicationController
-  before_action :set_hour, only: %i[ show edit update destroy ]
+  before_action :set_hour, only: %i[show edit update destroy]
 
   # GET /hours or /hours.json
   def index
@@ -35,7 +37,7 @@ class HoursController < ApplicationController
       @hour.user_id = @current_user.user_id
       respond_to do |format|
         if @hour.save
-          format.html { redirect_to hours_url(@hour), notice: "Hour was successfully created." }
+          format.html { redirect_to hours_url(@hour), notice: 'Hour was successfully created.' }
           format.json { render :show, status: :created, location: @hour }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -50,19 +52,20 @@ class HoursController < ApplicationController
     @hour.destroy
 
     respond_to do |format|
-      format.html { redirect_to hours_url, notice: "Hour was successfully destroyed." }
+      format.html { redirect_to hours_url, notice: 'Hour was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hour
-      @hour = Hour.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def hour_params
-      params.require(:hour).permit(:day, :start_time, :end_time)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hour
+    @hour = Hour.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def hour_params
+    params.require(:hour).permit(:day, :start_time, :end_time)
+  end
 end

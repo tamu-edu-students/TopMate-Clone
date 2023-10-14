@@ -66,6 +66,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -125,6 +126,55 @@
           null,
           null,
           1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
           3,
           3,
           1,
@@ -141,29 +191,46 @@
           null
         ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/channels/application_cable/channel.rb": {
+      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
           0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null,
+          null,
+          null,
+          2,
+          null,
+          null
+        ]
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/channels/application_cable/connection.rb": {
+      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/reset_password_session.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
       },
       "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/dashboard_controller.rb": {
         "lines": [
@@ -250,6 +317,83 @@
         "branches": {
         }
       },
+      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/hours_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
@@ -323,67 +467,16 @@
         "branches": {
         }
       },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/controllers/welcome_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/mailers/password_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
           null,
           0,
           0,
-          null,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/a211961/Desktop/School Stuff/A&M Fall 2023/Software Engineering/TopMate-Clone/app/models/reset_password_session.rb": {
-        "lines": [
-          null,
-          null,
           0,
           0
         ],
@@ -391,7 +484,7 @@
         }
       }
     },
-    "timestamp": 1697203492
+    "timestamp": 1697254220
   },
   "Cucumber Features": {
     "coverage": {
@@ -424,10 +517,10 @@
           1,
           null,
           1,
+          11,
+          11,
           9,
           9,
-          7,
-          7,
           null,
           2,
           2,
@@ -513,7 +606,7 @@
           1,
           null,
           1,
-          16,
+          20,
           null,
           null,
           1,
@@ -521,7 +614,7 @@
           null,
           null,
           1,
-          8,
+          10,
           null,
           null
         ]
@@ -590,8 +683,105 @@
           null
         ]
       },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/services_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          0,
+          null,
+          2,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          0,
+          null,
+          3,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -651,6 +841,7 @@
           null,
           1,
           null,
+          null,
           1,
           0,
           null,
@@ -664,6 +855,8 @@
       },
       "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -722,6 +915,11 @@
           0,
           null,
           0,
+          0,
+          null,
+          null,
+          null,
+          0,
           null,
           null
         ]
@@ -753,7 +951,7 @@
           1,
           null,
           1,
-          2,
+          4,
           null,
           null,
           1,
@@ -761,7 +959,7 @@
           null,
           null,
           1,
-          2,
+          4,
           null,
           null
         ]
@@ -800,103 +998,8 @@
           null,
           null
         ]
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/services_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          0,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          0,
-          null,
-          2,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/channels/application_cable/channel.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/channels/application_cable/connection.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/welcome_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1697256517
+    "timestamp": 1697256617
   }
 }

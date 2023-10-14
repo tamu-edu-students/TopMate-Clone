@@ -26,6 +26,6 @@ class PasswordResetController < ApplicationController
 
       flash[:error] = 'Reset session does not exist'
     end
-    redirect_back(fallback_location: root_path)
+    redirect_to root_path
   end
 end

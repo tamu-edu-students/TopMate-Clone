@@ -84,7 +84,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec'
-  gem 'simplecov', require: false
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   gem 'webdrivers'
 end

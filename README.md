@@ -30,7 +30,7 @@ rspec
 cucumber
 ```
 
-Current Coverage: 84%
+Current Coverage: 89%
 
 ## Deployment Information
 
