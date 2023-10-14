@@ -10,7 +10,6 @@
 # Create a User with email and password
 # Create multiple users using an array
 
-
 users = [{
   fname: 'John', lname: 'Doe', email: 'johndoe@gmail.com', password: 'password', about: 'This is John Doe. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy. He is a great guy.'
 }]
