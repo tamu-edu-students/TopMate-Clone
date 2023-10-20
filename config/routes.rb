@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   post '/services', to: 'services#create'
   get '/services', to: 'services#new'
+  
+  delete '/deleteservices/:id/hide', to: 'services#hide', as: 'hide_service'
 
   get '/servicesindex', to: 'services#index'
 
@@ -40,3 +42,4 @@ Rails.application.routes.draw do
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
 
 end
+
