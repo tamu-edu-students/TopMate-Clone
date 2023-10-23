@@ -16,6 +16,7 @@
             <p><strong>Duration:  </strong><%= service.duration %> mins</p>
 
             <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %><p>
+            <%= button_to 'Delete', hide_service_path(service), method: :delete, id: "delete-service-#{service.id}", class: 'button' %>
 
             
         </div>

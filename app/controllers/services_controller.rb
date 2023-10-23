@@ -79,8 +79,15 @@ class ServicesController < ApplicationController
     if @current_user.nil?
       redirect_to login_url
     else
-      @services = @current_user.services
+      @services = @current_user.services.where(hidden: false)
     end
+  end
+
+  def hide
+    @service = Service.find(params[:id])
+    @service.update(hidden: true)  # Add a 'hidden' boolean column to the 'services' table
+
+    redirect_to root_path, notice: 'Service deleted successfully.'
   end
 
   private

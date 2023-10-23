@@ -24,6 +24,19 @@ RSpec.describe ServicesController, type: :controller do
     end
   end
 
+  describe "DELETE #hide" do
+    let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
+    let!(:service) do
+      user.services.create(name: 'Test Service1', description: 'test service1 description', price: 120, duration: 10)
+    end
+    it "hides the service and displays a success message" do
+      delete :hide, params: { id: service.id }
+      service.reload
+      
+      expect(service.hidden).to eq(true)
+    end
+  end
+
   describe 'POST #create' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
 
@@ -62,40 +75,40 @@ RSpec.describe ServicesController, type: :controller do
     end
   end
   describe 'POST #edit' do
-  let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
-  let(:service) { Service.create(name: 'Test Service', description: 'test service description', price: 120, duration: 10 )  }
+    let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
+    let(:service) { Service.create(name: 'Test Service', description: 'test service description', price: 120, duration: 10 )  }
 
-  context 'when user is logged in' do
-    before { session[:user_id] = user.user_id }
+    context 'when user is logged in' do
+      before { session[:user_id] = user.user_id }
 
 
-    context 'with valid parameters' do
-      let(:valid_params) do
-        { service: { name: 'Test Service new', description: 'test service description new', price: 12, duration: 1 } }
-      end
-
-      it 'edits an existing service' do
-        expect do
-          post :create, params: valid_params
+      context 'with valid parameters' do
+        let(:valid_params) do
+          { service: { name: 'Test Service new', description: 'test service description new', price: 12, duration: 1 } }
         end
-      end
 
-      it 'redirects to root_path' do
-        post :create, params: valid_params
-        expect(response).to redirect_to(root_path)
-      end
+        it 'edits an existing service' do
+          expect do
+            post :create, params: valid_params
+          end
+        end
 
+        it 'redirects to root_path' do
+          post :create, params: valid_params
+          expect(response).to redirect_to(root_path)
+        end
+
+      end
+    end
+
+    context 'when user is not logged in' do
+      before { post :create }
+
+      it 'redirects to login_url' do
+        expect(response).to redirect_to(login_path)
+      end
     end
   end
-
-  context 'when user is not logged in' do
-    before { post :create }
-
-    it 'redirects to login_url' do
-      expect(response).to redirect_to(login_path)
-    end
-  end
-end
 
   describe 'GET #index' do
     context 'when user is logged in' do
