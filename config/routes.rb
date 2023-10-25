@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get '/services', to: 'services#new'
   
   delete '/deleteservices/:id/hide', to: 'services#hide', as: 'hide_service'
+  post '/togglepublish/:id', to: 'services#togglepublish', as: 'service_publish'
 
   get '/servicesindex', to: 'services#index'
 
