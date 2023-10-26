@@ -44,3 +44,17 @@ body {
 .footer button {
   margin: 0;
 }
+
+a {
+  color: inherit;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.header h3 {
+  margin-left: 10px;
+  font-size: 2.1em;
+}
