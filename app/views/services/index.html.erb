@@ -5,24 +5,36 @@
     <%= stylesheet_link_tag 'service', media: 'all' %>
   </head>
   <body>
-    <div class="service-container">
-        <h1>Services</h1>
+  <div class="navbar">
+    <h1 class="title">Services</h1>
+    <div class="navbar-links">
+    <%= link_to 'Create New Service', services_path%>
+    <%= link_to "Back to Dashboard", dashboard_path %>
+  </div>
+    
+  </div>
+  <div class="days-container-2">
+   
         <% @services.each do |service| %>
-        <div class="service-card">
+          <div class="day-container-2">
+        
 
             <h3><%= service.name %></h3>
+            <div class="time-container-2">
             <p><strong>Description:  </strong><%= service.description %></p>
             <p><strong>Price:  </strong><%= service.price %></p>
             <p><strong>Duration:  </strong><%= service.duration %> mins</p>
 
-            <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %><p>
+            <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %></p>
             <%= button_to 'Delete', hide_service_path(service), method: :delete, id: "delete-service-#{service.id}", class: 'button' %>
 
             
         </div>
+        </div>
         <% end %>
 
-        <p><%= link_to 'Create New Service', services_path, class: 'button' %></p>
+       
+    
     </div>
   </body>
 </html>

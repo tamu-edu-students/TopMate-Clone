@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/application_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,21 +9,13 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/email_submission_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/public_page_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
         "lines": [
           null,
           null,
@@ -31,7 +23,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/services_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -39,7 +31,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/welcome_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/services_helper.rb": {
         "lines": [
           null,
           null,
@@ -47,16 +39,15 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/service.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
           1,
-          1,
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/application_record.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/service.rb": {
         "lines": [
           null,
           null,
@@ -65,7 +56,16 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/user.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -76,7 +76,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/public_page_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
         "lines": [
           null,
           null,
@@ -94,7 +94,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/application_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -102,7 +102,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/services_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/services_controller.rb": {
         "lines": [
           null,
           null,
@@ -204,7 +204,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/mailers/password_mailer.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
@@ -227,7 +227,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -237,7 +237,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/reset_password_session.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/reset_password_session.rb": {
         "lines": [
           null,
           null,
@@ -245,7 +245,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/dashboard_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -270,7 +270,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
         "lines": [
           0,
           0,
@@ -309,7 +309,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/email_submission_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
         "lines": [
           null,
           null,
@@ -345,7 +345,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/home_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -369,7 +369,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/hours_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
           null,
           null,
@@ -446,7 +446,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/password_reset_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
           null,
@@ -483,7 +483,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/sessions_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -519,7 +519,7 @@
         "branches": {
         }
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/hour.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
@@ -536,11 +536,11 @@
         }
       }
     },
-    "timestamp": 1697847658
+    "timestamp": 1698362806
   },
   "Cucumber Features": {
     "coverage": {
-      "D:/assignments/SE/project/TopMate-Clone/app/models/user.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -551,7 +551,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/application_record.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -560,7 +560,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/sessions_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -594,7 +594,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/application_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -602,7 +602,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/application_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -610,21 +610,13 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/email_submission_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/public_page_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
         "lines": [
           null,
           null,
@@ -632,7 +624,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/services_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -640,7 +632,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/helpers/welcome_helper.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/services_helper.rb": {
         "lines": [
           null,
           null,
@@ -648,7 +640,15 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/dashboard_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -671,7 +671,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/service.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/service.rb": {
         "lines": [
           null,
           null,
@@ -680,7 +680,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/services_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/services_controller.rb": {
         "lines": [
           null,
           null,
@@ -782,7 +782,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/home_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -804,7 +804,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
         "lines": [
           1,
           1,
@@ -841,7 +841,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/public_page_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
         "lines": [
           null,
           null,
@@ -859,7 +859,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/hours_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
           null,
           null,
@@ -934,7 +934,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/hour.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
@@ -948,7 +948,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/email_submission_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
         "lines": [
           null,
           null,
@@ -982,7 +982,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/mailers/password_mailer.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
@@ -1005,7 +1005,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -1015,7 +1015,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/models/reset_password_session.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/reset_password_session.rb": {
         "lines": [
           null,
           null,
@@ -1023,7 +1023,7 @@
           null
         ]
       },
-      "D:/assignments/SE/project/TopMate-Clone/app/controllers/password_reset_controller.rb": {
+      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
           null,
@@ -1059,6 +1059,6 @@
         ]
       }
     },
-    "timestamp": 1697847694
+    "timestamp": 1698362801
   }
 }

@@ -1,3 +1,10 @@
+<html>
+  <head>
+    <title>Edit Public Page</title>
+    <%= stylesheet_link_tag 'add_hour', media: 'all' %>
+  </head>
+  <body>
+    <div class="hour-container">
 <h1>New hour</h1>
 
 <%= form_with(model: @hour) do |form| %>
@@ -32,8 +39,11 @@
   </div>
 <% end %>
 
-<br>
+
 
 <div>
   <%= link_to "Back to hours", hours_path %>
 </div>
+</div>
+</body>
+</html>

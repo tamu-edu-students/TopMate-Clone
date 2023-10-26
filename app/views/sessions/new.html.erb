@@ -1,11 +1,16 @@
 <!-- new.html.erb -->
-<html>
+<html class="login">
   <head>
     <title>Login</title>
-    <%= stylesheet_link_tag 'login', media: 'all' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Press+Start+2P&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'edit_service', media: 'all' %>
   </head>
   <body>
     <div class="login-container">
+    <center><h1 class="topmate"> Topmate </h1></center>
+    <hr class="topmate-hr">
       <h1>Login</h1>
 
       <%= form_tag sessions_new_path do %>
@@ -26,7 +31,7 @@
           <%= submit_tag 'Login', class: 'button'  %>
         </div>
         <div>
-          <%= link_to 'Forgot Password', submitemail_path, class: 'button' %>
+          <%= link_to 'Forgot Password', submitemail_path %>
         </div>
       <% end %>
     </div>

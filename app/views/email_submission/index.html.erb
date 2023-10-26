@@ -4,6 +4,7 @@
     <%= stylesheet_link_tag 'email_submission_styles', media: 'all' %>
   </head>
   <body class="email-submit-body">
+  <div class="login-container">
     <%= form_with(url: '/send_email', method: 'post', class: 'email-submit-body') do |form| %>
         <h1 class="email-submit-header">Enter your email</h1><br>
         <%= form.email_field :email, name:'Email Address', class: 'email-input-box', placeholder: "user@example.com" %><br>
@@ -20,5 +21,7 @@
         <% end %>
         <%= link_to "Return to Login", root_path, class: 'return-to-login'%>
     <% end %>
+    </div>
     </body>
 </html>
+

@@ -1,20 +1,116 @@
+/* Add styles for the entire page */
+body {
+  display: block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  align-items: center; /* Center align the content horizontally */
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the navigation bar at the top */
+.navbar {
+  background-color: #e35869;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h1 {
+  margin: 10px 0px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px; /* Add margin to create space between links */
+}
+
+/* Style for the "Back to Dashboard" button */
+.login-button {
+  background-color: #e35869;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Styles for the days container */
 .days-container {
   display: flex;
-  width: 100%;
-  gap: 8px;
-  margin: 8px 0px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
+
+/* Styles for individual day containers */
 .day-container {
-  flex: 1;
-  text-align: center;
-  background-color: #c0c0c0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 20px;
-  border: 1px solid #737171;
+  margin: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.day-container h2 {
+  color: #e35869;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Styles for time containers */
+.time-container {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.time-container p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Style for the "Delete" button */
+.time-container button {
+  background-color: #e35869;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.time-container button:hover {
+  background-color: #d04758;
+}
+
+/* Style for the "New Hour" link */
+.new-hour-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  background-color: #e35869;
+  color: white;
+  padding: 10px 20px;
   border-radius: 5px;
 }
-.time-container {
-  padding: 20px;
-  border: 1px solid #737171;
-  border-radius: 5px;
-  background-color: #f7f7f7;
+
+.new-hour-link:hover {
+  background-color: #d04758;
 }
