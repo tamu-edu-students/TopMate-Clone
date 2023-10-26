@@ -48,6 +48,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    color: inherit;
+    text-decoration: none;
+    height: 200px;
+}
+
+.service:hover {
+    cursor: pointer;
 }
 
 .service:hover {
@@ -61,6 +69,7 @@
 .service-description {
     font-size: 1.2em;
     margin: 0;
+    overflow: hidden;
 }
 
 .service-price-duration {
