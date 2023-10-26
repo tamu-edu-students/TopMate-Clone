@@ -96,7 +96,6 @@ class ServicesController < ApplicationController
   end
 
   def show
-    puts params
     @current_user ||= User.find_by(user_id: session[:user_id])
     if @current_user.nil?
       redirect_to login_url
