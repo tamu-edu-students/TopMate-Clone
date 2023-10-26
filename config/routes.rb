@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   post '/services', to: 'services#create'
   get '/services', to: 'services#new'
+  get '/services/:id', to: 'services#show', as: 'show_service'
   
   delete '/deleteservices/:id/hide', to: 'services#hide', as: 'hide_service'
   post '/togglepublish/:id', to: 'services#togglepublish', as: 'service_publish'
