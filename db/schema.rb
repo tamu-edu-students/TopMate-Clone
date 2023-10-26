@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_20_221700) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_24_014928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  # Custom types defined in this database.
+  # Note that some types may not work with other database engines. Be careful if changing database.
+  create_enum "appointment_status", ["booked", "closed", "cancelled"]
+
+  create_table "appointments", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.uuid "service_id"
+    t.uuid "user_id"
+    t.string "fname"
+    t.string "lname"
+    t.string "email"
+    t.datetime "startdatetime", precision: nil
+    t.datetime "enddatetime", precision: nil
+    t.decimal "amount_paid"
+    t.string "status", default: "booked", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hours", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.uuid "user_id"
@@ -55,6 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_20_221700) do
     t.string "username"
   end
 
+  add_foreign_key "appointments", "services"
+  add_foreign_key "appointments", "users", primary_key: "user_id"
   add_foreign_key "hours", "users", primary_key: "user_id"
   add_foreign_key "services", "users", primary_key: "user_id"
 end

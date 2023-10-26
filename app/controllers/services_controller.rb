@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ServicesController < ApplicationController
+  include ServicesHelper
+
   def new
     @current_user ||= User.find_by(user_id: session[:user_id])
     if @current_user.nil?
