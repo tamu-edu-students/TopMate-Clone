@@ -13,10 +13,9 @@
     padding: 20px;
     box-sizing: border-box;
     height: calc(100vh);
-    background-color: #565656;
+    background-color: #e35869;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: whitesmoke;
-    position: fixed;
     overflow: hidden;
 }
 
@@ -24,7 +23,6 @@
     padding: 20px;
     height: calc(100vh);
     flex: 1;
-    margin-left: 40%; /* Adjust this margin to match the width of the left section */
     box-sizing: border-box;
     overflow-y: scroll;
 }
