@@ -19,13 +19,12 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   username: postgres
-  password: "123"
-
+  database: topmate_clone_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -34,7 +33,7 @@ development:
   #username: topmate_clone
 
   # The password associated with the postgres role (username).
-
+  password: <%= ENV['LOCALHOST_DB_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -59,9 +58,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-
+  database: topmate_clone_test
   username: postgres
-  password: "123"
+  password: <%= ENV['LOCALHOST_DB_PASSWORD'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,5 +84,6 @@ test:
 #
 production:
   <<: *default
+  database: topmate_clone_production
   username: topmate_clone
-  password: "123"
+  password: <%= ENV["TOPMATE_CLONE_DATABASE_PASSWORD"] %>
