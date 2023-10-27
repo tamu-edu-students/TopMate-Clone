@@ -15,7 +15,7 @@ module ServicesHelper
     def user_availability_for_day(user, date)
         day = get_day_of_week_int(date)
         if user == nil
-            nil
+            return nil
         end
         hours = user.hours.where(day: day)
         appts = user.appointments.where("date(startdatetime) = ?", date)
