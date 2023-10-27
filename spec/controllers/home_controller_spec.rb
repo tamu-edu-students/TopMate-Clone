@@ -3,12 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  let(:user) { create(:user) } # 创建一个测试用户对象
+  let(:user) { create(:user) } 
 
   describe '#current_user' do
 
     it 'does not assign a current user when not logged in' do
-      # 模拟current_user方法返回nil，表示用户未登录
+
       allow(controller).to receive(:current_user).and_return(nil)
 
       get :index

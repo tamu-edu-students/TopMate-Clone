@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe EditPublicPageController, type: :controller do
-  let(:user) { create(:user) } # 创建一个测试用户对象
+  let(:user) { create(:user) } 
 
   describe '#index' do
     it 'redirects to login page when user is not logged in' do

@@ -6,7 +6,7 @@ RSpec.describe EmailSubmissionController, type: :controller do
   before do
     @request.env['HTTP_REFERER'] = 'http://example.com/previous_page'
     
-    # 设置主机名，确保它与预期一致
+ 
     @request.host = 'example.com'
   end
 
