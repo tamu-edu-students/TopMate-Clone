@@ -96,11 +96,12 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @current_user ||= User.find_by(user_id: session[:user_id])
-    if @current_user.nil?
-      redirect_to login_url
+    service = Service.find_by(id: params[:id])
+    if service.nil? || !service.is_published
+      @service = nil
     else
-      @service = @current_user.services.find_by(id: params[:id])
+      @service_owner ||= User.find_by(user_id: service.user_id)
+      @service = service
     end
   end
 
