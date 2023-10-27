@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,71 +12,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_24_014928) do
+ActiveRecord::Schema[7.0].define(version: 20_231_024_014_928) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-  enable_extension "uuid-ossp"
+  enable_extension 'plpgsql'
+  enable_extension 'uuid-ossp'
 
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
-  create_enum "appointment_status", ["booked", "closed", "cancelled"]
+  create_enum 'appointment_status', %w[booked closed cancelled]
 
-  create_table "appointments", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid "service_id"
-    t.uuid "user_id"
-    t.string "fname"
-    t.string "lname"
-    t.string "email"
-    t.datetime "startdatetime", precision: nil
-    t.datetime "enddatetime", precision: nil
-    t.decimal "amount_paid"
-    t.string "status", default: "booked", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'appointments', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
+    t.uuid 'service_id'
+    t.uuid 'user_id'
+    t.string 'fname'
+    t.string 'lname'
+    t.string 'email'
+    t.datetime 'startdatetime', precision: nil
+    t.datetime 'enddatetime', precision: nil
+    t.decimal 'amount_paid'
+    t.string 'status', default: 'booked', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "hours", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid "user_id"
-    t.integer "day"
-    t.time "start_time"
-    t.time "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'hours', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
+    t.uuid 'user_id'
+    t.integer 'day'
+    t.time 'start_time'
+    t.time 'end_time'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "reset_password_sessions", force: :cascade do |t|
-    t.uuid "user_id"
-    t.string "session_token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'reset_password_sessions', force: :cascade do |t|
+    t.uuid 'user_id'
+    t.string 'session_token'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "services", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid "user_id", null: false
-    t.string "name"
-    t.text "description"
-    t.decimal "price"
-    t.integer "duration"
-    t.boolean "is_published", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "hidden", default: false
+  create_table 'services', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
+    t.uuid 'user_id', null: false
+    t.string 'name'
+    t.text 'description'
+    t.decimal 'price'
+    t.integer 'duration'
+    t.boolean 'is_published', default: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.boolean 'hidden', default: false
   end
 
-  create_table "users", primary_key: "user_id", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string "fname", null: false
-    t.string "email"
-    t.string "password_digest"
-    t.string "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "lname", default: "", null: false
-    t.string "profile_image"
-    t.string "username"
+  create_table 'users', primary_key: 'user_id', id: :uuid, default: -> { 'uuid_generate_v4()' }, force: :cascade do |t|
+    t.string 'fname', null: false
+    t.string 'email'
+    t.string 'password_digest'
+    t.string 'about'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'lname', default: '', null: false
+    t.string 'profile_image'
+    t.string 'username'
   end
 
-  add_foreign_key "appointments", "services"
-  add_foreign_key "appointments", "users", primary_key: "user_id"
-  add_foreign_key "hours", "users", primary_key: "user_id"
-  add_foreign_key "services", "users", primary_key: "user_id"
+  add_foreign_key 'appointments', 'services'
+  add_foreign_key 'appointments', 'users', primary_key: 'user_id'
+  add_foreign_key 'hours', 'users', primary_key: 'user_id'
+  add_foreign_key 'services', 'users', primary_key: 'user_id'
 end

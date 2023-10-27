@@ -57,17 +57,15 @@ class ServicesController < ApplicationController
         render plain: 'Service does not exist.'
 
         # redirect_back(fallback_location: root_path)
-      else
+      elsif @service.update(service_params)
         # Update service attributes one by one
         # puts 'updating the services'
 
-        if @service.update(service_params)
-          # puts 'updated the service succesfully'
-          redirect_to servicesindex_url
-        else
-          flash[:error] = 'Failed to update service'
-          redirect_back(fallback_location: root_path)
-        end
+        redirect_to servicesindex_url
+      # puts 'updated the service succesfully'
+      else
+        flash[:error] = 'Failed to update service'
+        redirect_back(fallback_location: root_path)
       end
     end
 

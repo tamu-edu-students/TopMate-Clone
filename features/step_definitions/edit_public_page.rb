@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Given('I am on the edit the public page') do
-  @user = User.create(fname: 'John', lname: 'Doe', username: 'jdoe', email: 'test@example.com', password: 'password',about: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum')
+  @user = User.create(fname: 'John', lname: 'Doe', username: 'jdoe', email: 'test@example.com', password: 'password',
+                      about: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'

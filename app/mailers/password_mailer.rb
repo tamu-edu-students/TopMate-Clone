@@ -12,7 +12,6 @@ class PasswordMailer < ApplicationMailer
     if ResetPasswordSession.find_by(user_id: params[:user].id)
       @token = ResetPasswordSession.find_by(user_id: params[:user].id).session_token
     end
-    
 
     mail to: params[:user].email, subject: 'Reset your password'
   end
