@@ -9,7 +9,7 @@
         </aside>
         <main class='public-page-main'>
             <ul class="service-list">
-                <%= render partial: 'service', collection: @services, locals: { data: @user.fname } %>
+                <%= render partial: 'service', collection: @services, locals: { data: @user.username } %>
             </ul>
             <% if flash[:success].present? %> 
             <div class="flash-success">

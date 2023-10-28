@@ -1,18 +1,27 @@
 <html>
-  <head>
-    <title>Login</title>
-    <%= stylesheet_link_tag 'index', media: 'all' %>
-  </head>
-  <body>
-    <div class="login-container">
-      <h1>Welcome to the Home Page</h1>
-
-<% flash.each do |key, message|%>
+<head>
+  <title>Login</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Press+Start+2P&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'home', media: 'all' %>
+</head>
+<body>
+  <div class="login-container">
+  
+      <center><h1 class="topmate"> Topmate </h1></center>
+      <hr class="topmate-hr">
+      <h2>Welcome to the Home Page</h2>
+      
+      
+      <%= button_to 'Sign In', login_path, class: 'button' %>
+      <% flash.each do |key, message|%>
         <div class="alert">
-          <%= message%>
+          <%= message %>
         </div>
-      <%end%>
-<%= link_to 'Sign In', login_path, class: 'button' %>
-</div>
-  </body>
+      <% end %>
+  </div>
+</body>
 </html>
+

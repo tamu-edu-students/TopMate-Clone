@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 class AddApointmentsTable < ActiveRecord::Migration[7.0]
   def change
     execute <<-SQL
-    CREATE TYPE appointment_status AS ENUM ('booked', 'closed', 'cancelled');
-  SQL
+      CREATE TYPE appointment_status AS ENUM ('booked', 'closed', 'cancelled');
+    SQL
 
     create_table :appointments, id: :uuid, default: -> { 'uuid_generate_v4()' } do |t|
       t.uuid :service_id
+      t.uuid :user_id
       t.string :fname
       t.string :lname
       t.string :email
@@ -16,5 +19,6 @@ class AddApointmentsTable < ActiveRecord::Migration[7.0]
       t.timestamps
     end
     add_foreign_key :appointments, :services, column: :service_id, primary_key: 'id'
+    add_foreign_key :appointments, :users, column: :user_id, primary_key: 'user_id'
   end
 end

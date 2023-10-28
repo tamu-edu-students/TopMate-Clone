@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_014928) do
 
   create_table "appointments", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.uuid "service_id"
+    t.uuid "user_id"
     t.string "fname"
     t.string "lname"
     t.string "email"
@@ -73,6 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_24_014928) do
   end
 
   add_foreign_key "appointments", "services"
+  add_foreign_key "appointments", "users", primary_key: "user_id"
   add_foreign_key "hours", "users", primary_key: "user_id"
   add_foreign_key "services", "users", primary_key: "user_id"
 end

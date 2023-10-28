@@ -24,15 +24,15 @@ RSpec.describe ServicesController, type: :controller do
     end
   end
 
-  describe "DELETE #hide" do
+  describe 'DELETE #hide' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
     let!(:service) do
       user.services.create(name: 'Test Service1', description: 'test service1 description', price: 120, duration: 10)
     end
-    it "hides the service and displays a success message" do
+    it 'hides the service and displays a success message' do
       delete :hide, params: { id: service.id }
       service.reload
-      
+
       expect(service.hidden).to eq(true)
     end
   end
@@ -76,11 +76,12 @@ RSpec.describe ServicesController, type: :controller do
   end
   describe 'POST #edit' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
-    let(:service) { Service.create(name: 'Test Service', description: 'test service description', price: 120, duration: 10 )  }
+    let(:service) do
+      Service.create(name: 'Test Service', description: 'test service description', price: 120, duration: 10)
+    end
 
     context 'when user is logged in' do
       before { session[:user_id] = user.user_id }
-
 
       context 'with valid parameters' do
         let(:valid_params) do
@@ -97,7 +98,6 @@ RSpec.describe ServicesController, type: :controller do
           post :create, params: valid_params
           expect(response).to redirect_to(root_path)
         end
-
       end
     end
 
@@ -136,6 +136,56 @@ RSpec.describe ServicesController, type: :controller do
 
     context 'when user is not logged in' do
       before { get :index }
+
+      it 'redirects to login_url' do
+        expect(response).to redirect_to(login_path)
+      end
+    end
+  end
+
+  describe 'POST #togglepublish' do
+    let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
+
+    context 'when user is logged in' do
+      before { session[:user_id] = user.user_id }
+
+      context 'session is not published' do
+        let(:service) { user.services.create(name: '', description: '', price: 0, duration: 0, is_published: false )  }
+        let(:valid_params) do
+          { id: service.id }
+        end
+
+        it 'sets is_published to true' do
+          post :togglepublish, params: valid_params
+          expect(Service.find_by(id: service.id).is_published).to eq(true)
+        end
+
+        it 'redirects to root_path' do
+          post :togglepublish, params: valid_params
+          expect(response).to redirect_to(servicesindex_path)
+        end
+      end
+
+      context 'session is published' do
+        let(:service) { user.services.create(name: '', description: '', price: 0, duration: 0, is_published: true )  }
+        let(:valid_params) do
+          { id: service.id }
+        end
+        
+        it 'sets is_published to false' do
+          post :togglepublish, params: valid_params
+          expect(Service.find_by(id: service.id).is_published).to eq(false)
+        end
+
+        it 'redirects to root_path' do
+          post :togglepublish, params: valid_params
+          expect(response).to redirect_to(servicesindex_path)
+        end
+      end
+    end
+
+    context 'when user is not logged in' do
+      before { post :create }
 
       it 'redirects to login_url' do
         expect(response).to redirect_to(login_path)
