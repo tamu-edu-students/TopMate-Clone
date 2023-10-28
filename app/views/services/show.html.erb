@@ -1,0 +1,24 @@
+<html>
+  <head class='public-page-head'>
+    <%= stylesheet_link_tag "show_service.css" %>
+  </head>
+  <body>
+    <% if (@service.nil?) %>
+      404: Service not found
+    <% else %>
+      <div class="service-container">
+        <div class="header">
+          <a href="/public/<%= @service_owner.fname %>">← Back to <%= @service_owner.fname %> <%= @service_owner.lname %></a>
+          <h3 class="service-title"><%= @service.name %></h3>
+        </div>
+        <div class="body">
+          <p class="service-description"><%= @service.description %></p>
+        </div>
+        <div class="footer">
+          <p class="service-price-duration"><%= "$#{@service.price} for #{@service.duration} minutes" %></p>
+          <button>Purchase</button>
+        </div>
+      </div>
+    <% end %>
+  </body>
+</html>

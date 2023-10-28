@@ -142,4 +142,54 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
   end
+
+  describe 'POST #togglepublish' do
+    let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
+
+    context 'when user is logged in' do
+      before { session[:user_id] = user.user_id }
+
+      context 'session is not published' do
+        let(:service) { user.services.create(name: '', description: '', price: 0, duration: 0, is_published: false )  }
+        let(:valid_params) do
+          { id: service.id }
+        end
+
+        it 'sets is_published to true' do
+          post :togglepublish, params: valid_params
+          expect(Service.find_by(id: service.id).is_published).to eq(true)
+        end
+
+        it 'redirects to root_path' do
+          post :togglepublish, params: valid_params
+          expect(response).to redirect_to(servicesindex_path)
+        end
+      end
+
+      context 'session is published' do
+        let(:service) { user.services.create(name: '', description: '', price: 0, duration: 0, is_published: true )  }
+        let(:valid_params) do
+          { id: service.id }
+        end
+        
+        it 'sets is_published to false' do
+          post :togglepublish, params: valid_params
+          expect(Service.find_by(id: service.id).is_published).to eq(false)
+        end
+
+        it 'redirects to root_path' do
+          post :togglepublish, params: valid_params
+          expect(response).to redirect_to(servicesindex_path)
+        end
+      end
+    end
+
+    context 'when user is not logged in' do
+      before { post :create }
+
+      it 'redirects to login_url' do
+        expect(response).to redirect_to(login_path)
+      end
+    end
+  end
 end

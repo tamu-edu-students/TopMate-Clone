@@ -3,8 +3,12 @@
         <title>User Not Found</title>
         <%= stylesheet_link_tag "user_not_found.css" %>
     </head>
-    <body class="user-not-found-body">
-        <p><h1>User <%= @username %> does not have a public page set up.</h1><br>
+    <body>
+        <dic><h1>User <%= @username %> does not have a public page set up.</div><br>
+        <center>
+        <div>
         <%= link_to 'go to dashboard', root_path, :class => 'return-to-dash-link' %>
+        </div>
+        </center>
     </body>
 </html>

@@ -1,0 +1,85 @@
+/* dashboard.css */
+
+/* Add styles for the entire page */
+body {
+  display: block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  align-items: center; /* Center align the content horizontally */
+  background-color: white;
+}
+
+/* Styles for the navigation bar at the top */
+.navbar {
+  background-color: #e35869;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h1 {
+  margin: 10px 0px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px; /* Add margin to create space between links */
+}
+
+/* Style for the Logout button */
+.login-button {
+  background-color: white;
+  color: red;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Additional styles for the content in the login-container */
+.login-container {
+  padding: 20px;
+  text-align: center; /* Center the content horizontally within the container */
+}
+
+.dashboard-container{
+  margin: 20px;
+}
+
+
+
+
+
+.button {
+  display: inline-block;
+  padding: 50px 100px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  width: fit-content;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: #45a049;
+}
+/* Add styles for the alert messages, buttons, and other elements as needed */
+.login-container {
+  padding: 20px;
+  text-align: center; /* Center the content horizontally within the container */
+}
