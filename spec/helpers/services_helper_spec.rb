@@ -3,20 +3,20 @@
 require 'rails_helper'
 
 RSpec.describe ServicesHelper, type: :helper do
-
   describe '#get_next_seven_day_time_slots' do
     context 'when a user exists and has availability' do
       let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
-      let(:hours) { [Hour.create(user_id: user.id, day: 0, start_time: '09:00', end_time: '17:00'),
-      Hour.create(user_id: user.id, day: 2, start_time: '09:00', end_time: '17:00'),
-      Hour.create(user_id: user.id, day: 3, start_time: '09:00', end_time: '17:00'),
-      Hour.create(user_id: user.id, day: 5, start_time: '09:00', end_time: '17:00')] }
-      
+      let(:hours) do
+        [Hour.create(user_id: user.id, day: 0, start_time: '09:00', end_time: '17:00'),
+         Hour.create(user_id: user.id, day: 2, start_time: '09:00', end_time: '17:00'),
+         Hour.create(user_id: user.id, day: 3, start_time: '09:00', end_time: '17:00'),
+         Hour.create(user_id: user.id, day: 5, start_time: '09:00', end_time: '17:00')]
+      end
+
       it 'returns the next seven days of availability' do
         hours # loads the hours
         expect(get_next_seven_day_time_slots(user, Date.parse('01-01-2023')).length).to eq(4)
       end
-
     end
   end
 

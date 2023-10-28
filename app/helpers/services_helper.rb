@@ -17,9 +17,9 @@ module ServicesHelper
     7.times do
       times = user_availability_for_day(user, current_day)
       times.each do |time|
-        next_seven_day_time_slots << { 
-          'start_date_time' => current_day.to_time + Time.parse(time['start_time']).seconds_since_midnight.seconds, 
-          'end_date_time' => current_day.to_time + Time.parse(time['start_time']).seconds_since_midnight.seconds 
+        next_seven_day_time_slots << {
+          'start_date_time' => current_day.to_time + Time.parse(time['start_time']).seconds_since_midnight.seconds,
+          'end_date_time' => current_day.to_time + Time.parse(time['start_time']).seconds_since_midnight.seconds
         }
       end
       current_day += 1
