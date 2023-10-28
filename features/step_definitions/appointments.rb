@@ -32,31 +32,16 @@ Then('I fill in customer {string} with {string}') do |string, string2|
 end
 
 Then('I fill in customer {string} with first available start date') do |string|
+  # sleep(5)
   puts find_by_id(string,  visible: true).value
   # find_by_id(string,  visible: true).value="2023-10-27"
-
-  select "2023-10-27", from: string
-  puts find_by_id(string,  visible: true).value
+  puts page.html
+  # select "2023-10-24T19:30:00+00:00", from: 'appointments_startdatetime'
+  # puts find_by_id('appointments_startdatetime',  visible: true).value
 end
 
-Then('I fill in customer {string} with first available start time') do |string|
-  # page.execute_script("return fetch_slot_times();")
-
-  # sleep(10)
-  # wait_until { page.evaluate_script('window.apiCallCompleted') }
-  # timeout = 10 # Set the timeout duration in seconds
-  # start_time = Time.now
-
-  # until Time.now - start_time >= timeout
-  #   # Check if the API call has completed (replace with your condition)
-  #   break if page.evaluate_script('window.apiCallCompleted')
-
-  #   sleep(0.5) # Wait for 0.5 seconds before checking again
-  # end
-
-  puts page.html
-  puts "hello", find_by_id(string,  visible: true).inspect
-  select "12:00:00 GMT-0500 (Central Daylight Time)", from: string, visible: true
+Then('I click the {string} button to create appointment') do |string|
+  click_button string
 end
 
 

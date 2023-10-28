@@ -1,8 +1,4 @@
 class AppointmentsController < ApplicationController
-  $slots_data_start_time=[]
-  $slots_data_end_time=[]
-
-
   def new
   end
 
@@ -20,53 +16,8 @@ class AppointmentsController < ApplicationController
       #  slots_controller = SlotsController.new
       #  slots_controller.fetch_data
       #   @data =slots_controller.instance_variable_get(:@data)
-      @slots_data_start_date = [
-        "2023-10-24",
-        "2023-10-26",
-        "2023-10-27",
-        "2023-10-28",
-        "2023-10-29",
-        "2023-10-30",
-      ]
 
-    # session[:slots] = @slots
-    $slots_data_start_time=[]
-    $slots_data_end_time=[]
-  else
-    redirect_to public_page_path(@username)
-  end
-end
-
-def fetch_slot_times
-  puts @slots_data_start_time.inspect
-  puts @slots_data_end_time.inspect
-  date_selected = params[:start_date]
-    puts "hllo ",date_selected
-    # $slots_data_start_time=[
-    #   "2023-10-24T17:00:00.891Z",
-    #   "2023-10-24T17:30:00.891Z",
-    #   "2023-10-24T18:00:00.891Z",
-    #   "2023-10-24T18:30:00.891Z",
-    #   "2023-10-24T19:00:00.891Z",
-    #   "2023-10-24T19:30:00.891Z",
-    #   "2023-10-24T20:00:00.891Z",
-    #   "2023-10-24T20:30:00.891Z",
-    #   "2023-10-24T21:00:00.891Z",
-    #   "2023-10-24T21:30:00.891Z"
-    # ]
-    # $slots_data_end_time=[
-    #   "2023-10-24T17:30:00.891Z",
-    #   "2023-10-24T18:00:00.891Z",
-    #   "2023-10-24T18:30:00.891Z",
-    #   "2023-10-24T19:00:00.891Z",
-    #   "2023-10-24T19:30:00.891Z",
-    #   "2023-10-24T20:00:00.891Z",
-    #   "2023-10-24T20:30:00.891Z",
-    #   "2023-10-24T21:00:00.891Z",
-    #   "2023-10-24T21:30:00.891Z",
-    #   "2023-10-24T22:00:00.891Z"
-    # ]
-    start_times = [
+      @slots_data_start_datetime  = [
     "2023-10-24T17:00:00.891Z",
     "2023-10-24T17:30:00.891Z",
     "2023-10-24T18:00:00.891Z",
@@ -78,7 +29,19 @@ def fetch_slot_times
     "2023-10-24T21:00:00.891Z",
     "2023-10-24T21:30:00.891Z"
   ]
-end_times = [
+      api_slots_data_start_datetime = [
+    "2023-10-24T17:00:00.891Z",
+    "2023-10-24T17:30:00.891Z",
+    "2023-10-24T18:00:00.891Z",
+    "2023-10-24T18:30:00.891Z",
+    "2023-10-24T19:00:00.891Z",
+    "2023-10-24T19:30:00.891Z",
+    "2023-10-24T20:00:00.891Z",
+    "2023-10-24T20:30:00.891Z",
+    "2023-10-24T21:00:00.891Z",
+    "2023-10-24T21:30:00.891Z"
+  ]
+  api_slots_data_end_datetime = [
   "2023-10-24T17:30:00.891Z",
   "2023-10-24T18:00:00.891Z",
   "2023-10-24T18:30:00.891Z",
@@ -90,28 +53,79 @@ end_times = [
   "2023-10-24T21:30:00.891Z",
   "2023-10-24T22:00:00.891Z"
 ]
-puts "1"
-$slots_data_start_time=start_times.map do |start_time_ele|
-  timstamp= DateTime.parse(start_time_ele)
-  current_date=DateTime.parse(date_selected)
-  DateTime.new(current_date.year, current_date.month, current_date.day,timstamp.hour,timstamp.min,timstamp.sec,timstamp.zone)
-end
-puts "2"
-$slots_data_end_time=end_times.map do |end_time_ele|
-  timstamp= DateTime.parse(end_time_ele)
-  current_date=DateTime.parse(date_selected)
-   DateTime.new(current_date.year, current_date.month, current_date.day,timstamp.hour,timstamp.min,timstamp.sec,timstamp.zone)
-end
-puts "3"
-puts "$slots_data_start_time",$slots_data_start_time.inspect
-# puts $slots_data_end_time.inspect
-@slots=[]
-for i in 0...$slots_data_start_time.length
-  @slots[i]={'startTime':$slots_data_start_time[i],'endTime':$slots_data_end_time[i]}
-end
-render json: {slots: @slots}
 
+dummy_slots_data_start_datetime = []
+dummy_slots_data_end_datetime = []
+@slots=[]
+  for i in 0... api_slots_data_start_datetime.length
+    # puts DateTime.parse(api_slots_data_start_datetime[i])+@service.duration.minutes
+    # puts DateTime.parse(api_slots_data_end_datetime[i])
+    # puts DateTime.parse(api_slots_data_start_datetime[i])+@service.duration.minutes<= DateTime.parse(api_slots_data_end_datetime[i])
+    if  DateTime.parse(api_slots_data_start_datetime[i])+@service.duration.minutes <= DateTime.parse(api_slots_data_end_datetime[i])
+    @slots[i]={'startTime':DateTime.parse(api_slots_data_start_datetime[i]),'endTime':DateTime.parse(api_slots_data_end_datetime[i])}
+    dummy_slots_data_start_datetime.push(DateTime.parse(api_slots_data_start_datetime[i]))
+    dummy_slots_data_end_datetime.push(DateTime.parse(api_slots_data_end_datetime[i]))
+    end
+  end
+  @slots_data_start_datetime =dummy_slots_data_start_datetime
+  @slots_data_end_datetime = dummy_slots_data_end_datetime
+  else
+    redirect_to public_page_path(@username)
+  end
 end
+
+# def fetch_slot_times
+#   puts @slots_data_start_time.inspect
+#   puts @slots_data_end_time.inspect
+#   date_selected = params[:start_date]
+#     puts "hllo ",date_selected
+#     # $slots_data_start_time=[
+#     #   "2023-10-24T17:00:00.891Z",
+#     #   "2023-10-24T17:30:00.891Z",
+#     #   "2023-10-24T18:00:00.891Z",
+#     #   "2023-10-24T18:30:00.891Z",
+#     #   "2023-10-24T19:00:00.891Z",
+#     #   "2023-10-24T19:30:00.891Z",
+#     #   "2023-10-24T20:00:00.891Z",
+#     #   "2023-10-24T20:30:00.891Z",
+#     #   "2023-10-24T21:00:00.891Z",
+#     #   "2023-10-24T21:30:00.891Z"
+#     # ]
+#     # $slots_data_end_time=[
+#     #   "2023-10-24T17:30:00.891Z",
+#     #   "2023-10-24T18:00:00.891Z",
+#     #   "2023-10-24T18:30:00.891Z",
+#     #   "2023-10-24T19:00:00.891Z",
+#     #   "2023-10-24T19:30:00.891Z",
+#     #   "2023-10-24T20:00:00.891Z",
+#     #   "2023-10-24T20:30:00.891Z",
+#     #   "2023-10-24T21:00:00.891Z",
+#     #   "2023-10-24T21:30:00.891Z",
+#     #   "2023-10-24T22:00:00.891Z"
+#     # ]
+
+# puts "1"
+# $slots_data_start_time=start_times.map do |start_time_ele|
+#   timstamp= DateTime.parse(start_time_ele)
+#   current_date=DateTime.parse(date_selected)
+#   DateTime.new(current_date.year, current_date.month, current_date.day,timstamp.hour,timstamp.min,timstamp.sec,timstamp.zone)
+# end
+# puts "2"
+# $slots_data_end_time=end_times.map do |end_time_ele|
+#   timstamp= DateTime.parse(end_time_ele)
+#   current_date=DateTime.parse(date_selected)
+#    DateTime.new(current_date.year, current_date.month, current_date.day,timstamp.hour,timstamp.min,timstamp.sec,timstamp.zone)
+# end
+# puts "3"
+# puts "$slots_data_start_time",$slots_data_start_time.inspect
+# # puts $slots_data_end_time.inspect
+# @slots=[]
+# for i in 0...$slots_data_start_time.length
+#   @slots[i]={'startTime':$slots_data_start_time[i],'endTime':$slots_data_end_time[i]}
+# end
+# render json: {slots: @slots}
+
+# end
 
 def create_submit
 
@@ -145,53 +159,78 @@ def create_submit
       return
     end
 
-  #   @slots_data_start_time = [
-  #     "2023-10-24T17:00:00.891Z",
-  #     "2023-10-24T17:30:00.891Z",
-  #     "2023-10-24T18:00:00.891Z",
-  #     "2023-10-24T18:30:00.891Z",
-  #     "2023-10-24T19:00:00.891Z",
-  #     "2023-10-24T19:30:00.891Z",
-  #     "2023-10-24T20:00:00.891Z",
-  #     "2023-10-24T20:30:00.891Z",
-  #     "2023-10-24T21:00:00.891Z",
-  #     "2023-10-24T21:30:00.891Z"
-  #   ]
-  # @slots_data_end_time = [
-  #   "2023-10-24T17:30:00.891Z",
-  #   "2023-10-24T18:00:00.891Z",
-  #   "2023-10-24T18:30:00.891Z",
-  #   "2023-10-24T19:00:00.891Z",
-  #   "2023-10-24T19:30:00.891Z",
-  #   "2023-10-24T20:00:00.891Z",
-  #   "2023-10-24T20:30:00.891Z",
-  #   "2023-10-24T21:00:00.891Z",
-  #   "2023-10-24T21:30:00.891Z",
-  #   "2023-10-24T22:00:00.891Z"
-  # ]
-  # @slots=[]
-  # for i in 0...@slots_data_start_time.length
-  #   @slots[i]={'startTime':@slots_data_start_time[i],'endTime':@slots_data_end_time[i]}
-  # end
+    api_slots_data_start_datetime = [
+      "2023-10-24T17:00:00.891Z",
+      "2023-10-24T17:30:00.891Z",
+      "2023-10-24T18:00:00.891Z",
+      "2023-10-24T18:30:00.891Z",
+      "2023-10-24T19:00:00.891Z",
+      "2023-10-24T19:30:00.891Z",
+      "2023-10-24T20:00:00.891Z",
+      "2023-10-24T20:30:00.891Z",
+      "2023-10-24T21:00:00.891Z",
+      "2023-10-24T21:30:00.891Z"
+    ]
+    api_slots_data_end_datetime = [
+    "2023-10-24T17:30:00.891Z",
+    "2023-10-24T18:00:00.891Z",
+    "2023-10-24T18:30:00.891Z",
+    "2023-10-24T19:00:00.891Z",
+    "2023-10-24T19:30:00.891Z",
+    "2023-10-24T20:00:00.891Z",
+    "2023-10-24T20:30:00.891Z",
+    "2023-10-24T21:00:00.891Z",
+    "2023-10-24T21:30:00.891Z",
+    "2023-10-24T22:00:00.891Z"
+  ]
+
+  @slots_data_start_datetime = []
+  @slots_data_end_datetime = []
+  @slots=[]
+    for i in 0... api_slots_data_start_datetime.length
+      # puts DateTime.parse(api_slots_data_start_datetime[i])+@service.duration.minutes
+      # puts DateTime.parse(api_slots_data_end_datetime[i])
+      # puts DateTime.parse(api_slots_data_start_datetime[i])+@service.duration.minutes<= DateTime.parse(api_slots_data_end_datetime[i])
+      if  DateTime.parse(api_slots_data_start_datetime[i])+@service.duration.minutes <= DateTime.parse(api_slots_data_end_datetime[i])
+      @slots[i]={'startTime':DateTime.parse(api_slots_data_start_datetime[i]),'endTime':DateTime.parse(api_slots_data_end_datetime[i])}
+      @slots_data_start_datetime.push(DateTime.parse(api_slots_data_start_datetime[i]))
+      @slots_data_end_datetime.push(DateTime.parse(api_slots_data_end_datetime[i]))
+      end
+    end
   #   # if @service.nil?
   #   #   flash[:notice] = "Invalid Service"
   #   #   redirect_to public_page_path(@user.fname)
   #   # end
-  #   filtered_slots = @slots.select { |slot| slot[:startTime] == @appointment.startdatetime }
+    filtered_slots = @slots.select do |slot|
+      # puts slot[:startTime]
+      # puts DateTime.parse(@appointment.startdatetime.to_s)
+      # puts slot[:startTime] == DateTime.parse(@appointment.startdatetime.to_s)
+      # puts "slot[:startTime].to_i",slot[:startTime].to_i
+      # puts "@appointment.startdatetime",@appointment.startdatetime
+      # puts slot[:startTime]== @appointment.startdatetime
+      # puts DateTime.parse(slot[:startTime]) == @appointment.startdatetime
+       DateTime.parse(slot[:startTime].to_s) == DateTime.parse(@appointment.startdatetime.to_s)
+      # { |slot| slot[:startTime] == @appointment.startdatetime }
+    end
     # start_time=DateTime.iso8601(@appointment.startdatetime)
     # start_date=Date.parse(@appointment.start_date)
     # start_time=Time.parse(@appointment.start_time)
     # puts start_date,start_time
     # Combine the date and time strings
-combined_datetime = "#{@appointment.start_date} #{@appointment.start_time}"
+    puts "filtered_slots",filtered_slots
+    puts @appointment.startdatetime
+    end_time=    @appointment.startdatetime+@service.duration*60
+
+    # end_time=filtered_slots[:startTime].to_i+@service.duration*60
+    puts end_time
+    # return
+# combined_datetime = "#{@appointment.start_date} #{@appointment.start_time}"
 
 # Parse the combined datetime string into a DateTime object
-timestamp = DateTime.parse(combined_datetime)
+# timestamp = DateTime.parse(combined_datetime)
 
-puts timestamp
     # @appointment.startdatetime = new DataTime(@appointment.
     # start_time=@appointment.startdatetime
-    end_time=timestamp+@service.duration*60
     @appointment.enddatetime=end_time
     @appointment.amount_paid=@service.price.to_f
     @appointment.service_id=@service.id
@@ -206,6 +245,6 @@ puts timestamp
 end
   private
   def appointments_params
-    params.require(:appointments).permit(:fname, :lname, :email, :startdatetime, :start_date, :start_time)
+    params.require(:appointments).permit(:fname, :lname, :email, :startdatetime)
   end
 end
