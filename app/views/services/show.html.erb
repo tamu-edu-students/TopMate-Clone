@@ -16,7 +16,9 @@
         </div>
         <div class="footer">
           <p class="service-price-duration"><%= "$#{@service.price} for #{@service.duration} minutes" %></p>
-          <button>Purchase</button>
+          <%# <button url>Purchase</button> %>
+           <%= link_to "Purchase", appointments_page_index_path(@username,@service.id), id: @service.name.gsub(' ', '_') ,class: 'button' %>
+          
         </div>
       </div>
     <% end %>

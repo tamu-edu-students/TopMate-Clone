@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/zepu/TopMate-Clone/app/helpers/application_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,21 +9,13 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/appointments_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/helpers/email_submission_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/zepu/TopMate-Clone/app/helpers/public_page_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -31,7 +23,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/helpers/services_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
         "lines": [
           null,
           null,
@@ -39,7 +31,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/helpers/welcome_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -47,7 +39,92 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/models/hour.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/services_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          7,
+          7,
+          4,
+          null,
+          null,
+          null,
+          null,
+          7,
+          null,
+          1,
+          null,
+          null,
+          1,
+          9,
+          9,
+          null,
+          8,
+          8,
+          8,
+          null,
+          null,
+          1,
+          17,
+          17,
+          null,
+          null,
+          1,
+          12,
+          null,
+          12,
+          9,
+          9,
+          null,
+          9,
+          4,
+          4,
+          null,
+          4,
+          null,
+          3,
+          2,
+          null,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          9,
+          8,
+          null,
+          null,
+          12,
+          null,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
@@ -61,7 +138,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/models/application_record.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -70,27 +147,29 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/models/service.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/home/zepu/TopMate-Clone/app/models/user.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/service.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/dashboard_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -113,52 +192,52 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/application_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
           1,
+          1,
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
         "lines": [
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          2,
           null,
-          0,
-          0,
+          2,
+          2,
+          1,
           null,
-          0,
-          0,
-          null,
+          1,
           null,
           null,
           null,
           1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
           null,
           1,
-          0,
+          null,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/email_submission_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +271,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/home_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -214,7 +293,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/public_page_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +311,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/services_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/services_controller.rb": {
         "lines": [
           null,
           null,
@@ -247,9 +326,9 @@
           null,
           null,
           1,
-          6,
-          6,
-          2,
+          7,
+          7,
+          3,
           null,
           4,
           4,
@@ -293,13 +372,12 @@
           0,
           null,
           null,
-          null,
+          0,
           null,
           null,
           null,
           0,
           null,
-          0,
           null,
           0,
           0,
@@ -307,6 +385,37 @@
           null,
           null,
           null,
+          null,
+          null,
+          1,
+          4,
+          0,
+          null,
+          4,
+          4,
+          0,
+          0,
+          0,
+          null,
+          null,
+          4,
+          4,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
           null,
           null,
           null,
@@ -334,7 +443,7 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/mailers/password_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
@@ -351,13 +460,12 @@
           0,
           null,
           null,
-          null,
           2,
           null,
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -367,7 +475,16 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/models/reset_password_session.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointment.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/reset_password_session.rb": {
         "lines": [
           null,
           null,
@@ -375,7 +492,109 @@
           null
         ]
       },
-      "/home/zepu/TopMate-Clone/app/controllers/hours_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/appointments_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
           null,
           null,
@@ -452,7 +671,7 @@
         "branches": {
         }
       },
-      "/home/zepu/TopMate-Clone/app/controllers/password_reset_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
           null,
@@ -489,7 +708,7 @@
         "branches": {
         }
       },
-      "/home/zepu/TopMate-Clone/app/controllers/sessions_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -520,17 +739,37 @@
           null,
           null,
           null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointments.rb": {
+        "lines": [
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
           0
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1698383743
+    "timestamp": 1698467384
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/user.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -538,10 +777,11 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/application_record.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -550,7 +790,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -584,7 +824,16 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/application_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -592,7 +841,13 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/application_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/appointments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -600,13 +855,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/edit_public_page_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/email_submission_helper.rb": {
         "lines": [
           null,
           null,
@@ -614,7 +863,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/public_page_helper.rb": {
         "lines": [
           null,
           null,
@@ -622,7 +871,84 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/services_helper.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/services_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -630,15 +956,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/helpers/welcome_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
@@ -661,22 +979,23 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/service.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/services_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/service.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/services_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           0,
           null,
@@ -731,13 +1050,12 @@
           0,
           null,
           null,
-          null,
+          1,
           null,
           null,
           null,
           1,
           null,
-          1,
           null,
           0,
           0,
@@ -745,6 +1063,37 @@
           null,
           null,
           null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          1,
           null,
           null,
           null,
@@ -772,7 +1121,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/home_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -794,11 +1143,14 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/edit_public_page_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           2,
+          null,
           2,
           2,
           0,
@@ -807,19 +1159,15 @@
           null,
           null,
           null,
-          null,
-          null,
           1,
           1,
           1,
           0,
-          null,
           1,
           1,
           null,
           0,
           0,
-          null,
           null,
           null,
           null,
@@ -831,17 +1179,17 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/public_page_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          5,
+          5,
+          5,
           4,
           4,
-          4,
-          3,
-          3,
           null,
           1,
           null,
@@ -849,7 +1197,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/hours_controller.rb": {
         "lines": [
           null,
           null,
@@ -924,7 +1272,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/hour.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/hour.rb": {
         "lines": [
           null,
           null,
@@ -938,7 +1286,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/email_submission_controller.rb": {
         "lines": [
           null,
           null,
@@ -972,7 +1320,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/password_mailer.rb": {
         "lines": [
           null,
           null,
@@ -987,7 +1335,6 @@
           null,
           0,
           0,
-          null,
           null,
           null,
           0,
@@ -995,7 +1342,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -1005,7 +1352,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/models/reset_password_session.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/reset_password_session.rb": {
         "lines": [
           null,
           null,
@@ -1013,7 +1360,7 @@
           null
         ]
       },
-      "/Users/Geetesh/Projects/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/password_reset_controller.rb": {
         "lines": [
           null,
           null,
@@ -1047,8 +1394,141 @@
           null,
           null
         ]
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/controllers/appointments_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointment.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointments.rb": {
+        "lines": [
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1698362801
+    "timestamp": 1698467396
   }
 }

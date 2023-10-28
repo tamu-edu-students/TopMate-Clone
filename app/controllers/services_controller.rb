@@ -94,6 +94,7 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @username = params[:username]
     service = Service.find_by(id: params[:id])
     if service.nil? || !service.is_published
       @service = nil
