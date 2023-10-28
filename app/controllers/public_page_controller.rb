@@ -3,7 +3,7 @@
 class PublicPageController < ApplicationController
   def show
     @username = params[:username]
-    @user = User.find_by(fname: @username)
+    @user = User.find_by(username: @username)
     if @user.present?
       @services = Service.where(hidden: false, is_published: true)
       render 'public_page/user_public_page'
