@@ -1,7 +1,5 @@
-<% if service.is_published %>
-    <li class="service">
-        <h3 class="service-title"><%= service.name %></h3>
-        <p class="service-description"><%= service.description %></p>
-        <p class="service-price-duration"><%= "$#{service.price} for #{service.duration} minutes" %></p>
-    </li>
-<% end %>
+<a href="<%= show_service_path(service) %>" class="service">
+  <h3 class="service-title"><%= service.name %></h3>
+  <p class="service-description"><%= service.description %></p>
+  <p class="service-price-duration"><%= "$#{service.price} for #{service.duration} minutes" %></p>
+</a>

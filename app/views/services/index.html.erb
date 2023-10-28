@@ -25,7 +25,8 @@
             <p><strong>Price:  </strong><%= service.price %></p>
             <p><strong>Duration:  </strong><%= service.duration %> mins</p>
 
-            <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %></p>
+            <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %><p>
+            <%= button_to service.is_published ? 'Unpublish' : 'Publish', service_publish_path(service), method: :post, class: 'button' %>
             <%= button_to 'Delete', hide_service_path(service), method: :delete, id: "delete-service-#{service.id}", class: 'button' %>
 
             
