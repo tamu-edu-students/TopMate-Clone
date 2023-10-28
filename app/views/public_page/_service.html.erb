@@ -3,5 +3,6 @@
         <h3 class="service-title"><%= service.name %></h3>
         <p class="service-description"><%= service.description %></p>
         <p class="service-price-duration"><%= "$#{service.price} for #{service.duration} minutes" %></p>
+        <%= link_to "Book an Appointment", appointments_page_index_path(data,service.id), id: service.name.gsub(' ', '_') ,class: 'button' %>
     </li>
 <% end %>

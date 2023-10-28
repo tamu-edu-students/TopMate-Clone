@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   post '/services', to: 'services#create'
   get '/services', to: 'services#new'
-  
+
   delete '/deleteservices/:id/hide', to: 'services#hide', as: 'hide_service'
 
   get '/servicesindex', to: 'services#index'
@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
 
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
-
+  get '/public/:username/:service_id/create/appointment', to: 'appointments#index', as: 'appointments_page_index'
+  post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',  as: 'appointments_page_create_submit'
+  get '/appointment/get/timings/:start_date', to: 'appointments#fetch_slot_times',  as: 'appointments_page_fetch_slot_times_for_date'
 end
-

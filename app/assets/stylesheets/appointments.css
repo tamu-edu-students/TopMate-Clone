@@ -1,4 +1,4 @@
-/* service.css */
+/* appointments.css */
 
 /* Example styles */
 .service-container {
@@ -99,3 +99,11 @@
   color: white;
   padding: 10pc 10px;
 }
+
+.hidden {
+  display: none !important;
+}
+
+/* .visible {
+  display: block !important;
+} */

@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.flash-error {
+  color: red;
+  text-align: center;
+}
+
+.flash-success {
+  color: green;
+  text-align: center;
+}
