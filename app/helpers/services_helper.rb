@@ -11,6 +11,22 @@ module ServicesHelper
     'Saturday' => 6
   }
 
+  def get_next_seven_day_time_slots(user, date)
+    current_day = date
+    next_seven_day_time_slots = []
+    7.times do
+      times = user_availability_for_day(user, current_day)
+      times.each do |time|
+        next_seven_day_time_slots << { 
+          'start_date_time' => current_day.to_time + Time.parse(time['start_time']).seconds_since_midnight.seconds, 
+          'end_date_time' => current_day.to_time + Time.parse(time['start_time']).seconds_since_midnight.seconds 
+        }
+      end
+      current_day += 1
+    end
+    next_seven_day_time_slots
+  end
+
   def user_availability_for_day(user, date)
     day = get_day_of_week_int(date)
     return nil if user.nil?
