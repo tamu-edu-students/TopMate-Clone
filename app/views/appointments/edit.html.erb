@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Edit Appointment</title>
+    <%= stylesheet_link_tag 'appointments', media: 'all' %>
+    <%= javascript_include_tag 'appointments' %>
+  </head>
+  <body>
+    <div class="service-container">
+        <h1>Edit Appointment</h1>
+        <h3>Service: <%= @service.name%></h1>
+
+        <%= form_with(model: @appointment, url: update_appointment_path(@appointment.id), method: :patch) do |form| %>
+        <!-- Display form fields for editing appointment details here -->
+        <%= form.label "First Name" %>
+        <%= form.text_field :fname, id: "First Name" %>
+
+        <%= form.label "Last Name" %>
+        <%= form.text_field :lname, id: "Last Name" %>
+
+        <%= form.submit "update Appointment", class: 'button' %>
+       
+        <% end %>
+    </div>
+  </body>
+</html>

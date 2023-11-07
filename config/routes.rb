@@ -42,8 +42,12 @@ Rails.application.routes.draw do
   get 'public/:username', to: 'public_page#show', as: 'public_page'
   get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
 
+  get 'appointments/:id/edit', to: 'appointments#edit', as: 'edit_appointment'
+  patch 'appointments/:id', to: 'appointments#update', as: 'update_appointment'
+
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
   get '/public/:username/:service_id/create/appointment', to: 'appointments#index', as: 'appointments_page_index'
   post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',  as: 'appointments_page_create_submit'
   get '/appointment/get/timings/:start_date', to: 'appointments#fetch_slot_times',  as: 'appointments_page_fetch_slot_times_for_date'
 end
+

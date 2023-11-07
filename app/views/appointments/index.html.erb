@@ -18,7 +18,7 @@
         <%= form.label "Email" %>
         <%= form.text_field :email, id: "Email" %>
 
-         <%= form.label "Appointment Date" %>
+        <%= form.label "Appointment Date" %>
         <%= form.select :startdatetime, options_for_select(@slots_data_start_datetime),{}, id: "Appointment Date" %>
         <%# <%= form.label "Appointment Date" %>
         
@@ -39,7 +39,7 @@
                 </div>
         <% end %>
 
-        <%= link_to "Return to Public Page", public_page_path('John'), class: 'button'%>
+        <%= link_to "Return to Public Page", public_page_path(@user.username), class: 'button'%>
     </div>
   </body>
   <script>

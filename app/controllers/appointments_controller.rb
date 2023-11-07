@@ -33,6 +33,29 @@ dummy_slots_data_end_datetime = []
   end
 end
 
+def edit
+  @appointment = Appointment.find_by(id: params[:id])
+  @user = User.find_by(user_id: @appointment.user_id)
+  @service=Service.find_by(id: @appointment.service_id)
+  if @appointment
+    render :edit
+  else
+    redirect_to public_page_path(@user.username), alert: 'Invalid token'
+  end
+end
+
+def update
+  @appointment = Appointment.find_by(id: params[:id])
+  @user = User.find_by(user_id: @appointment.user_id)
+  @service=Service.find_by(id: @appointment.service_id)
+  if @appointment.update(appointments_params)
+    redirect_to public_page_path(@user.username), notice: 'Appointment updated successfully!'
+  else
+    render :edit
+  end
+end
+
+
 def create_submit
 
   @username = params[:username]
@@ -81,9 +104,9 @@ def create_submit
     @appointment.amount_paid=@service.price.to_f
     @appointment.service_id=@service.id
     @appointment.status=Appointments.status_types["booked"]
-
     @save=@appointment.save!
     if @save
+      AppointmentMailer.edit_link_email(@appointment).deliver_now
       redirect_to public_page_path(@username), success: 'Appoinment Created successfully'
     else
       redirect_to appointments_page_index_path(@username ,@service_id), notice: 'Appoinment Creation Failed'
