@@ -8,6 +8,7 @@ class Hour < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, comparison: { greater_than: :start_time }
   validate :times_must_be_fifteen_min_intervals
+  validate :must_have_30_min_gap
   validate :times_must_not_overlap
 
   def times_must_be_fifteen_min_intervals
@@ -16,6 +17,14 @@ class Hour < ApplicationRecord
     end
     if end_time.min % 15 != 0
       errors.add(:end_time, "start time must be on 15-minute interval")
+    end
+  end
+
+  def must_have_30_min_gap
+    start_stamp = start_time.hour * 60 + start_time.min
+    end_stamp = end_time.hour * 60 + end_time.min
+    if end_stamp - start_stamp < 30
+      errors.add(:end_time, "must at least 30 minutes after start time")
     end
   end
 
@@ -29,14 +38,14 @@ class Hour < ApplicationRecord
       h_end_stamp = h.end_time.hour * 60 + h.end_time.min
       # check position
       if start_stamp >= h_start_stamp && start_stamp <= h_end_stamp
-        errors.add(:start_time, "this availability cannot overlap with another")
+        errors.add(:start_time, "cannot overlap with another availability")
       end
       if end_stamp >= h_start_stamp && end_stamp <= h_end_stamp
-        errors.add(:end_time, "this availability cannot overlap with another")
+        errors.add(:end_time, "cannot overlap with another availability")
       end
       if start_stamp < h_start_stamp && end_stamp > h_end_stamp
-        errors.add(:start_time, "this availability cannot overlap with another")
-        errors.add(:end_time, "this availability cannot overlap with another")
+        errors.add(:start_time, "cannot overlap with another availability")
+        errors.add(:end_time, "cannot overlap with another availability")
       end
     end
   end
