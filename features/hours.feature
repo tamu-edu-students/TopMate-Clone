@@ -17,7 +17,7 @@ Feature: Available Hours
     Given I am on the add hours page
     And I fill in time select "Start time" with "9:15 PM"
     And I fill in time select "End time" with "11:00 PM"
-    When I click on "Create Hour"
+    When I click on "Create Availability"
     Then I should be on the hours page
     And I should see "9:15pm - 11:00pm"
   
@@ -25,5 +25,5 @@ Feature: Available Hours
     Given I am on the add hours page
     And I fill in time select "Start time" with "11:00 PM"
     And I fill in time select "End time" with "10:15 PM"
-    When I click on "Create Hour"
+    When I click on "Create Availability"
     Then I should see "error"
