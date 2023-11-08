@@ -22,8 +22,8 @@
             <h3><%= service.name %></h3>
             <div class="time-container-2">
             <p><strong>Description:  </strong><%= service.description %></p>
-            <p><strong>Price:  </strong><%= service.price %></p>
-            <p><strong>Duration:  </strong><%= service.duration %> mins</p>
+            <p><strong>Price:  </strong>$<%= format("%.2f", service.price) %></p>
+            <p><strong>Duration:  </strong><%= service.duration / 60 %> hr <%= service.duration % 60 %> mins</p>
 
             <p><%= link_to 'Edit', 'editService/'+service.id , class: 'button' %><p>
             <%= button_to service.is_published ? 'Unpublish' : 'Publish', service_publish_path(service), method: :post, class: 'button' %>

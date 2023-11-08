@@ -1,5 +1,6 @@
 <a href="<%= show_service_path(data,service) %>" class="service">
   <h3 class="service-title"><%= service.name %></h3>
   <p class="service-description"><%= service.description %></p>
-  <p class="service-price-duration"><%= "$#{service.price} for #{service.duration} minutes" %></p>
+  <p class="service-price-duration"><%= "$#{format("%.2f", service.price)} 
+    for #{service.duration / 60} hr #{service.duration % 60} minutes" %></p>
 </a>
