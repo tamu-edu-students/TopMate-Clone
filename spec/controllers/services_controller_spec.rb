@@ -54,14 +54,14 @@ RSpec.describe ServicesController, type: :controller do
           end.to change(Service, :count).by(1)
         end
 
-        it 'redirects to root_path' do
+        it 'redirects to services index' do
           post :create, params: valid_params
-          expect(response).to redirect_to(root_path)
+          expect(response).to redirect_to(servicesindex_path)
         end
 
         it 'sets a success notice' do
           post :create, params: valid_params
-          expect(flash[:notice]).to eq('Service created successfully.')
+          expect(flash[:notice]).to eq('Service was successfully created.')
         end
       end
     end
@@ -94,9 +94,9 @@ RSpec.describe ServicesController, type: :controller do
           end
         end
 
-        it 'redirects to root_path' do
+        it 'redirects to services index' do
           post :create, params: valid_params
-          expect(response).to redirect_to(root_path)
+          expect(response).to redirect_to(servicesindex_path)
         end
       end
     end
@@ -150,7 +150,7 @@ RSpec.describe ServicesController, type: :controller do
       before { session[:user_id] = user.user_id }
 
       context 'session is not published' do
-        let(:service) { user.services.create(name: '', description: '', price: 0, duration: 0, is_published: false )  }
+        let(:service) { user.services.create(name: 'Service', description: 'desc', price: 0, duration: 0, is_published: false )  }
         let(:valid_params) do
           { id: service.id }
         end
@@ -167,7 +167,7 @@ RSpec.describe ServicesController, type: :controller do
       end
 
       context 'session is published' do
-        let(:service) { user.services.create(name: '', description: '', price: 0, duration: 0, is_published: true )  }
+        let(:service) { user.services.create(name: 'Service', description: 'desc', price: 0, duration: 0, is_published: true )  }
         let(:valid_params) do
           { id: service.id }
         end
