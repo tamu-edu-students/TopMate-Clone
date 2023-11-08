@@ -28,7 +28,7 @@
 
             <h3><%= service.name %></h3>
             <div class="time-container-2">
-            <p><strong>Description:  </strong><%= service.description %></p>
+            <p><strong>Description:  </strong><%= service.short_description %></p>
             <p><strong>Price:  </strong>$<%= format("%.2f", service.price) %></p>
             <p><strong>Duration:  </strong><%= service.duration / 60 > 0 ? (service.duration / 60).to_s + "hr " : "" %>
             <%= service.duration % 60 > 0 ? (service.duration % 60).to_s + "min" : "" %></p>
