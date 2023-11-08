@@ -130,3 +130,9 @@ body {
 .new-hour-link:hover {
   background-color: #d04758;
 }
+
+.time-select {
+  display: flex;
+  font-size: 1.5em;
+  gap: 10px;
+}

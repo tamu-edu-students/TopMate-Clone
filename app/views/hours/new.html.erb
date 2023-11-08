@@ -26,12 +26,16 @@
 
   <div>
     <%= form.label :start_time, style: "display: block" %>
-    <%= form.time_field :start_time %>
+    <div class="time-select">
+      <%= form.time_select :start_time, {ampm: true, minute_step: 15} %>
+    </div>
   </div>
 
   <div>
     <%= form.label :end_time, style: "display: block" %>
-    <%= form.time_field :end_time %>
+    <div class="time-select">
+      <%= form.time_select :end_time, {ampm: true, minute_step: 15} %>
+    </div>
   </div>
 
   <div>
