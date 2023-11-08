@@ -1,11 +1,11 @@
 <html>
   <head>
-    <title>Edit Public Page</title>
+    <title>Edit Availability</title>
     <%= stylesheet_link_tag 'add_hour', media: 'all' %>
   </head>
   <body>
     <div class="hour-container">
-<h1>New hour</h1>
+<h1>New Availability</h1>
 
 <%= form_with(model: @hour) do |form| %>
   <% if @hour.errors.any? %>
@@ -39,7 +39,7 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create Availability" %>
   </div>
 <% end %>
 
