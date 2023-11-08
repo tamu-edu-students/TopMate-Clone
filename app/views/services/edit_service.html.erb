@@ -14,10 +14,15 @@
         <%= form.text_area :description , class: 'ip'%>
 
         <%= form.label :price %>
-        <%= form.number_field :price, { step: 0.01, class: 'ip'} %>
-
+        <div class="field-unit-wrapper">
+          <p>$</p>
+          <%= form.number_field :price, { step: 0.01, class: 'ip', style: 'margin: 0'} %>
+        </div>
         <%= form.label :duration %>
-        <%= form.number_field :duration , class: 'ip'%>
+        <div class="field-unit-wrapper">
+          <%= form.number_field :duration , { class: 'ip input-no-margin', style: 'margin: 0' } %>
+          <p>minutes</p>
+        </div>
 
         <div style="display: flex; gap: 20px">
           <%= link_to 'Cancel', servicesindex_path, class: 'button cancel-button' %>
