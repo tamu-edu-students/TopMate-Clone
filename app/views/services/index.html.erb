@@ -15,7 +15,7 @@
   </div>
   <div class="days-container-2">
    
-        <% @services.each do |service| %>
+        <% @services.sort_by(&:name).each do |service| %>
           <div class="day-container-2">
         
 
