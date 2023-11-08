@@ -12,15 +12,18 @@ class Hour < ApplicationRecord
   validate :times_must_not_overlap
 
   def times_must_be_fifteen_min_intervals
-    if start_time.min % 15 != 0
+    if start_time.nil? || start_time.min % 15 != 0
       errors.add(:start_time, "start time must be on 15-minute interval")
     end
-    if end_time.min % 15 != 0
+    if end_time.nil? || end_time.min % 15 != 0
       errors.add(:end_time, "start time must be on 15-minute interval")
     end
   end
 
   def must_have_30_min_gap
+    if start_time.nil? || end_time.nil?
+      return
+    end
     start_stamp = start_time.hour * 60 + start_time.min
     end_stamp = end_time.hour * 60 + end_time.min
     if end_stamp - start_stamp < 30
@@ -29,6 +32,9 @@ class Hour < ApplicationRecord
   end
 
   def times_must_not_overlap
+    if start_time.nil? || end_time.nil?
+      return
+    end
     all_user_hours = Hour.where(user_id: user_id)
     all_user_hours.each do |h|
       # calculate minutes since midnight
