@@ -5,7 +5,7 @@ class Service < ApplicationRecord
   has_many :appointment
 
   validates :name, presence: true
-  validates :description, presence: true
+  validates :short_description, presence: true, length: { maximum: 60 }
   validates :price, presence: true
   validates :duration, presence: true
   validate :price_is_valid_precision
