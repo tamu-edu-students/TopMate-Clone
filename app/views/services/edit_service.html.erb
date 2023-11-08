@@ -16,7 +16,7 @@
         <%= form.label :price %>
         <div class="field-unit-wrapper">
           <p>$</p>
-          <%= form.number_field :price, { step: 0.01, class: 'ip', style: 'margin: 0'} %>
+          <%= form.number_field :price, { value: format("%.2f", @service.price), step: 0.01, class: 'ip', style: 'margin: 0'} %>
         </div>
         <%= form.label :duration %>
         <div class="field-unit-wrapper">
