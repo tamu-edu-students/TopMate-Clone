@@ -15,7 +15,7 @@ Feature: Edit Service
     Then I should see "Mock Sessions"
     Then I should see "Mock sessions for 40 hrs"
     Then I should see "777"
-    Then I should see "776"
+    Then I should see "12hr 56min"
 
 
 

@@ -77,5 +77,5 @@ Then('the new service should be added to my services') do
 end
 
 And('I should see a success message confirming the addition') do
-  expect(page).to have_content('Service created successfully.')
+  expect(page).to have_content('Service was successfully created.')
 end
