@@ -15,7 +15,7 @@
         <%= form.text_area :description , class: 'ip'%>
 
         <%= form.label :price %>
-        <%= form.number_field :price , class: 'ip'%>
+        <%= form.number_field :price, { step: 0.01, class: 'ip'} %>
 
         <%= form.label :duration %>
         <%= form.number_field :duration , class: 'ip'%>
