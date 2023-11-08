@@ -65,5 +65,11 @@ width: 100%;
   font-size: .85em;
 }
 
+.delete-button {
+  background-color: rgb(252, 54, 77);
+  font-size: .85em;
+}
 
-
+.delete-button:hover {
+  background-color: rgb(215, 42, 62);
+}

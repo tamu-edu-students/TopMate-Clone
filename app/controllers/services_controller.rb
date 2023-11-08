@@ -117,7 +117,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     @service.update(hidden: true)  # Add a 'hidden' boolean column to the 'services' table
 
-    redirect_to root_path, notice: 'Service deleted successfully.'
+    redirect_to servicesindex_path, notice: 'Service deleted successfully.'
   end
 
   private
