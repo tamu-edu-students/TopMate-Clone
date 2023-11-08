@@ -20,7 +20,10 @@
         <%= form.label :duration %>
         <%= form.number_field :duration , class: 'ip'%>
 
-        <%= form.submit "Create Service", class: 'button' %>
+        <div style="display: flex; gap: 20px">
+          <%= link_to 'Cancel', servicesindex_path, class: 'button cancel-button' %>
+          <%= form.submit "Create Service", class: 'button' %>
+        </div>
       <% end %>
     </div>
   </body>
