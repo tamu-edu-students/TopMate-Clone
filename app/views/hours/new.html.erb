@@ -27,14 +27,14 @@
   <div>
     <%= form.label :start_time, style: "display: block" %>
     <div class="time-select">
-      <%= form.time_select :start_time, {ampm: true, minute_step: 15} %>
+      <%= form.time_select :start_time, {ampm: true, minute_step: 15, :default => {:hour => '00', :minute => '00'}} %>
     </div>
   </div>
 
   <div>
     <%= form.label :end_time, style: "display: block" %>
     <div class="time-select">
-      <%= form.time_select :end_time, {ampm: true, minute_step: 15} %>
+      <%= form.time_select :end_time, {ampm: true, minute_step: 15, :default => {:hour => '23', :minute => '45'}} %>
     </div>
   </div>
 
