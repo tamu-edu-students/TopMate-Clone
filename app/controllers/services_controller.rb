@@ -17,10 +17,14 @@ class ServicesController < ApplicationController
     else
       @service = @current_user.services.new(service_params)
       @service.user_id = @current_user.user_id
-      if @service.save
-        redirect_to root_path, notice: 'Service created successfully.'
-      else
-        render :new
+      respond_to do |format|
+        if @service.save
+          format.html { redirect_to servicesindex_path, notice: 'Service was successfully created.' }
+          format.json { render :show, status: :created, location: @service }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @service.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

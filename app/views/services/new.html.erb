@@ -8,6 +8,18 @@
       <h1>New Service</h1>
 
       <%= form_with(model: @service, url: services_path, local: true) do |form| %>
+        <% if @service.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+            <ul>
+              <% @service.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <%= form.label :name %>
         <%= form.text_field :name %>
 

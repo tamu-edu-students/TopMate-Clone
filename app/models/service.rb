@@ -4,6 +4,10 @@ class Service < ApplicationRecord
   belongs_to :user
   has_many :appointment
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+  validates :duration, presence: true
   validate :price_is_valid_precision
 
   def price_is_valid_precision
