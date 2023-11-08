@@ -9,6 +9,9 @@
       <%= form_with(model: @service, url: "", method: "post", local: true) do |form| %>
         <%= form.label :name %>
         <%= form.text_field :name %>
+        
+        <%= form.label :short_description %>
+        <%= form.text_area :short_description , class: 'ip'%>
 
         <%= form.label :description %>
         <%= form.text_area :description , class: 'ip'%>
