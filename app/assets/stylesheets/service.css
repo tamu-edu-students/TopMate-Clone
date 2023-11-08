@@ -113,6 +113,8 @@ body {
   background-color: #d04758;
 }
 
-
+textarea {
+  resize: vertical;
+}
 
 /* Add styles for the alert messages, buttons, and other elements as needed */
