@@ -46,9 +46,14 @@ body {
 /* Styles for the days container */
 .days-container {
   display: flex;
+  flex-direction: column;
+  margin: auto;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  width: 60%;
+  max-width: 100%;
+  min-width: 500px;
 }
 
 /* Styles for individual day containers */
@@ -58,15 +63,25 @@ body {
   border-radius: 5px;
   padding: 20px;
   margin: 10px;
-  width: 200px;
+  width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .day-container h2 {
   color: #e35869;
   font-size: 20px;
-  margin-bottom: 10px;
+}
+
+.times-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  overflow: auto;
 }
 
 /* Styles for time containers */
@@ -82,6 +97,7 @@ body {
 .time-container p {
   font-size: 16px;
   margin: 5px 0;
+  min-width: 80px;
 }
 
 /* Style for the "Delete" button */
