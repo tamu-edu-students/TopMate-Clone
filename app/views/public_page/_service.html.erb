@@ -2,5 +2,7 @@
   <h3 class="service-title"><%= service.name %></h3>
   <p class="service-description"><%= service.description %></p>
   <p class="service-price-duration"><%= "$#{format("%.2f", service.price)} 
-    for #{service.duration / 60} hr #{service.duration % 60} minutes" %></p>
+    for #{service.duration / 60 > 0 ? (service.duration / 60).to_s + " hour" : ""}
+    #{service.duration / 60 > 0 && service.duration % 60 > 0 ? " and " : ""}
+    #{service.duration % 60 > 0 ? (service.duration % 60).to_s + " minutes" : ""}" %></p>
 </a>
