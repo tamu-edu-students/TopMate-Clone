@@ -37,6 +37,10 @@ class Hour < ApplicationRecord
     end
     all_user_hours = Hour.where(user_id: user_id)
     all_user_hours.each do |h|
+      # ignore if different day
+      if day != h.day
+        next
+      end
       # calculate minutes since midnight
       start_stamp = start_time.hour * 60 + start_time.min
       end_stamp = end_time.hour * 60 + end_time.min
