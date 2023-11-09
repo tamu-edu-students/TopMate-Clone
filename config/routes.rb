@@ -31,8 +31,8 @@ Rails.application.routes.draw do
 
   get '/servicesindex', to: 'services#index'
 
-  post '/editService/:token', to: 'services#edit'
-  get 'editService/:token', to: 'services#edit_intial', as: 'edit_service'
+  post '/editService/:token', to: 'services#submit_edit'
+  get 'editService/:token', to: 'services#edit_page', as: 'edit_service'
 
   get 'public/:username', to: 'public_page#show', as: 'public_page'
   get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'

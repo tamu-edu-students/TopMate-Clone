@@ -29,11 +29,16 @@ RSpec.describe ServicesController, type: :controller do
     let!(:service) do
       user.services.create(name: 'Test Service1', description: 'test service1 description', price: 120, duration: 10)
     end
-    it 'hides the service and displays a success message' do
-      delete :hide, params: { id: service.id }
-      service.reload
 
-      expect(service.hidden).to eq(true)
+    context 'when user is logged in' do
+      before { session[:user_id] = user.user_id }
+      
+      it 'hides the service and displays a success message' do
+        delete :hide, params: { id: service.id }
+        service.reload
+
+        expect(service.hidden).to eq(true)
+      end
     end
   end
 
