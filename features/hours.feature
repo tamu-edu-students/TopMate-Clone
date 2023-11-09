@@ -15,16 +15,15 @@ Feature: Available Hours
 
   Scenario: I should be able to add an availability period
     Given I am on the add hours page
-    And I fill in "Start time" with "10:23 PM"
-    And I fill in "End time" with "11:23 PM"
-    When I click on "Create Hour"
+    And I fill in time select "Start time" with "9:15 PM"
+    And I fill in time select "End time" with "11:00 PM"
+    When I click on "Create Availability"
     Then I should be on the hours page
-    And I should see "10:23pm - 11:23pm"
+    And I should see "9:15pm - 11:00pm"
   
   Scenario: I should not be able to set an end time before start time
     Given I am on the add hours page
-    And I fill in "End time" with "10:23 PM"
-    And I fill in "Start time" with "11:23 PM"
-    When I click on "Create Hour"
-    Then I should be on the hours page
-    And I should not see "10:23pm - 11:23pm"
+    And I fill in time select "Start time" with "11:00 PM"
+    And I fill in time select "End time" with "10:15 PM"
+    When I click on "Create Availability"
+    Then I should see "error"
