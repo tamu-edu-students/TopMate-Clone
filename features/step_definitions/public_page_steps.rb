@@ -2,9 +2,9 @@
 
 Given('The user exists') do
   @user = User.create(fname: 'John', lname: 'Doe', username: 'jdoe', email: 'test@example.com', password: 'password')
-  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Description 1', price: 10,
+  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', short_description: 'Description 1', price: 10,
                              duration: 60, is_published: true)
-  @service2 = Service.create(user_id: @user.user_id, name: 'Service 2', description: 'Description 2', price: 15,
+  @service2 = Service.create(user_id: @user.user_id, name: 'Service 2', short_description: 'Description 2', price: 15,
                              duration: 90, is_published: true)
 end
 

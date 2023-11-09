@@ -62,7 +62,7 @@ end
 
 And('I fill in the required service details') do
   fill_in 'Name', with: 'My Service'
-  fill_in 'Description', with: 'Service description'
+  fill_in 'service_short_description', with: 'Service short description'
   fill_in 'Price', with: 10.99
   fill_in 'Duration', with: 60
 end
@@ -77,5 +77,5 @@ Then('the new service should be added to my services') do
 end
 
 And('I should see a success message confirming the addition') do
-  expect(page).to have_content('Service created successfully.')
+  expect(page).to have_content('Service was successfully created.')
 end
