@@ -3,8 +3,6 @@
 class DashboardController < ApplicationController
   before_action :get_current_user
   before_action :redirect_if_logged_out
-  
-  def main; end
 
   private
 

@@ -4,8 +4,6 @@ class EditPublicPageController < ApplicationController
   before_action :get_current_user
   before_action :redirect_if_logged_out
   
-  def index; end
-
   def update
     if @current_user.update(user_params)
       redirect_to edit_public_page_path, notice: 'Public page was successfully updated.'
