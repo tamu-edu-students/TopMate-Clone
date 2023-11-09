@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   post 'send_email', to: 'email_submission#send_email'
   get 'reset/:token', to: 'password_reset#reset'
   post 'submit_reset', to: 'password_reset#change_password'
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  get 'passward/reset/edit', to: 'password_resets#edit'
-  patch 'passward/reset/edit', to: 'password_resets#update'
 
   root 'home#index'
 
