@@ -25,8 +25,7 @@ class HoursController < ApplicationController
   def create
     dayObject = Struct.new(:id, :day)
     @days = Date::DAYNAMES.map.with_index { |day, index| dayObject.new(index, day) }
-    @hour = Hour.new(hour_params)
-    @hour.user_id = @current_user.user_id
+    @hour = @current_user.hours.new(hour_params)
     respond_to do |format|
       if @hour.save
         format.html { redirect_to hours_url(@hour), notice: 'Hour was successfully created.' }
@@ -40,7 +39,7 @@ class HoursController < ApplicationController
 
   # DELETE /hours/1 or /hours/1.json
   def destroy
-    Hour.find(params[:id]).destroy
+    @current_user.hours.find(params[:id]).destroy
 
     respond_to do |format|
       format.html { redirect_to hours_url, notice: 'Hour was successfully destroyed.' }
