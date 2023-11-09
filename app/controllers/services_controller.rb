@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
   end
 
   def edit_page
-    @service = Service.find_by(id: params[:token])
+    @service = @current_user.services.find_by(id: params[:token])
     if @service.nil?
       render plain: 'Service does not exist.'
     else
@@ -28,7 +28,7 @@ class ServicesController < ApplicationController
   end
 
   def submit_edit
-    @service = Service.find_by(id: params[:token])
+    @service = @current_user.services.find_by(id: params[:token])
     if @service.nil?
       flash[:error] = 'Service not found'
       render plain: 'Service does not exist.'
@@ -41,7 +41,7 @@ class ServicesController < ApplicationController
   end
 
   def togglepublish
-    @service = Service.find_by(id: params[:id], user_id: session[:user_id])
+    @service = @current_user.services.find_by(id: params[:id], user_id: session[:user_id])
     if @service.nil?
       flash[:error] = 'Service not found'
       render plain: 'Service does not exist.'
@@ -72,7 +72,7 @@ class ServicesController < ApplicationController
   end
 
   def hide
-    @service = Service.find_by(id: params[:id])
+    @service = @current_user.services.find_by(id: params[:id])
     @service.update(hidden: true)  # Add a 'hidden' boolean column to the 'services' table
     redirect_to root_path, notice: 'Service deleted successfully.'
   end
