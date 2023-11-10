@@ -29,7 +29,7 @@ RSpec.describe EditPublicPageController, type: :controller do
       expect(User).to receive(:find_by).with(user_id: user.user_id).and_return(user)
       expect(user).to receive(:update).and_return(true)
       post :update, params: { user: { fname: 'John' } }
-      expect(response).to redirect_to(edit_public_page_path)
+      expect(response).to redirect_to(dashboard_path)
     end
 
   end

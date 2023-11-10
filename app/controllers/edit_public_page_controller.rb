@@ -6,10 +6,9 @@ class EditPublicPageController < ApplicationController
   
   def update
     if @current_user.update(user_params)
-      redirect_to edit_public_page_path, notice: 'Public page was successfully updated.'
+      redirect_to dashboard_path, success: 'Public page was successfully updated.'
     else
-      flash.now[:error] = @current_user.errors.full_messages.to_sentence
-      redirect_to edit_public_page_path
+      redirect_to dashboard_path, error: 'Public page failed to update.'
     end
   end
 
