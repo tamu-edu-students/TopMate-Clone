@@ -8,6 +8,11 @@
   </div>
   </div>
 
+<% flash.each do |key, message|%>
+  <div class="alert" style="text-align: center; margin-top: 10px">
+    <%= message%>
+  </div>
+<%end%>
 
 <div id="days" class="days-container">
   <% [0, 1, 2, 3, 4, 5, 6].each do |day| %>

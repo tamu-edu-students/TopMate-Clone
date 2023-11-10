@@ -26,24 +26,19 @@ class HoursController < ApplicationController
     dayObject = Struct.new(:id, :day)
     @days = Date::DAYNAMES.map.with_index { |day, index| dayObject.new(index, day) }
     @hour = @current_user.hours.new(hour_params)
-    respond_to do |format|
-      if @hour.save
-        format.html { redirect_to hours_url(@hour), notice: 'Hour was successfully created.' }
-        format.json { render :show, status: :created, location: @hour }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @hour.errors, status: :unprocessable_entity }
-      end
+    if @hour.save
+      redirect_to hours_url, success: 'Time slot successfully added!'
+    else
+      redirect_to hours_url, error: 'Time slot failed to update.'
     end
   end
 
   # DELETE /hours/1 or /hours/1.json
   def destroy
-    @current_user.hours.find(params[:id]).destroy
-
-    respond_to do |format|
-      format.html { redirect_to hours_url, notice: 'Hour was successfully destroyed.' }
-      format.json { head :no_content }
+    if @current_user.hours.find(params[:id]).destroy
+      redirect_to hours_url, success: 'Time slot successfully deleted!'
+    else
+      redirect_to hours_url, error: 'Time slot failed to delete.'
     end
   end
 

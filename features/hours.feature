@@ -26,4 +26,4 @@ Feature: Available Hours
     And I fill in time select "Start time" with "11:00 PM"
     And I fill in time select "End time" with "10:15 PM"
     When I click on "Create Availability"
-    Then I should see "error"
+    Then I should see "failed"
