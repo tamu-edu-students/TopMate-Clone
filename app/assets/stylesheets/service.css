@@ -113,6 +113,22 @@ body {
   background-color: #d04758;
 }
 
+textarea {
+  resize: vertical;
+}
 
+.field-unit-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 55%;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+.field-unit-wrapper p {
+  margin: 0;
+  font-size: 1.2em;
+}
 
 /* Add styles for the alert messages, buttons, and other elements as needed */

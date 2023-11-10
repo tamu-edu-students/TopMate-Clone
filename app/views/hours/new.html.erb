@@ -1,11 +1,11 @@
 <html>
   <head>
-    <title>Edit Public Page</title>
+    <title>Edit Availability</title>
     <%= stylesheet_link_tag 'add_hour', media: 'all' %>
   </head>
   <body>
     <div class="hour-container">
-<h1>New hour</h1>
+<h1>New Availability</h1>
 
 <%= form_with(model: @hour) do |form| %>
   <% if @hour.errors.any? %>
@@ -26,16 +26,20 @@
 
   <div>
     <%= form.label :start_time, style: "display: block" %>
-    <%= form.time_field :start_time %>
+    <div class="time-select">
+      <%= form.time_select :start_time, {ampm: true, minute_step: 15, :default => {:hour => '00', :minute => '00'}} %>
+    </div>
   </div>
 
   <div>
     <%= form.label :end_time, style: "display: block" %>
-    <%= form.time_field :end_time %>
+    <div class="time-select">
+      <%= form.time_select :end_time, {ampm: true, minute_step: 15, :default => {:hour => '23', :minute => '45'}} %>
+    </div>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create Availability" %>
   </div>
 <% end %>
 

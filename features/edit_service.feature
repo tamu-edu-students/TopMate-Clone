@@ -8,14 +8,14 @@ Feature: Edit Service
   Scenario: Edit an existing service
     Given I am on "edit service" page for an existing service
     When I fill in "service_name" with "Mock Sessions"
-    And I fill in "service_description" with "Mock sessions for 40 hrs"
+    And I fill in "service_short_description" with "Mock sessions for 40 hrs"
     And I fill in "service_price" with "777"
     And I fill in "service_duration" with "776"
     And I click the "Edit Service" button
     Then I should see "Mock Sessions"
     Then I should see "Mock sessions for 40 hrs"
     Then I should see "777"
-    Then I should see "776"
+    Then I should see "12hr 56min"
 
 
 

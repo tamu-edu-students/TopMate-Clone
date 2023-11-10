@@ -11,7 +11,7 @@ Given('I am on the services index page') do
   fill_in 'Password', with: 'password'
   click_button 'Login'
 
-  service = Service.create(name: 'service 123', description: 'sessions of 39 hr', price: 770, duration: 770,
+  service = Service.create(name: 'service 123', short_description: 'sessions of 39 hr', price: 770, duration: 770,
                            user_id: @user.id)
   service.save!
 

@@ -1,8 +1,8 @@
 <%= stylesheet_link_tag 'hour', media: 'all' %>
 <div class="navbar">
-    <h1 class="title">Hours</h1>
+    <h1 class="title">Availability</h1>
     <div class="navbar-links">
-    <%= link_to "New hour", new_hour_path %>
+    <%= link_to "Add Availability", new_hour_path %>
     <%= link_to "Back to Dashboard", dashboard_path %>
     
   </div>
@@ -12,18 +12,19 @@
 <div id="days" class="days-container">
   <% [0, 1, 2, 3, 4, 5, 6].each do |day| %>
     <div class="day-container">
-      <h2><%= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][day] %></h2>
-      <% if @days[day].length > 0 %>
-        <% @days[day].each do |hour| %>
-          <div class="time-container">
-            <p><%= hour.start_time.strftime("%l:%M%P") %> - <%= hour.end_time.strftime("%l:%M%P") %></p>
-            <%= button_to 'Delete', delete_hour_path, method: :delete, params: {id: hour.id} %>
-          </div>
+      <h2><%= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][day] %>:</h2>
+      <div class="times-container">
+        <% if @days[day].length > 0 %>
+          <% @days[day].sort_by(&:start_time).each do |hour| %>
+            <div class="time-container">
+              <p><%= hour.start_time.strftime("%l:%M%P") %> - <%= hour.end_time.strftime("%l:%M%P") %></p>
+              <%= button_to 'Delete', delete_hour_path, method: :delete, params: {id: hour.id} %>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No availability this day!</p>
         <% end %>
-      <% else %>
-        <p>No availability this day!</p>
-      <% end %>
-      
+      </div>
     </div>
   <% end %>
 </div>
