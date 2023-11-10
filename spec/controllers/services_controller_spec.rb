@@ -66,7 +66,7 @@ RSpec.describe ServicesController, type: :controller do
 
         it 'sets a success notice' do
           post :create, params: valid_params
-          expect(flash[:notice]).to eq('Service was successfully created.')
+          expect(flash[:success]).to eq('Service was successfully created.')
         end
       end
     end
