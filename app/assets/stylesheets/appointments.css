@@ -92,6 +92,9 @@
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  width: auto;
+  text-align: center;
+  font-size: 15px;
 }
 .basic-button {
   border-radius: 5px;
