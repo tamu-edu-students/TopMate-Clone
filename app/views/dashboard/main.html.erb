@@ -7,7 +7,8 @@
   <div class="navbar">
     <h1 class="title">Dashboard</h1>
     <div class="navbar-links">
-    
+    <% @username = User.find_by(user_id: session[:user_id]).username %>
+    <%= link_to 'Public Profile', public_page_path(@username) %>
     <%= link_to 'Edit Public Profile', edit_public_page_path %>
     <%= link_to 'Logout', logout_path, method: :delete %>
   </div>
@@ -25,8 +26,12 @@
       <%end%>
       
       <div class="square-items">
+      
+      
       <%= link_to 'Services', servicesindex_path, class: 'button'%>
       <%= link_to 'Availability', hours_path, class: 'button'%>
+      <%= link_to 'Appointments', userappointments_path(username: @username), class: 'button'%>
+      
       </div>
       </center>
     </div>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Given('I have a registered user with email {string} and password {string} and first_name {string} and last_name {string}') do |email, password, first_name, last_name|
-  user = User.create(email:, password:, fname: first_name, lname: last_name)
+  user = User.create(email:, password:, fname: first_name, lname: last_name, username: first_name)
   user.save!
 end
 
