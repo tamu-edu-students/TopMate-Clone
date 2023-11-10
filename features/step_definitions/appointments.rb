@@ -4,12 +4,10 @@ Given('I am on public page of {string} for booking the appointment') do |_string
   @user = User.create(email: 'testuser@gmail.com', password: 'Hello@#1999', fname: 'Jack', lname: 'Hill',
                       username: 'jackhill', about: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum')
   @user.save!
-  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Description 1', price: 10,
+  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem', price: 10, short_description: "Lorem Ipsum",
                              duration: 60, is_published: true)
-  @service2 = Service.create(user_id: @user.user_id, name: 'Service 2', description: 'Description 2', price: 15,
-                             duration: 90, is_published: true)
   @hour1=Hour.create(user_id: @user.user_id, day: 0, start_time: '11:15:00', end_time: '15:15:00')
-  @hour1=Hour.create(user_id: @user.user_id, day: 0, start_time: '21:15:00', end_time: '23:15:00')
+  @hour2=Hour.create(user_id: @user.user_id, day: 1, start_time: '11:15:00', end_time: '15:15:00')
   @hour2=Hour.create(user_id: @user.user_id, day: 1, start_time: '11:15:00', end_time: '15:15:00')
   @hour3=Hour.create(user_id: @user.user_id, day: 2, start_time: '11:15:00', end_time: '15:15:00')
   @hour4=Hour.create(user_id: @user.user_id, day: 3, start_time: '11:15:00', end_time: '15:15:00')
@@ -21,6 +19,7 @@ end
 
 When('I click on {string} to open service page') do |string|
   expect(page).to have_current_path(public_page_path(@user.username))
+
   click_link(string.gsub(' ', '_'))
 end
 
@@ -60,7 +59,7 @@ Given('I have a registered user with email {string} and password {string} and fi
                       username: string5, about: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum')
 
   @user.save!
-  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Description 1', price: 10,
+  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem', price: 10, short_description: "Lorem Ipsum",
   duration: 60, is_published: true)
 end
 
