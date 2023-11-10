@@ -2,7 +2,6 @@
   <head>
     <title>Create Appointment</title>
     <%= stylesheet_link_tag 'appointments', media: 'all' %>
-    <%= javascript_include_tag 'appointments' %>
   </head>
   <body>
     <div class="service-container">
@@ -17,10 +16,14 @@
 
         <%= form.label "Email" %>
         <%= form.text_field :email, id: "Email" %>
+        
+        <%= form.label "Appointment Date" %>
+        <%= form.select :start_date, options_for_select(@slots_data_start_date), {}, onchange: "fetch_slot_times();", id: "Appointment Date" %>
+      
+        <%= form.label "Consultation Start Time" , id: 'start-time-label' , class: 'hidden' %> 
+         <%= form.select :start_time, options_for_select(@slots_data_start_time),{}, class: 'hidden', id: 'Consultation Start Time' %> 
 
-         <%= form.label "Appointment Date" %>
-        <%= form.select :startdatetime, options_for_select(@slots_data_start_datetime),{}, id: "Appointment Date" %>
-        <%# <%= form.label "Appointment Date" %>
+         <p id="empty-list" class="flash-error hidden"> No timings available for the selected date</p>
         
         <%= form.submit "Create Appointment", class: 'button' %>
        
@@ -44,39 +47,51 @@
   </body>
   <script>
     async function fetch_slot_times() {
-    // let start_date_dropdown = document.getElementById("Appointment Date");
-    // // Get the selected value
-    // var start_date = start_date_dropdown.value;
+    let start_date_dropdown = document.getElementById("Appointment Date");
+    let start_time_dropdown = document.getElementById("Consultation Start Time")
+    start_time_dropdown.innerHTML =""
+    console.log("start_time_dropdown.",start_time_dropdown)
+      document.getElementById("empty-list").classList = "flash-error hidden";
 
-    // // Use the selected value as needed
-    // let api_url = "/appointment/get/timings/" + start_date
-    // const response = await fetch(api_url);
-    // const data = await response.json().then((responseData) => {
-    //     return responseData;
-    // }).catch((error) => {
-    //     console.log("error", error);
-    //     return { "slots": [] }
-    // });
-    // console.log(data.slots)
-    // console.log(data.slots.length)
-    // if (data.slots.length > 0) {
-    //     var dropdown_label = document.getElementById("start-time-label");
-    //     var dropdown = document.getElementById("Consultation Start Time");
-    //     console.log({ dropdown_label, dropdown });
-    //     data.slots.forEach((slots_item) => {
-    //         var dropdown_option = document.createElement("option");
+    // Get the selected value
+    var start_date = start_date_dropdown.value;
+    console.log("st",start_date)
+    const username = window.location.href.split("/")[4];
+console.log(username);
+    // Use the selected value as needed
+    let api_url = "/appointment/get/timings/"+username+"/" + start_date;
+    const response = await fetch(api_url);
+    const data = await response.json().then((responseData) => {
+        return responseData;
+    }).catch((error) => {
+        console.log("error", error);
+        return { "slots": [] }
+    });
+    console.log(data.slots)
+    console.log(data.slots.length)
+    if (data.slots.length > 0) {
+        var dropdown_label = document.getElementById("start-time-label");
+        var dropdown = document.getElementById("Consultation Start Time");
+        console.log({ dropdown_label, dropdown });
+        data.slots.forEach((slots_item) => {
+            var dropdown_option = document.createElement("option");
 
 
-    //         // Set the value and text of the option
-    //         dropdown_option.value = new Date(slots_item.startTime).toTimeString();
-    //         dropdown_option.text = new Date(slots_item.startTime).toTimeString();
+            // Set the value and text of the option
+            dropdown_option.value = slots_item.startTime;
+            dropdown_option.text = slots_item.startTime;
 
-    //         // Append the new option to the select element
-    //         dropdown.appendChild(dropdown_option);
-    //     });
-    //     dropdown.classList = "";
-    //     dropdown_label.classList = "";
-    // }
+            // Append the new option to the select element
+            dropdown.appendChild(dropdown_option);
+        });
+        dropdown.classList = "";
+        dropdown_label.classList = "";
+    }
+    else{
+      document.getElementById("empty-list").classList = "flash-error";
+      document.getElementById("start-time-label").classList = "hidden";
+      document.getElementById("Consultation Start Time").classList = "hidden";
+    }
 
 }
   </script>

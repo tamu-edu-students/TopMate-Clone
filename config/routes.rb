@@ -45,5 +45,5 @@ Rails.application.routes.draw do
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
   get '/public/:username/:service_id/create/appointment', to: 'appointments#index', as: 'appointments_page_index'
   post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',  as: 'appointments_page_create_submit'
-  get '/appointment/get/timings/:start_date', to: 'appointments#fetch_slot_times',  as: 'appointments_page_fetch_slot_times_for_date'
+  get '/appointment/get/timings/:username/:start_date', to: 'appointments#fetch_slot_times_api',  as: 'appointments_page_fetch_slot_times_for_date'
 end
