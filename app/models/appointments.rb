@@ -2,8 +2,8 @@
 
 class Appointments < ApplicationRecord
   belongs_to :service
-  enum status_type: { booked: 'booked', closed: 'closed', cancelled: 'cancelled' }
-  # attribute :start_date, :date
+  enum status_type: { booked: "booked", closed: "closed", cancelled: "cancelled" }
+  attribute :start_date, :date
   attribute :start_time, :datetime
 
   # attribute :slot_start_time, :time

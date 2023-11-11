@@ -1,19 +1,16 @@
 # frozen_string_literal: true
 
 class DashboardController < ApplicationController
-  before_action :is_logged_in
-  helper_method :current_user
-  def main; end
+  before_action :get_current_user
+  before_action :redirect_if_logged_out
 
-  def current_user
+  private
+
+  def get_current_user
     @current_user ||= User.find_by(user_id: session[:user_id])
   end
-
-  def require_login
-    redirect_to login_url, alert: 'You must be logged in to access this page.' if current_user.nil?
-  end
-
-  def is_logged_in
-    redirect_to login_url if current_user.nil?
+  
+  def redirect_if_logged_out
+    redirect_to login_url if @current_user.nil?
   end
 end
