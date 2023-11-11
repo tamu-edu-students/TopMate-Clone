@@ -49,14 +49,12 @@ class ServicesController < ApplicationController
     if @service.nil?
       flash[:error] = 'Service not found'
       render plain: 'Service does not exist.'
-    else
+    elsif @service.update(is_published: !@service.is_published)
       # Toggle publish status
-      if @service.update(is_published: !@service.is_published)
-        redirect_to servicesindex_url
-      else
-        flash[:error] = 'Failed to update service'
-        redirect_back(fallback_location: root_path)
-      end
+      redirect_to servicesindex_url
+    else
+      flash[:error] = 'Failed to update service'
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -77,7 +75,7 @@ class ServicesController < ApplicationController
 
   def hide
     @service = @current_user.services.find_by(id: params[:id])
-    @service.update(hidden: true)  # Add a 'hidden' boolean column to the 'services' table
+    @service.update(hidden: true) # Add a 'hidden' boolean column to the 'services' table
     redirect_to servicesindex_path, notice: 'Service deleted successfully.'
   end
 
@@ -90,7 +88,7 @@ class ServicesController < ApplicationController
   def get_current_user
     @current_user ||= User.find_by(user_id: session[:user_id])
   end
-  
+
   def redirect_if_logged_out
     redirect_to login_url if @current_user.nil?
   end

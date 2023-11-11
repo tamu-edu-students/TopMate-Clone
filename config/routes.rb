@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   get 'public/:username', to: 'public_page#show', as: 'public_page'
   get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
 
+  get 'appointments/:id/edit', to: 'appointments#edit', as: 'edit_appointment'
+  patch 'appointments/:id', to: 'appointments#update', as: 'update_appointment'
+  delete 'appointments/:id', to: 'appointments#destroy', as: 'delete_appointment'
+
   get '/apts/:username', to: 'user_appointments#show', as: 'userappointments'
 
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'

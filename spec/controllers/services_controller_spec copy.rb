@@ -27,12 +27,13 @@ RSpec.describe ServicesController, type: :controller do
   describe 'DELETE #hide' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
     let!(:service) do
-      user.services.create(name: 'Test Service1', short_description:'test service1 description', price: 120, duration: 10)
+      user.services.create(name: 'Test Service1', short_description: 'test service1 description', price: 120,
+                           duration: 10)
     end
 
     context 'when user is logged in' do
       before { session[:user_id] = user.user_id }
-      
+
       it 'hides the service and displays a success message' do
         delete :hide, params: { id: service.id }
         service.reload
@@ -50,7 +51,7 @@ RSpec.describe ServicesController, type: :controller do
 
       context 'with valid parameters' do
         let(:valid_params) do
-          { service: { name: 'Test Service', short_description:'test service description', price: 120, duration: 10 } }
+          { service: { name: 'Test Service', short_description: 'test service description', price: 120, duration: 10 } }
         end
 
         it 'creates a new service' do
@@ -82,7 +83,7 @@ RSpec.describe ServicesController, type: :controller do
   describe 'POST #edit' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
     let(:service) do
-      Service.create(name: 'Test Service', short_description:'test service description', price: 120, duration: 10)
+      Service.create(name: 'Test Service', short_description: 'test service description', price: 120, duration: 10)
     end
 
     context 'when user is logged in' do
@@ -90,7 +91,8 @@ RSpec.describe ServicesController, type: :controller do
 
       context 'with valid parameters' do
         let(:valid_params) do
-          { service: { name: 'Test Service new', short_description:'test service description new', price: 12, duration: 1 } }
+          { service: { name: 'Test Service new', short_description: 'test service description new', price: 12,
+                       duration: 1 } }
         end
 
         it 'edits an existing service' do
@@ -119,10 +121,12 @@ RSpec.describe ServicesController, type: :controller do
     context 'when user is logged in' do
       let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
       let!(:service1) do
-        user.services.create(name: 'Test Service1', short_description:'test service1 description', price: 120, duration: 10)
+        user.services.create(name: 'Test Service1', short_description: 'test service1 description', price: 120,
+                             duration: 10)
       end
       let!(:service2) do
-        user.services.create(name: 'Test Service2', short_description:'test service2 description', price: 20, duration: 20)
+        user.services.create(name: 'Test Service2', short_description: 'test service2 description', price: 20,
+                             duration: 20)
       end
 
       before do
@@ -155,7 +159,9 @@ RSpec.describe ServicesController, type: :controller do
       before { session[:user_id] = user.user_id }
 
       context 'session is not published' do
-        let(:service) { user.services.create(name: 'Service', short_description:'desc', price: 0, duration: 0, is_published: false )  }
+        let(:service) do
+          user.services.create(name: 'Service', short_description: 'desc', price: 0, duration: 0, is_published: false)
+        end
         let(:valid_params) do
           { id: service.id }
         end
@@ -172,11 +178,13 @@ RSpec.describe ServicesController, type: :controller do
       end
 
       context 'session is published' do
-        let(:service) { user.services.create(name: 'Service', short_description:'desc', price: 0, duration: 0, is_published: true )  }
+        let(:service) do
+          user.services.create(name: 'Service', short_description: 'desc', price: 0, duration: 0, is_published: true)
+        end
         let(:valid_params) do
           { id: service.id }
         end
-        
+
         it 'sets is_published to false' do
           post :togglepublish, params: valid_params
           expect(Service.find_by(id: service.id).is_published).to eq(false)

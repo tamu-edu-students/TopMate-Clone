@@ -3,7 +3,9 @@
 RSpec.describe UserAppointmentsController, type: :controller do
   describe 'GET #show' do
     context 'when user is logged in' do
-      let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password',username: 'jdoe') }
+      let(:user) do
+        User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
+      end
 
       before do
         session[:user_id] = user.user_id
@@ -20,6 +22,4 @@ RSpec.describe UserAppointmentsController, type: :controller do
       end
     end
   end
-
-  
 end

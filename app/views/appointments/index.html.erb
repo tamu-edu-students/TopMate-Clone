@@ -42,7 +42,7 @@
                 </div>
         <% end %>
 
-        <%= link_to "Return to Public Page", public_page_path('John'), class: 'button'%>
+        <%= link_to "Return to Public Page", public_page_path(@user.username), class: 'button'%>
     </div>
   </body>
   <script>

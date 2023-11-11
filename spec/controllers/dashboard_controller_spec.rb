@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/controllers/dashboard_controller_spec.rb
 
 require 'rails_helper'
@@ -39,5 +41,3 @@ RSpec.describe DashboardController, type: :controller do
     end
   end
 end
-
-

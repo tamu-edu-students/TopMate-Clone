@@ -3,10 +3,10 @@
 # Step definitions for Scenario 1: Viewing user's services from the dashboard
 
 Given('I have multiple appointments listed under me') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username:'jdoe')
-  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Description 2',short_description: 'Description 2', price: 15,
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
+  @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Description 2', short_description: 'Description 2', price: 15,
                              duration: 90, is_published: true)
-  
+
   @user.save!
   @service1.save!
   @appointment1 = Appointment.create(
@@ -40,7 +40,6 @@ Given('I have multiple appointments listed under me') do
   # Create more appointments as needed
 end
 
-
 And('I click on {string} button') do |button_text|
   click_link button_text
 end
@@ -68,4 +67,3 @@ And('each appointment should display its details') do
     end
   end
 end
-

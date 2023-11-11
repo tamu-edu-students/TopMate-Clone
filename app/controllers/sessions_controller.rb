@@ -32,6 +32,6 @@ class SessionsController < ApplicationController
   end
 
   def redirect_if_logged_in
-    redirect_to dashboard_url if !@current_user.nil?
+    redirect_to dashboard_url unless @current_user.nil?
   end
 end

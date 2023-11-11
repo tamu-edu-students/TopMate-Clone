@@ -28,4 +28,4 @@ Feature: Appointment Creation
     Then I clck on "Purchase" to go the appointment page
     And I should be on the "Service 1" booking appointment page of "Jack"
     And I click the "Create Appointment" button to create appointment
-    Then I should see a error message "Please enter your first name, last name, email, email"
+    Then I should see a error message "Please enter your first name, last name, email"
