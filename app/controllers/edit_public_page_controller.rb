@@ -16,7 +16,7 @@ class EditPublicPageController < ApplicationController
   private
 
   def get_current_user
-    @get_current_user ||= User.find_by(user_id: session[:user_id])
+    @current_user ||= User.find_by(user_id: session[:user_id])
   end
 
   def redirect_if_logged_out
