@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   post 'send_email', to: 'email_submission#send_email'
   get 'reset/:token', to: 'password_reset#reset'
   post 'submit_reset', to: 'password_reset#change_password'
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  get 'passward/reset/edit', to: 'password_resets#edit'
-  patch 'passward/reset/edit', to: 'password_resets#update'
 
   root 'home#index'
 
@@ -36,8 +31,8 @@ Rails.application.routes.draw do
 
   get '/servicesindex', to: 'services#index'
 
-  post '/editService/:token', to: 'services#edit'
-  get 'editService/:token', to: 'services#edit_intial', as: 'edit_service'
+  post '/editService/:token', to: 'services#submit_edit'
+  get 'editService/:token', to: 'services#edit_page', as: 'edit_service'
 
   get 'public/:username', to: 'public_page#show', as: 'public_page'
   get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
@@ -46,10 +41,10 @@ Rails.application.routes.draw do
   patch 'appointments/:id', to: 'appointments#update', as: 'update_appointment'
   delete 'appointments/:id', to: 'appointments#destroy', as: 'delete_appointment'
 
+  get '/apts/:username', to: 'user_appointments#show', as: 'userappointments'
+
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
   get '/public/:username/:service_id/create/appointment', to: 'appointments#index', as: 'appointments_page_index'
-  post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',
-                                                                  as: 'appointments_page_create_submit'
-  get '/appointment/get/timings/:start_date', to: 'appointments#fetch_slot_times',
-                                              as: 'appointments_page_fetch_slot_times_for_date'
+  post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',  as: 'appointments_page_create_submit'
+  get '/appointment/get/timings/:username/:start_date', to: 'appointments#fetch_slot_times_api',  as: 'appointments_page_fetch_slot_times_for_date'
 end

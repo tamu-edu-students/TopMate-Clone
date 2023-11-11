@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  # before_action :is_logged_in
-  def new; end
+  before_action :get_current_user
+  before_action :redirect_if_logged_in, only: %i[new]
 
   def create
     @user = User.find_by(email: params[:email])
@@ -17,14 +17,21 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'Logged out successfully!'
+    if @current_user.nil?
+      redirect_to root_url
+    else
+      @current_user = nil
+      redirect_to root_url, notice: 'Logged out successfully!'
+    end
   end
 
-  def current_user
+  private
+
+  def get_current_user
     @current_user ||= User.find_by(user_id: session[:user_id])
   end
 
-  # def is_logged_in
-  #   redirect_to dashboard_url if current_user
-  # end
+  def redirect_if_logged_in
+    redirect_to dashboard_url if !@current_user.nil?
+  end
 end

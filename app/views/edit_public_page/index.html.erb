@@ -7,7 +7,7 @@
     <div class="service-container">
       <h1>User Public Edit Information</h1>
 
-      <%= form_for @user , url: edit_public_page_update_path, method: :patch do |form| %>
+      <%= form_for @current_user , url: edit_public_page_update_path, method: :patch do |form| %>
     <%#   form_with(model: @user, url: services_path(@user), local: true) do |form|  %>
         <%= form.label :fname %>
         <%= form.text_field :fname %>

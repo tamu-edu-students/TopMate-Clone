@@ -15,7 +15,7 @@ RSpec.describe EditPublicPageController, type: :controller do
     it 'assigns current user when logged in' do
       session[:user_id] = user.user_id # Simulate being logged in
       get :index
-      expect(assigns(:user)).to eq(user)
+      expect(assigns(:current_user)).to eq(user)
     end
   end
 
