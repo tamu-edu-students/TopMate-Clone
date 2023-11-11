@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Service</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <%= stylesheet_link_tag 'user_appointments', media: 'all' %>
+  </head>
+  <body>
+  <div class="navbar">
+    <h1 class="title">Appointments</h1>
+    <div class="navbar-links">
+        <select id="statusFilter">
+        <option value="All">All</option>
+        <option value="Booked">Booked</option>
+        <option value="Completed">Completed</option>
+        <option value="Cancelled">Cancelled</option>
+        </select>
+        <%= link_to "Back to Dashboard", dashboard_path %>
+        <%= link_to 'Logout', logout_path, method: :delete %>
+    </div>
+    
+  </div>
+  
+  <% flash.each do |key, message|%>
+    <div class="alert">
+      <%= message%>
+    </div>
+  <%end%>
+
+  <div class="days-container-2">
+   
+        <% @appointments.sort_by(&:startdatetime).each do |appointment| %>
+          <div class="day-container-2" id = "appointment-<%= appointment.id %>" >
+        
+
+            <h3><%= Service.find_by(id: appointment.service_id).name %></h3>
+            <div class="time-container-2">
+            <p><strong>Client :  </strong><%= appointment.fname %> </strong><%= appointment.lname %></p>
+            <p><strong>Email:  </strong><%= appointment.email %></p>
+            <p><strong>Date:  </strong><%= appointment.startdatetime.strftime("%m-%d-%Y") %></p>
+            <p><strong>Start time:  </strong><%= appointment.startdatetime.strftime("%H:%M") %></p>
+            <p><strong>End time:  </strong><%= appointment.enddatetime.strftime("%H:%M") %></p>
+            <p><strong>Amount paid:  </strong><%= appointment.amount_paid %></p>
+            <p><strong>Status:  </strong><%= appointment.status %></p>
+
+            
+        </div>
+        </div>
+        <% end %>
+
+       
+    
+    </div>
+  </body>
+
+  <script>
+    $(document).ready(function() {
+    // Initial display of all appointments
+    showAppointments('All');
+
+    // Change event for the status filter dropdown
+    $('#statusFilter').change(function() {
+        const status = $(this).val();
+        showAppointments(status);
+    });
+    });
+
+    function showAppointments(status) {
+    $('.day-container-2').hide(); // Hide all appointments
+
+    // Show only the appointments with the selected status
+    if (status === 'All') {
+        $('.day-container-2').show(); // Show all appointments
+    } else {
+        $(`.day-container-2:has(p:contains('${status}'))`).show(); // Show appointments matching the status
+    }
+    }
+  </script>
+</html>
+

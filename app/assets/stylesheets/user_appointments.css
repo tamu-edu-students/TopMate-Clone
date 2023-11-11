@@ -1,0 +1,138 @@
+/* dashboard.css */
+
+/* Add styles for the entire page */
+body {
+  display: block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  align-items: center; /* Center align the content horizontally */
+  background-color: white;
+}
+
+/* Styles for the navigation bar at the top */
+.navbar {
+  background-color: #e35869;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h1 {
+  margin: 10px 0px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px; /* Add margin to create space between links */
+}
+
+
+/* Styles for the days container */
+.days-container-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+/* Styles for individual day containers */
+.day-container-2 {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+}
+
+.day-container-2 h2 {
+  color: #e35869;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Styles for time containers */
+.time-container-2 {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+}
+
+.time-container-2 p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Style for the "Delete" button */
+.time-container-2 button {
+  background-color: #e35869;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 60%;
+}
+
+.time-container-2 button:hover {
+  background-color: #d04758;
+}
+.time-container-2 .button {
+  background-color: #e35869;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 60%;
+}
+.time-container-2 p{
+  padding: 5px 0px;
+}
+
+.time-container-2 .button:hover {
+  background-color: #d04758;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.field-unit-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 55%;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+.field-unit-wrapper p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+#statusFilter{
+  font-size: larger;
+}
+
+/* Add styles for the alert messages, buttons, and other elements as needed */

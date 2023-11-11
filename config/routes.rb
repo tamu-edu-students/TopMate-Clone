@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   get 'public/:username', to: 'public_page#show', as: 'public_page'
   get '/edit_public_page', to: 'edit_public_page#index', as: 'edit_public_page'
 
+  get '/apts/:username', to: 'user_appointments#show', as: 'userappointments'
+
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
   get '/public/:username/:service_id/create/appointment', to: 'appointments#index', as: 'appointments_page_index'
   post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',  as: 'appointments_page_create_submit'
