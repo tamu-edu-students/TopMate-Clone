@@ -8,19 +8,42 @@
       <h1>New Service</h1>
 
       <%= form_with(model: @service, url: services_path, local: true) do |form| %>
+        <% if @service.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+            <ul>
+              <% @service.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <%= form.label :name %>
         <%= form.text_field :name %>
+
+        <%= form.label :short_description %>
+        <%= form.text_area :short_description , class: 'ip'%>
 
         <%= form.label :description %>
         <%= form.text_area :description , class: 'ip'%>
 
         <%= form.label :price %>
-        <%= form.number_field :price , class: 'ip'%>
-
+        <div class="field-unit-wrapper">
+          <p>$</p>
+          <%= form.number_field :price, { step: 0.01, class: 'ip', style: 'margin: 0'} %>
+        </div>
         <%= form.label :duration %>
-        <%= form.number_field :duration , class: 'ip'%>
+        <div class="field-unit-wrapper">
+          <%= form.number_field :duration , { class: 'ip input-no-margin', style: 'margin: 0' } %>
+          <p>minutes</p>
+        </div>
 
-        <%= form.submit "Create Service", class: 'button' %>
+        <div style="display: flex; gap: 20px">
+          <%= link_to 'Cancel', servicesindex_path, class: 'button cancel-button' %>
+          <%= form.submit "Create Service", class: 'button' %>
+        </div>
       <% end %>
     </div>
   </body>
