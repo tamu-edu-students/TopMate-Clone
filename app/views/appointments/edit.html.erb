@@ -7,9 +7,11 @@
   <body>
     <div class="service-container">
         <h1>Edit Appointment</h1>
-        <h3>Service: <%= @service.name%></h1>
+        <h3>Service: <%= @service.name%></h3>
+        <h4>User: <%= @user.fname%> <%= @user.lname%></h4>
+        <h4>Duration: <%= @service.duration%> minutes</h4>
 
-        <%= form_with(model: @appointment, url: update_appointment_path(@appointment.id), method: :patch) do |form| %>
+        <%= form_for @appointment, url: update_appointment_path(@appointment.id), method: :patch do |form| %>
         <!-- Display form fields for editing appointment details here -->
         <%= form.label "First Name" %>
         <%= form.text_field :fname, id: "First Name" %>
@@ -17,9 +19,16 @@
         <%= form.label "Last Name" %>
         <%= form.text_field :lname, id: "Last Name" %>
 
-        <%= form.submit "update Appointment", class: 'button' %>
-       
+        <%= form.label "Appointment Date" %>
+        <%= form.select :startdatetime, options_for_select(@slots_data_start_datetime),{}, id: "Appointment Date" %>
+
+        <%= form.submit "Update Appointment", class: 'button' %>
+
         <% end %>
+
+        <%= button_to "Cancel Appointment", delete_appointment_path(@appointment.id), method: :delete, data: { confirm: "Are you sure you want to cancel this appointment?" }, class: 'button' %>
+        
+        <%= link_to "Return to Public Page", public_page_path(@user.username)%>
     </div>
   </body>
 </html>

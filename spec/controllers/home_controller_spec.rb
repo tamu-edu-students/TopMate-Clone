@@ -1,14 +1,14 @@
+# frozen_string_literal: true
+
 # spec/controllers/home_controller_spec.rb
 
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  let(:user) { create(:user) } 
+  let(:user) { create(:user) }
 
   describe '#current_user' do
-
     it 'does not assign a current user when not logged in' do
-
       allow(controller).to receive(:current_user).and_return(nil)
 
       get :index
@@ -18,8 +18,6 @@ RSpec.describe HomeController, type: :controller do
   end
 
   describe '#require_login' do
-
-
     it 'does not redirect when user is logged in' do
       allow(controller).to receive(:current_user).and_return(user)
       get :index

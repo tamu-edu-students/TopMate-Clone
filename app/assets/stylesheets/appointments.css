@@ -104,6 +104,15 @@
   display: none !important;
 }
 
-/* .visible {
-  display: block !important;
+/* .link-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 } */

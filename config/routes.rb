@@ -44,10 +44,12 @@ Rails.application.routes.draw do
 
   get 'appointments/:id/edit', to: 'appointments#edit', as: 'edit_appointment'
   patch 'appointments/:id', to: 'appointments#update', as: 'update_appointment'
+  delete 'appointments/:id', to: 'appointments#destroy', as: 'delete_appointment'
 
   patch '/update/user_profile', to: 'edit_public_page#update', as: 'edit_public_page_update'
   get '/public/:username/:service_id/create/appointment', to: 'appointments#index', as: 'appointments_page_index'
-  post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',  as: 'appointments_page_create_submit'
-  get '/appointment/get/timings/:start_date', to: 'appointments#fetch_slot_times',  as: 'appointments_page_fetch_slot_times_for_date'
+  post '/public/:username/:service_id/create/appointment/submit', to: 'appointments#create_submit',
+                                                                  as: 'appointments_page_create_submit'
+  get '/appointment/get/timings/:start_date', to: 'appointments#fetch_slot_times',
+                                              as: 'appointments_page_fetch_slot_times_for_date'
 end
-

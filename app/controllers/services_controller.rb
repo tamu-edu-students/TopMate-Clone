@@ -81,14 +81,12 @@ class ServicesController < ApplicationController
         puts 'service not available'
         flash[:error] = 'Service not found'
         render plain: 'Service does not exist.'
-      else
+      elsif @service.update(is_published: !@service.is_published)
         # Toggle publish status
-        if @service.update(is_published: !@service.is_published)
-          redirect_to servicesindex_url
-        else
-          flash[:error] = 'Failed to update service'
-          redirect_back(fallback_location: root_path)
-        end
+        redirect_to servicesindex_url
+      else
+        flash[:error] = 'Failed to update service'
+        redirect_back(fallback_location: root_path)
       end
     end
   end
