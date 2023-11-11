@@ -9,6 +9,10 @@
 
 ## Running Project
 
+> [!important]
+> You must have a local postgres db running for the tests or server to run.\
+> Add the configuration for your local db to config/database.yml
+
 ### Clone Repo
 ```
 git clone git@github.com:tamu-edu-students/TopMate-Clone.git
@@ -30,7 +34,7 @@ rspec
 cucumber
 ```
 
-Current Coverage: 89%
+Current Coverage: 84.88%
 
 ## Deployment Information
 
@@ -60,6 +64,19 @@ Current Coverage: 89%
 - Users can edit their services
 - Users can set their availability
 - Added gmail stmp server for resetting passwords
+
+### [Iteration 3](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/documentation/Fall2023):
+- Allow Service details to be viewed from the public page
+- Implemented booking a service from the public page of a user
+- Functionality for returning the available time slots of a users availability 
+- Refactoring of UI components to provide a consistent visual model
+
+### [Iteration 4](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/documentation/Fall2023):
+- Send Clients confirmation email after booking appointment
+- Allow clients to edit appointments
+- Users can view client appointments in dashboard
+- Improved usability of dashboard and hours pages
+- Improved time selections when creating appointment
 
 ## Dev Team
 [Dalton Avery](https://github.com/dalton-avery)\
