@@ -13,7 +13,7 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe AppointmentsHelper, type: :helper do
-    describe '#get_next_seven_day_time_slots' do
+  describe '#get_next_seven_day_time_slots' do
     context 'when a user exists and has availability' do
       let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
       let(:hours) do

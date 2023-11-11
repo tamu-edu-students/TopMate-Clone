@@ -5,9 +5,9 @@ class UserAppointmentsController < ApplicationController
     @current_user ||= User.find_by(user_id: session[:user_id])
     @username = params[:username]
     @user = User.find_by(username: @username)
-    if @user.nil? 
+    if @user.nil?
       render 'user_appointments/user_not_found'
-    elsif @current_user.nil? || (@current_user.user_id!=@user.user_id)
+    elsif @current_user.nil? || (@current_user.user_id != @user.user_id)
       redirect_to login_url
     else
       @services = Service.where(hidden: false, is_published: true)
@@ -16,7 +16,7 @@ class UserAppointmentsController < ApplicationController
       # puts @services.name
       # puts @appointments.fname
       render 'user_appointments/index'
-     
+
     end
   end
 end

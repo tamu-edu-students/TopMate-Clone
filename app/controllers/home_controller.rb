@@ -7,10 +7,10 @@ class HomeController < ApplicationController
   private
 
   def get_current_user
-    @current_user ||= User.find_by(user_id: session[:user_id])
+    @get_current_user ||= User.find_by(user_id: session[:user_id])
   end
-  
+
   def redirect_if_logged_in
-    redirect_to dashboard_url if !@current_user.nil?
+    redirect_to dashboard_url unless @current_user.nil?
   end
 end

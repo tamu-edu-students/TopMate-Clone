@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module AppointmentsHelper
-    $day_to_int = {
+  $day_to_int = {
     'Sunday' => 0,
     'Monday' => 1,
     'Tuesday' => 2,

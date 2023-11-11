@@ -3,7 +3,7 @@
 # Step definitions for Scenario 1: Viewing user's services from the dashboard
 
 Given('I have multiple services listed under me') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username:'jdoe')
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
   @service1 = Service.create(user_id: @user.user_id, name: 'Service 1', description: 'Description 1', price: 10,
                              duration: 60, is_published: true)
   @service2 = Service.create(user_id: @user.user_id, name: 'Service 2', description: 'Description 2', price: 15,
@@ -12,7 +12,7 @@ Given('I have multiple services listed under me') do
 end
 
 When('I visit the dashboard page') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username:'jdoe')
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'
@@ -47,7 +47,7 @@ end
 # Step definitions for Scenario 2: Adding a new service
 
 Given('I am on the services page') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username:'jdoe')
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'
