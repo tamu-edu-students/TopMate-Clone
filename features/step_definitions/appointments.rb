@@ -45,9 +45,6 @@ Then('I click the {string} button to create appointment') do |string|
   click_button string
 end
 
-Then('I should redirected back to public page of {string}') do |_string|
-  expect(page).to have_current_path(public_page_path(@user.username))
-end
 
 Then('I should see a success message {string}') do |string|
   expect(page).to have_content(string)
