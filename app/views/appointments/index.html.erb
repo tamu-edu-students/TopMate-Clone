@@ -18,10 +18,10 @@
         <%= form.text_field :email, id: "Email" %>
         
         <%= form.label "Appointment Date" %>
-        <%= form.select :start_date, options_for_select(@slots_data_start_date), {}, onchange: "fetch_slot_times();", id: "Appointment Date" %>
+        <%= form.select :start_date, options_for_select(@slots_data_start_date), { include_blank: false,prompt: "Select Appointment Date"}, onchange: "fetch_slot_times();", id: "Appointment Date" %>
       
         <%= form.label "Consultation Start Time" , id: 'start-time-label' , class: 'hidden' %> 
-         <%= form.select :start_time, options_for_select(@slots_data_start_time),{}, class: 'hidden', id: 'Consultation Start Time' %> 
+         <%= form.select :start_time, options_for_select(@slots_data_start_time),{ include_blank: false,prompt: "Select Consultation Start Time"}, class: 'hidden', id: 'Consultation Start Time' %> 
 
          <p id="empty-list" class="flash-error hidden"> No timings available for the selected date</p>
         
@@ -49,7 +49,7 @@
     async function fetch_slot_times() {
     let start_date_dropdown = document.getElementById("Appointment Date");
     let start_time_dropdown = document.getElementById("Consultation Start Time")
-    start_time_dropdown.innerHTML =""
+    // start_time_dropdown.innerHTML =""
     console.log("start_time_dropdown.",start_time_dropdown)
       document.getElementById("empty-list").classList = "flash-error hidden";
 
