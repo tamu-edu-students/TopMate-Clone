@@ -99,7 +99,6 @@ class AppointmentsController < ApplicationController
   def create_submit
     @username = params[:username]
     @user = User.find_by(username: params[:username])
-
     @service_id = params[:service_id]
     @service = Service.find_by(id: params[:service_id])
     @appointment = Appointments.new(appointments_params)
@@ -108,14 +107,14 @@ class AppointmentsController < ApplicationController
     @errors.push('First Name') if @appointment.fname.nil? || @appointment.fname.empty?
     @errors.push('Last Name') if @appointment.lname.nil? || @appointment.lname.empty?
     @errors.push('Email') if @appointment.email.nil? || @appointment.email.empty?
-    @errors.push('Appointment Date') if @appointment.start_date.nil? || @appointment.start_date.empty?
-    @errors.push('Consultation Start Time') if @appointment.start_time.nil? || @appointment.start_time.empty?
+    @errors.push('Appointment Date') if @appointment.start_date.nil?
+    @errors.push('Consultation Start Time') if @appointment.start_time.nil?
     unless @errors.empty?
       flash[:error] = "Please enter your #{@errors.join(', ')}"
       redirect_to appointments_page_index_path(@username, @service_id)
       return
     end
-    @current_start_date = DateTime.parse(params[:appointments][:start_date])
+    @current_start_date = DateTime.parse(@appointment.start_date.to_s)
     api_data = user_availability_for_day(@user, @current_start_date)
     dummy_slots_data_start_datetime = []
     dummy_slots_data_end_datetime = []
@@ -140,8 +139,8 @@ class AppointmentsController < ApplicationController
     @slots_data_start_datetime = dummy_slots_data_start_datetime
     @slots_data_end_datetime = dummy_slots_data_end_datetime
     selected_date = Date.parse(@current_start_date.to_s)
-    start_time = params[:appointments][:start_time] || api_data[0]['start_time']
-    selected_start_time = Time.parse(start_time)
+    start_time = @appointment.start_time
+    selected_start_time = Time.parse(start_time.to_s)
 
     # Create a DateTime object
     combined_appt_date_time = DateTime.new(selected_date.year, selected_date.month, selected_date.day,
@@ -160,7 +159,7 @@ class AppointmentsController < ApplicationController
     @save = @appointment.save!
     if @save
       AppointmentMailer.edit_link_email(@appointment).deliver_now
-      redirect_to public_page_path(@username), success: 'Appoinment Created successfully'
+      redirect_to public_page_path(@username), success: 'Appointment Created successfully'
     else
       redirect_to appointments_page_index_path(@username, @service_id), notice: 'Appoinment Creation Failed'
     end
@@ -176,7 +175,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointments_params
-    params.require(:appointments).permit(:fname, :lname, :email, :startdatetime)
+    params.require(:appointments).permit(:fname, :lname, :email, :start_date, :start_time)
   end
 
   def update_params
