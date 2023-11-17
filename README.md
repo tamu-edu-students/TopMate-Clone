@@ -11,28 +11,7 @@
 
 > [!important]
 > You must have a local postgres db running for the tests or server to run.\
-> Add the configuration for your local db to config/database.yml
-
-### Clone Repo
-```
-git clone git@github.com:tamu-edu-students/TopMate-Clone.git
-cd TopMate-Clone
-```
-
-### Run Rails Server
-```
-bin/rails server
-```
-
-## Running Tests
-
-cd TopMate-Clone
-```
-rspec
-```
-```
-cucumber
-```
+> Visit the [Getting Started Document](https://github.com/tamu-edu-students/TopMate-Clone/tree/main/GETTING_STARTED.md) to learn more about running and deploying the project
 
 Current Coverage: 84.88%
 
