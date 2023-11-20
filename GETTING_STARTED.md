@@ -44,6 +44,10 @@
 8. Migrate DB 
    1. ```heroku run rake db:migrate```
 9.  ```heroku open```
+    1. if you ran `rake db:seed` you can login with a temp user using
+        1.  Email: johndoe@gmail.com
+        2.  Password: password
+    2. Or visit John Doe's public page at the path `/public/JohnDoe`
 
 This should spin up a production instance of the repo and open the app at the created url.
 Remember, this app needs a user to be seeded to access the majority of the functionality.
