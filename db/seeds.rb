@@ -12,33 +12,57 @@
 # User.create(users)
 # Service.create(services)
 
-appts2 = [{
+user = [{ 
+  fname: 'John', 
+  lname: 'Doe', 
+  email: 'johndoe@gmail.com', 
+  password: 'password', 
+  about: 'This is an about section',
+  username: 'JohnDoe',
+}]
+
+User.create(user);
+
+service = [{
+  user_id: User.find_by(fname: 'John').id,
+  name: 'Interview prep',
+  description: 'This is a description',
+  price: 100,
+  duration: 60,
+  is_published: true,
+  hidden: false,
+  short_description: 'This is a short description'
+}]
+
+Service.create(service)
+
+appts = [{
   service_id: Service.find_by(name: 'Interview prep').id,
-  user_id: User.find_by(fname: 'Heisenberg').id,
+  user_id: User.find_by(fname: 'John').id,
   fname: 'rama',
   lname: 'krishna',
   email: 'rk@gmail.com',
   startdatetime: DateTime.parse('2023-10-22T14:30:00'),
   enddatetime: DateTime.parse('2023-10-22T16:30:00'),
   amount_paid: 123,
-  status: 'Booked',
+  status: 'Cancelled',
   created_at: DateTime.parse('2023-10-24T14:30:00'),
   updated_at: DateTime.parse('2023-10-24T14:30:00')
 }, {
-  service_id: Service.find_by(name: 'DSA Prep').id,
-  user_id: User.find_by(fname: 'Heisenberg').id,
+  service_id: Service.find_by(name: 'Interview prep').id,
+  user_id: User.find_by(fname: 'John').id,
   fname: 'zama',
   lname: 'zrishna',
   email: 'zk@gmail.com',
   startdatetime: DateTime.parse('2023-10-23T14:30:00'),
   enddatetime: DateTime.parse('2023-10-23T16:30:00'),
   amount_paid: 923,
-  status: 'Booked',
+  status: 'Closed',
   created_at: DateTime.parse('2023-10-24T14:30:00'),
   updated_at: DateTime.parse('2023-10-24T14:30:00')
 }, {
-  service_id: Service.find_by(name: 'DSA Prep').id,
-  user_id: User.find_by(fname: 'Heisenberg').id,
+  service_id: Service.find_by(name: 'Interview prep').id,
+  user_id: User.find_by(fname: 'John').id,
   fname: 'zama',
   lname: 'zrishna',
   email: 'zk@gmail.com',
@@ -48,52 +72,6 @@ appts2 = [{
   status: 'Booked',
   created_at: DateTime.parse('2023-10-24T14:30:00'),
   updated_at: DateTime.parse('2023-10-24T14:30:00')
-}, {
-  service_id: Service.find_by(name: 'Interview prep').id,
-  user_id: User.find_by(fname: 'Heisenberg').id,
-  fname: 'zama',
-  lname: 'zrishna',
-  email: 'zk@gmail.com',
-  startdatetime: DateTime.parse('2023-10-22T13:30:00'),
-  enddatetime: DateTime.parse('2023-10-22T17:30:00'),
-  amount_paid: 923,
-  status: 'Booked',
-  created_at: DateTime.parse('2023-10-24T14:30:00'),
-  updated_at: DateTime.parse('2023-10-24T14:30:00')
-},
-          {
-            service_id: Service.find_by(name: 'Interview prep').id,
-            user_id: User.find_by(fname: 'Heisenberg').id,
-            fname: 'karen',
-            lname: 'gilian',
-            email: 'rk@gmail.com',
-            startdatetime: DateTime.parse('2023-10-22T16:30:00'),
-            enddatetime: DateTime.parse('2023-10-22T19:30:00'),
-            amount_paid: 123,
-            status: 'Cancelled',
-            created_at: DateTime.parse('2023-10-24T14:30:00'),
-            updated_at: DateTime.parse('2023-10-24T14:30:00')
-          },
-          {
-            service_id: Service.find_by(name: 'DSA Prep').id,
-            user_id: User.find_by(fname: 'Heisenberg').id,
-            fname: 'remo',
-            lname: 'krishna',
-            email: 'rk@gmail.com',
-            startdatetime: DateTime.parse('2023-10-22T19:30:00'),
-            enddatetime: DateTime.parse('2023-10-22T20:30:00'),
-            amount_paid: 123,
-            status: 'Completed',
-            created_at: DateTime.parse('2023-10-24T14:30:00'),
-            updated_at: DateTime.parse('2023-10-24T14:30:00')
-          }]
+}]
 
-# Appointment.create(appts)
-# Appointment.create(appts2)
-Appointment.destroy_all
-Appointment.create(appts2)
-
-# ResetPasswordSession.create(sessions);
-
-[{ fname: 'Heisenberg', lname: 'U', email: 'heisenberg@gmail.com', password: 'jkjk1234$', about: 'student' }]
-# User.create(userG);
+Appointment.create(appts)

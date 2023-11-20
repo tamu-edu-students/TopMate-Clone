@@ -1,6 +1,6 @@
 ## Running Locally for Development
 
-1. ```git clone git@github.com:tamu-edu-students/TopMate-Clone.git```
+1. ```git clone https://github.com/tamu-edu-students/TopMate-Clone.git```
 2. ```cd topmate-clone```
 3. Install Ruby and Rails
    1. [Ruby Intro](https://github.com/tamu-edu-students/hw-ruby-intro)
@@ -12,8 +12,8 @@
 5. Export environment variables
    1. ```export TOPMATE_DB_DEV_HOST=localhost```
    2. ```export TOPMATE_DB_DEV_PORT=5432```
-   3. ```export TOPMATE_DB_DEV_USER=username```
-   4. ```export TOPMATE_DB_DEV_PASS=password```
+   3. ```export TOPMATE_DB_DEV_USER=<your postgres username>```
+   4. ```export TOPMATE_DB_DEV_PASS=<your postgres password> ```
 6. Create/migrate db’s
    1. ```rake db:create```
    2. ```rake db:migrate```
@@ -21,7 +21,7 @@
       1. optional but recommended, 95% of functionality requires a user's existence
 7. Run tests
    1. ```rspec```
-   2. ```cucumber```
+   2. ```rails cucumber```
 8. Run server
    1. ```rails server```
 9.  Start contributing
