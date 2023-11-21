@@ -8,7 +8,9 @@
     <h1 class="title">Dashboard</h1>
     <div class="navbar-links">
     <% @username = User.find_by(user_id: session[:user_id]).username %>
-    <%= link_to 'Public Profile', public_page_path(@username) %>
+    <% if @username.present? %>
+      <%= link_to 'Public Profile', public_page_path(@username) %>
+    <% end %>
     <%= link_to 'Edit Public Profile', edit_public_page_path %>
     <%= link_to 'Logout', logout_path, method: :delete %>
   </div>
