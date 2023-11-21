@@ -30,7 +30,7 @@ RSpec.describe AppointmentsController, type: :controller do
     start_date: '2023-10-22',
     start_time: '14:30:00',
     amount_paid: @service.price.to_f,
-    status: 'booked'
+    status:  Appointments.status_types['booked']
         }
       }
         expect(response).to redirect_to(public_page_path(@user.username))
