@@ -79,3 +79,21 @@ end
 And('I should see a success message confirming the addition') do
   expect(page).to have_content('Service was successfully created.')
 end
+
+
+Given('I am a logged-in user') do
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
+  visit login_path
+  fill_in 'Email', with: 'test@example.com'
+  fill_in 'Password', with: 'password'
+  click_button 'Login'
+end
+
+When('I visit the edit page with an invalid service token') do
+  # pending # Write code here that turns the phrase above into concrete actions
+  visit edit_service_path("invalid token")
+end
+
+Then('I should see the message {string}') do |string|
+  expect(page).to have_content(string)
+end

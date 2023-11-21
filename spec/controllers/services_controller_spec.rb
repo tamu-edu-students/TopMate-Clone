@@ -70,7 +70,27 @@ RSpec.describe ServicesController, type: :controller do
           expect(flash[:notice]).to eq('Service was successfully created.')
         end
       end
+
+    context 'with invalid parameters' do
+      let(:invalid_params) do
+        { service: { name: '', short_description: '', price: nil, duration: nil } }
+      end
+
+      it 'renders the new template with unprocessable entity status' do
+        post :create, params: invalid_params
+
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to render_template(:new)
+      end
+
+      it 'assigns the invalid service to @service' do
+        post :create, params: invalid_params
+
+        expect(assigns(:service)).to be_a_new(Service)
+        expect(assigns(:service).errors.any?).to be_truthy
+      end
     end
+  end
 
     context 'when user is not logged in' do
       before { post :create }
@@ -83,9 +103,7 @@ RSpec.describe ServicesController, type: :controller do
 
   describe 'POST #edit' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
-    let(:service) do
-      Service.create(name: 'Test Service', short_description: 'test service description', price: 120, duration: 10)
-    end
+    let(:service) {Service.create(name: 'Test Service', short_description: 'test service description', price: 120, duration: 10)}
 
     context 'when user is logged in' do
       before { session[:user_id] = user.user_id }
