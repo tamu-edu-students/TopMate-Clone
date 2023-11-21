@@ -155,7 +155,7 @@ RSpec.describe ServicesController, type: :controller do
       before { session[:user_id] = user.user_id }
 
       context 'session is not published' do
-        let(:service) { user.services.create(name: 'Service', short_description:'desc', price: 0, duration: 0, is_published: false )  }
+        let(:service) { user.services.create(name: 'Service', short_description:'desc', price: 1, duration: 1, is_published: false )  }
         let(:valid_params) do
           { id: service.id }
         end
@@ -172,7 +172,7 @@ RSpec.describe ServicesController, type: :controller do
       end
 
       context 'session is published' do
-        let(:service) { user.services.create(name: 'Service', short_description:'desc', price: 0, duration: 0, is_published: true )  }
+        let(:service) { user.services.create(name: 'Service', short_description:'desc', price: 1, duration: 1, is_published: true )  }
         let(:valid_params) do
           { id: service.id }
         end

@@ -14,7 +14,10 @@ class ServicesController < ApplicationController
     if @service.save
       redirect_to servicesindex_path, success: 'Service was successfully created.'
     else
-      redirect_to servicesindex_path, error: 'Service failed to be created.'
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -35,7 +38,10 @@ class ServicesController < ApplicationController
     elsif @service.update(service_params)
       redirect_to servicesindex_url, success: "Successfully edited service #{@service.name}."
     else
-      redirect_to servicesindex_url, error: "Failed to update service."
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
     end
   end
 
