@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Given('I am on {string} page for an existing service') do |_p|
-  @user = User.create(fname: 'Geetesh', lname: 'Doe', email: 'editservices@example.com', password: 'password12@')
+  @user = User.create(fname: 'Geetesh', lname: 'Doe', email: 'editservices@example.com', password: 'password12@',
+                      username: 'gdoe')
   @user.save!
 
   visit login_path
@@ -17,7 +18,8 @@ Given('I am on {string} page for an existing service') do |_p|
 end
 
 Given('I am on {string} page for an invalid service') do |_p|
-  @user = User.create(fname: 'Geetesh', lname: 'Doe', email: 'editservices@example.com', password: 'password12@')
+  @user = User.create(fname: 'Geetesh', lname: 'Doe', email: 'editservices@example.com', password: 'password12@',
+                      username: 'gdoe')
   @user.save!
 
   visit login_path

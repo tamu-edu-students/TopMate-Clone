@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe EditPublicPageController, type: :controller do
@@ -31,6 +33,5 @@ RSpec.describe EditPublicPageController, type: :controller do
       post :update, params: { user: { fname: 'John' } }
       expect(response).to redirect_to(dashboard_path)
     end
-
   end
 end

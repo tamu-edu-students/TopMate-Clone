@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Given('I am on the hours page') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password')
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'
@@ -14,7 +14,7 @@ When('I click on {string}') do |string|
 end
 
 Given('I am on the add hours page') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password')
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'jdoe')
   visit login_path
   fill_in 'Email', with: 'test@example.com'
   fill_in 'Password', with: 'password'
@@ -35,15 +35,15 @@ Given('I fill in time select {string} with {string}') do |string, string2|
   time = Time.zone.parse(string2)
 
   # Set the hour string
-  if time.hour == 0
-    hour = "12 AM"
-  elsif time.hour < 12
-    hour = time.hour.to_s + " AM"
-  elsif time.hour == 12
-    hour = "12 PM"
-  else
-    hour = (time.hour - 12).to_s + " PM"
-  end
+  hour = if time.hour.zero?
+           '12 AM'
+         elsif time.hour < 12
+           "#{time.hour} AM"
+         elsif time.hour == 12
+           '12 PM'
+         else
+           "#{time.hour - 12} PM"
+         end
 
   find(:xpath, ".//select[@id='#{base_dom_id}_4i']").select(hour)
   find(:xpath, ".//select[@id='#{base_dom_id}_5i']").select(time.min.to_s.rjust(2, '0'))

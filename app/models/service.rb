@@ -12,8 +12,8 @@ class Service < ApplicationRecord
   validate :price_is_valid_precision
 
   def price_is_valid_precision
-    if price.to_f != price.to_f.round(2)
-      errors.add(:price, "is invalid. Too many decimal places.")
-    end
+    return unless price.to_f != price.to_f.round(2)
+
+    errors.add(:price, 'is invalid. Too many decimal places.')
   end
 end

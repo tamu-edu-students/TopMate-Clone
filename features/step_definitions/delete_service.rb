@@ -3,7 +3,7 @@
 # Step definitions for Scenario: delete an existing service
 
 Given('I am on the services index page') do
-  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password')
+  @user = User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password', username: 'johndoe')
   @user.save!
 
   visit login_path

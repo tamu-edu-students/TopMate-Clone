@@ -12,35 +12,30 @@ class Hour < ApplicationRecord
   validate :times_must_not_overlap
 
   def times_must_be_fifteen_min_intervals
-    if start_time.nil? || start_time.min % 15 != 0
-      errors.add(:start_time, "start time must be on 15-minute interval")
-    end
-    if end_time.nil? || end_time.min % 15 != 0
-      errors.add(:end_time, "start time must be on 15-minute interval")
-    end
+    errors.add(:start_time, 'start time must be on 15-minute interval') if start_time.nil? || start_time.min % 15 != 0
+    return unless end_time.nil? || end_time.min % 15 != 0
+
+    errors.add(:end_time, 'start time must be on 15-minute interval')
   end
 
   def must_have_30_min_gap
-    if start_time.nil? || end_time.nil?
-      return
-    end
+    return if start_time.nil? || end_time.nil?
+
     start_stamp = start_time.hour * 60 + start_time.min
     end_stamp = end_time.hour * 60 + end_time.min
-    if end_stamp - start_stamp < 30
-      errors.add(:end_time, "must at least 30 minutes after start time")
-    end
+    return unless end_stamp - start_stamp < 30
+
+    errors.add(:end_time, 'must at least 30 minutes after start time')
   end
 
   def times_must_not_overlap
-    if start_time.nil? || end_time.nil?
-      return
-    end
-    all_user_hours = Hour.where(user_id: user_id)
+    return if start_time.nil? || end_time.nil?
+
+    all_user_hours = Hour.where(user_id:)
     all_user_hours.each do |h|
       # ignore if different day
-      if day != h.day
-        next
-      end
+      next if day != h.day
+
       # calculate minutes since midnight
       start_stamp = start_time.hour * 60 + start_time.min
       end_stamp = end_time.hour * 60 + end_time.min
@@ -48,14 +43,14 @@ class Hour < ApplicationRecord
       h_end_stamp = h.end_time.hour * 60 + h.end_time.min
       # check position
       if start_stamp >= h_start_stamp && start_stamp <= h_end_stamp
-        errors.add(:start_time, "cannot overlap with another availability")
+        errors.add(:start_time, 'cannot overlap with another availability')
       end
       if end_stamp >= h_start_stamp && end_stamp <= h_end_stamp
-        errors.add(:end_time, "cannot overlap with another availability")
+        errors.add(:end_time, 'cannot overlap with another availability')
       end
       if start_stamp < h_start_stamp && end_stamp > h_end_stamp
-        errors.add(:start_time, "cannot overlap with another availability")
-        errors.add(:end_time, "cannot overlap with another availability")
+        errors.add(:start_time, 'cannot overlap with another availability')
+        errors.add(:end_time, 'cannot overlap with another availability')
       end
     end
   end

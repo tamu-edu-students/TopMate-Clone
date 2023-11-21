@@ -50,7 +50,7 @@ class ServicesController < ApplicationController
     if @service.nil?
       flash[:error] = 'Service not found'
       render plain: 'Service does not exist.'
-    else
+    elsif
       # Toggle publish status
       if @service.update(is_published: !@service.is_published)
         redirect_to servicesindex_url
@@ -94,7 +94,7 @@ class ServicesController < ApplicationController
   def get_current_user
     @current_user ||= User.find_by(user_id: session[:user_id])
   end
-  
+
   def redirect_if_logged_out
     redirect_to login_url if @current_user.nil?
   end

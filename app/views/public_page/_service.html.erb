@@ -1,4 +1,4 @@
-<a href="<%= show_service_path(data,service) %>" class="service">
+<a id="<%= service.name.gsub(' ', '_') %>" href="<%= show_service_path(data,service) %>" class="service">
   <h3 class="service-title"><%= service.name %></h3>
   <p class="service-description"><%= service.short_description %></p>
   <p class="service-price-duration"><%= "$#{format("%.2f", service.price)} 
