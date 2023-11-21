@@ -8,7 +8,18 @@
       <h1>Edit Public Page Information</h1>
 
       <%= form_for @current_user , url: edit_public_page_update_path, method: :patch do |form| %>
-    <%#   form_with(model: @user, url: services_path(@user), local: true) do |form|  %>
+        <% if @current_user.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(@current_user.errors.count, "error") %> prohibited this update from being saved:</h2>
+
+            <ul>
+              <% @current_user.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <%= form.label :fname, "First Name" %>
         <%= form.text_field :fname %>
 

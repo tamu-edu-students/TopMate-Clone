@@ -8,7 +8,10 @@ class EditPublicPageController < ApplicationController
     if @current_user.update(user_params)
       redirect_to dashboard_path, success: 'Public page was successfully updated.'
     else
-      redirect_to dashboard_path, error: 'Public page failed to update.'
+      respond_to do |format|
+        format.html { render :index, status: :unprocessable_entity }
+        format.json { render json: @current_user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
