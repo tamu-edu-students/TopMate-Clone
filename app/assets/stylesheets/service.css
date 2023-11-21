@@ -132,3 +132,8 @@ textarea {
 }
 
 /* Add styles for the alert messages, buttons, and other elements as needed */
+.alert {
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 5px;
+}

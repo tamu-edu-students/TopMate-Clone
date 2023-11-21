@@ -14,15 +14,15 @@
     
   </div>
   
+    <% flash.each do |key, message|%>
+      <div class="alert">
+        <%= message%>
+      </div>
+    <%end%>
     <div class="dashboard-container">
     <center>
       <h1>Welcome to the Dashboard Page</h1>
       <p>Logged in as <%= @current_user.email %></p>
-      <% flash.each do |key, message|%>
-        <div class="alert">
-          <%= message%>
-        </div>
-      <%end%>
       
       <div class="square-items">
       <%= link_to 'Services', servicesindex_path, class: 'button'%>
