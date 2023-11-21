@@ -29,7 +29,10 @@ class HoursController < ApplicationController
     if @hour.save
       redirect_to hours_url, success: 'Time slot successfully added!'
     else
-      redirect_to hours_url, error: 'Time slot failed to update.'
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @hour.errors, status: :unprocessable_entity }
+      end
     end
   end
 
