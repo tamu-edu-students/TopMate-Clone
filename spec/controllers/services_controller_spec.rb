@@ -171,6 +171,45 @@ RSpec.describe ServicesController, type: :controller do
     end
   end
 
+describe 'POST #submit_edit' do
+    let(:user) { FactoryBot.create(:user) }
+    context 'when user is logged in' do
+      before do
+         session[:user_id] = user.user_id
+      end
+    context 'the service exists' do
+      let(:service) { FactoryBot.create(:service, user: user) }
+
+      it 'updates the service and redirects to services index' do
+        post :submit_edit, params: { token: service.id, service: { name: 'Updated Service' } }
+        service_res=Service.find_by_id(service.id)
+        expect(service_res.name).to eq('Updated Service')
+        expect(response).to redirect_to(servicesindex_url)
+      end
+    end
+
+    context 'when the service does not exist' do
+      it 'renders a plain text response and sets a flash error message' do
+        post :submit_edit, params: { token: 'nonexistent_token', service: { name: 'Updated Service' } }
+        expect(response.body).to eq('Service does not exist.')
+        expect(flash[:error]).to eq('Service not found')
+      end
+    end
+
+    context 'when the service update fails' do
+      let(:service) { FactoryBot.create(:service, user: user) }
+
+      it 'redirects back with a flash error message' do
+        allow_any_instance_of(Service).to receive(:update).and_return(false)
+        post :submit_edit, params: { token: service.id, service: { name: 'Updated Service' } }
+        expect(flash[:error]).to eq('Failed to update service')
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
+  end
+
+
   describe 'POST #togglepublish' do
     let(:user) { User.create(fname: 'John', lname: 'Doe', email: 'test@example.com', password: 'password') }
 

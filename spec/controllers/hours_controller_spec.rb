@@ -9,7 +9,7 @@ RSpec.describe HoursController, type: :controller do
     context 'when the user is logged in' do
       let(:user) { create(:user) }
 
-      before { allow(controller).to receive(:find_current_user) { user } }
+      before { allow(controller).to receive(:get_current_user) { user } }
 
       it 'assigns the current user' do
         get :index
@@ -31,7 +31,7 @@ RSpec.describe HoursController, type: :controller do
     end
 
     context 'when the user is not logged in' do
-      before { allow(controller).to receive(:find_current_user) { nil } }
+      before { allow(controller).to receive(:get_current_user) { nil } }
 
       it 'redirects to the login page' do
         get :index
@@ -43,7 +43,7 @@ RSpec.describe HoursController, type: :controller do
   describe 'GET #new' do
     let(:user) { create(:user) }
 
-    before { allow(controller).to receive(:find_current_user) { user } }
+    before { allow(controller).to receive(:get_current_user) { user } }
 
     it 'assigns a new hour instance' do
       get :new
@@ -74,7 +74,7 @@ RSpec.describe HoursController, type: :controller do
       }
     end
 
-    before { allow(controller).to receive(:find_current_user) { user } }
+    before { allow(controller).to receive(:get_current_user) { user } }
 
     context 'with valid parameters' do
       it 'creates a new hour' do
@@ -129,7 +129,7 @@ RSpec.describe HoursController, type: :controller do
     let(:user) { create(:user) }
     let(:hour) { create(:hour, user: user) }
 
-    before { allow(controller).to receive(:find_current_user) { user } }
+    before { allow(controller).to receive(:get_current_user) { user } }
 
     it 'destroys the requested hour' do
       hour # Ensure the hour exists

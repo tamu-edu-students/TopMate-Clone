@@ -90,7 +90,6 @@ Given('I am a logged-in user') do
 end
 
 When('I visit the edit page with an invalid service token') do
-  # pending # Write code here that turns the phrase above into concrete actions
   visit edit_service_path("invalid token")
 end
 
