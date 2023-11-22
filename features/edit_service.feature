@@ -11,7 +11,7 @@ Feature: Edit Service
     And I fill in "service_short_description" with "Mock sessions for 40 hrs"
     And I fill in "service_price" with "777"
     And I fill in "service_duration" with "776"
-    And I click the "Edit Service" button
+    And I click the "Save" button
     Then I should see "Mock Sessions"
     Then I should see "Mock sessions for 40 hrs"
     Then I should see "777"
