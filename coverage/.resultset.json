@@ -807,11 +807,6 @@
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
           5,
           5,
@@ -843,10 +838,6 @@
           1,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
           1,
           1,
           1,
@@ -879,26 +870,25 @@
         "lines": [
           null,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          0,
+          0,
+          0,
+          0
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1700682683
+    "timestamp": 1700685910
   },
   "Cucumber Features": {
     "coverage": {
