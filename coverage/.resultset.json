@@ -1034,7 +1034,6 @@
           3,
           3,
           null,
-          null,
           3,
           21,
           null,
@@ -1078,6 +1077,7 @@
           1,
           1,
           1,
+          1,
           7,
           0,
           null,
@@ -1090,7 +1090,7 @@
           null,
           1,
           1,
-          1,
+          null,
           1,
           null,
           0,
@@ -1257,7 +1257,7 @@
           null
         ]
       },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointments.rb": {
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointment.rb": {
         "lines": [
           null,
           null,
@@ -1266,10 +1266,7 @@
           1,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
+          1,
           1,
           1,
           1,
@@ -1451,15 +1448,6 @@
           1,
           13,
           null,
-          null
-        ]
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointment.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
           null
         ]
       },
@@ -1663,17 +1651,11 @@
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
           0,
-          null,
           0,
           0,
-          null,
+          0,
           null,
           0,
           null,
@@ -1776,8 +1758,29 @@
         ],
         "branches": {
         }
+      },
+      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointments.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1700623768
+    "timestamp": 1700686822
   }
 }
