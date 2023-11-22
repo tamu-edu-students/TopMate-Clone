@@ -7,7 +7,11 @@ FactoryBot.define do
     fname { 'John' }
     lname { 'Doe' }
     email { 'johndoe@example.com' }
-    password { 'your_password' }
-    # Other user attributes...
+    password_digest { BCrypt::Password.create('your_password') }
+    about { 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }
+    created_at { Time.current }
+    updated_at { Time.current }
+    profile_image { 'https://example.com/profile_image.jpg' }
+    username { 'johndoe' }
   end
 end

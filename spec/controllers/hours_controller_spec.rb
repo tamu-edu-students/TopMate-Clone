@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # spec/controllers/hours_controller_spec.rb
-''"
+
 require 'rails_helper'
 
 RSpec.describe HoursController, type: :controller do
@@ -9,7 +9,7 @@ RSpec.describe HoursController, type: :controller do
     context 'when the user is logged in' do
       let(:user) { create(:user) }
 
-      before { allow(controller).to receive(:get_current_user) { user } }
+      before { session[:user_id] = user.user_id }
 
       it 'assigns the current user' do
         get :index
@@ -17,7 +17,15 @@ RSpec.describe HoursController, type: :controller do
       end
 
       it 'retrieves and sorts the user\'s hours' do
-        hours = create_list(:hour, 5, user: user)
+        hours = [
+          create(:hour, user: user, day: 0),
+          create(:hour, user: user, day: 1),
+          create(:hour, user: user, day: 2),
+          create(:hour, user: user, day: 3),
+          create(:hour, user: user, day: 4),
+          create(:hour, user: user, day: 5),
+          create(:hour, user: user, day: 6),
+        ]
         get :index
         expect(assigns(:days)).to be_an(Array)
         expect(assigns(:days).size).to eq(7)
@@ -43,7 +51,7 @@ RSpec.describe HoursController, type: :controller do
   describe 'GET #new' do
     let(:user) { create(:user) }
 
-    before { allow(controller).to receive(:get_current_user) { user } }
+    before { session[:user_id] = user.user_id }
 
     it 'assigns a new hour instance' do
       get :new
@@ -74,7 +82,7 @@ RSpec.describe HoursController, type: :controller do
       }
     end
 
-    before { allow(controller).to receive(:get_current_user) { user } }
+    before { session[:user_id] = user.user_id }
 
     context 'with valid parameters' do
       it 'creates a new hour' do
@@ -91,7 +99,7 @@ RSpec.describe HoursController, type: :controller do
 
       it 'redirects to the hour show page' do
         post :create, params: valid_params
-        expect(response).to redirect_to(hour_url(assigns(:hour)))
+        expect(response).to redirect_to(hours_url(assigns(:hour)))
       end
     end
 
@@ -129,7 +137,7 @@ RSpec.describe HoursController, type: :controller do
     let(:user) { create(:user) }
     let(:hour) { create(:hour, user: user) }
 
-    before { allow(controller).to receive(:get_current_user) { user } }
+    before { session[:user_id] = user.user_id }
 
     it 'destroys the requested hour' do
       hour # Ensure the hour exists
@@ -144,4 +152,3 @@ RSpec.describe HoursController, type: :controller do
     end
   end
 end
-"''
