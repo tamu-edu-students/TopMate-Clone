@@ -14,10 +14,9 @@ class AppointmentsController < ApplicationController
     @service_id = params[:service_id]
     @service = Service.find_by(id: params[:service_id])
     if !@service.nil?
-      @appointment = Appointments.new
+      @appointment = Appointment.new
       start_date = Date.today
       next_seven_days = []
-
       # Iterate through the next seven days and add them to the array
       7.times do |day_offset|
         next_seven_days << start_date + day_offset
@@ -55,6 +54,7 @@ class AppointmentsController < ApplicationController
 
   def edit
     @appointment = Appointment.find_by(id: params[:id])
+    if @appointment
     @user = User.find_by(user_id: @appointment.user_id)
     @service = Service.find_by(id: @appointment.service_id)
     api_data = get_next_seven_day_time_slots(@user, Date.today)
@@ -74,11 +74,11 @@ class AppointmentsController < ApplicationController
     end
     @slots_data_start_datetime = dummy_slots_data_start_datetime
     @slots_data_end_datetime = dummy_slots_data_end_datetime
-    if @appointment
+
       render :edit
     else
-      redirect_to public_page_path(@user.username), alert: 'Invalid token'
-    end
+      redirect_to public_page_path(@user.username ), alert: 'Invalid token'
+      end
   end
 
   def update
@@ -101,7 +101,7 @@ class AppointmentsController < ApplicationController
     @user = User.find_by(username: params[:username])
     @service_id = params[:service_id]
     @service = Service.find_by(id: params[:service_id])
-    @appointment = Appointments.new(appointments_params)
+    @appointment = Appointment.new(appointments_params)
     flash[:error] ||= ''
     @errors = []
     @errors.push('First Name') if @appointment.fname.nil? || @appointment.fname.empty?
@@ -154,7 +154,7 @@ class AppointmentsController < ApplicationController
     @appointment.user_id = @user.id
     @appointment.amount_paid = @service.price.to_f
     @appointment.service_id = @service.id
-    @appointment.status = Appointments.status_types['booked']
+    @appointment.status = Appointment.status_types['booked']
 
     @save = @appointment.save!
     if @save
@@ -167,7 +167,7 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @appointment = Appointment.find_by(id: params[:id])
-    @appointment.update(status: Appointments.status_types['cancelled'])
+    @appointment.update(status: Appointment.status_types['cancelled'])
     @appointment.save
     redirect_to public_page_path(@appointment.user.username), success: 'Appointment cancelled successfully!'
   end
@@ -175,7 +175,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointments_params
-    params.require(:appointments).permit(:fname, :lname, :email, :start_date, :start_time)
+    params.require(:appointment).permit(:fname, :lname, :email, :start_date, :start_time)
   end
 
   def update_params

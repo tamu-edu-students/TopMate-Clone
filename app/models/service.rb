@@ -2,7 +2,7 @@
 
 class Service < ApplicationRecord
   belongs_to :user
-  has_many :appointment
+  has_many :appointments
 
   validates :name, presence: true
   validates :short_description, presence: true, length: { maximum: 60 }

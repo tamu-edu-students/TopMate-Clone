@@ -6,7 +6,7 @@ class Hour < ApplicationRecord
   validates :user_id, presence: true
   validates :day, comparison: { greater_than_or_equal_to: 0, less_than: 7 }
   validates :start_time, presence: true
-  validates :end_time, comparison: { greater_than: :start_time }
+  validates :end_time, comparison: { greater_than: :start_time , message: "must be greater than the start time"  }
   validate :times_must_be_fifteen_min_intervals
   validate :must_have_30_min_gap
   validate :times_must_not_overlap

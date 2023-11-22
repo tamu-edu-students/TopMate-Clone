@@ -22,7 +22,6 @@ class EmailSubmissionController < ApplicationController
   end
 
   def generateResetSession(user)
-    puts "Generating reset session for user #{user.id}"
     session_token = SecureRandom.uuid
     ResetPasswordSession.create(user_id: user.id, session_token:)
     session_token
