@@ -81,7 +81,7 @@ RSpec.describe Hour, type: :model do
     end
 
     it 'validates end_time' do
-      hour = Hour.new(start_time: Time.now, end_time: Time.now - 1.hour)
+      hour = Hour.new(start_time: Time.new(2023, 1, 1, 12, 15), end_time: Time.new(2023, 1, 1, 12, 00))
       hour.valid?
       expect(hour.errors[:end_time]).to include('must be greater than the start time')
     end
