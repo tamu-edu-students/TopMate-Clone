@@ -39,11 +39,18 @@ class HoursController < ApplicationController
 
   # DELETE /hours/1 or /hours/1.json
   def destroy
-    @current_user.hours.find(params[:id]).destroy
+    @hour = @current_user.hours.find(params[:id])
+    day_of_week = @hour.day
+    start_time = @hour.start_time
+    end_time = @hour.end_time
+    # Find all appointments for the same day of the week as the hour
+    appointments = Appointment.where("EXTRACT(DOW FROM startdatetime::date) = ? AND status = ?", day_of_week, "Booked")
 
-    respond_to do |format|
-      format.html { redirect_to hours_url, notice: 'Hour was successfully destroyed.' }
-      format.json { head :no_content }
+    if appointments.any? { |appointment| appointment.startdatetime.strftime("%H:%M") >= @hour.start_time.strftime("%H:%M") && appointment.enddatetime.strftime("%H:%M") <= @hour.end_time.strftime("%H:%M") }
+      redirect_to hours_url, error: "Cannot delete hours for which appointments are booked"
+    else
+      @hour.destroy
+      redirect_to hours_url, notice: "Hour was successfully destroyed."
     end
   end
 

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-22T18:03:55-06:00">2023-11-22T18:03:55-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-11-22T22:47:48-06:00">2023-11-22T22:47:48-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.32%
+  99.11%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         10.07
+         9.98
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>444</b> relevant lines,
-    <span class="green"><b>441</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed. </span>
+    <b>449</b> relevant lines,
+    <span class="green"><b>445</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed. </span>
     (<span class="green">
-  99.32%
+  99.11%
 </span>
 )
   </div>
@@ -138,12 +138,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#be645370a08b058ae77d381c07ffe34fef95e1e7" class="src_link" title="app/controllers/hours_controller.rb">app/controllers/hours_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">64</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">9.37</td>
+            <td class="green strong cell--number t-file__coverage">97.50 %</td>
+            <td class="cell--number">71</td>
+            <td class="cell--number">40</td>
+            <td class="cell--number">39</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">8.35</td>
             
           </tr>
         
@@ -341,7 +341,7 @@
             <td class="cell--number">35</td>
             <td class="cell--number">35</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">27.89</td>
+            <td class="cell--number">27.91</td>
             
           </tr>
         
@@ -390,14 +390,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="green">
-  99.07%
+  98.78%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.27
+         5.21
        </span>
     </span> hits/line
     )
@@ -410,11 +410,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>323</b> relevant lines,
-    <span class="green"><b>320</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed. </span>
+    <b>328</b> relevant lines,
+    <span class="green"><b>324</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed. </span>
     (<span class="green">
-  99.07%
+  98.78%
 </span>
 )
   </div>
@@ -505,12 +505,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#be645370a08b058ae77d381c07ffe34fef95e1e7" class="src_link" title="app/controllers/hours_controller.rb">app/controllers/hours_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">64</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">9.37</td>
+            <td class="green strong cell--number t-file__coverage">97.50 %</td>
+            <td class="cell--number">71</td>
+            <td class="cell--number">40</td>
+            <td class="cell--number">39</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">8.35</td>
             
           </tr>
         
@@ -645,7 +645,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         17.46
+         17.48
        </span>
     </span> hits/line
     )
@@ -714,7 +714,7 @@
             <td class="cell--number">35</td>
             <td class="cell--number">35</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">27.89</td>
+            <td class="cell--number">27.91</td>
             
           </tr>
         
@@ -4369,7 +4369,7 @@
     <h3>app/controllers/hours_controller.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  97.5%
 </span>
 
       lines covered
@@ -4378,9 +4378,9 @@
     
 
     <div class="t-line-summary">
-      <b>35</b> relevant lines.
-      <span class="green"><b>35</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>40</b> relevant lines.
+      <span class="green"><b>39</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
 
     
@@ -4848,18 +4848,18 @@
 
             
 
-            <code class="ruby">    @current_user.hours.find(params[:id]).destroy</code>
+            <code class="ruby">    @hour = @current_user.hours.find(params[:id])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="43">
+            <span class="hits">2</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    day_of_week = @hour.day</code>
           </li>
         </div>
       
@@ -4870,40 +4870,40 @@
 
             
 
-            <code class="ruby">    respond_to do |format|</code>
+            <code class="ruby">    start_time = @hour.start_time</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="45">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">      format.html { redirect_to hours_url, notice: &#39;Hour was successfully destroyed.&#39; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="46">
+          <li class="covered" data-hits="2" data-linenumber="45">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      format.json { head :no_content }</code>
+            <code class="ruby">    end_time = @hour.end_time</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="47">
+          <li class="never" data-hits="" data-linenumber="46">
             
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    # Find all appointments for the same day of the week as the hour</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="47">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    appointments = Appointment.where(&quot;EXTRACT(DOW FROM startdatetime::date) = ? AND status = ?&quot;, day_of_week, &quot;Booked&quot;)</code>
           </li>
         </div>
       
@@ -4914,29 +4914,29 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="49">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="50">
+          <li class="covered" data-hits="2" data-linenumber="49">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">    if appointments.any? { |appointment| appointment.startdatetime.strftime(&quot;%H:%M&quot;) &gt;= @hour.start_time.strftime(&quot;%H:%M&quot;) &amp;&amp; appointment.enddatetime.strftime(&quot;%H:%M&quot;) &lt;= @hour.end_time.strftime(&quot;%H:%M&quot;) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby">      redirect_to hours_url, error: &quot;Cannot delete hours for which appointments are booked&quot;</code>
           </li>
         </div>
       
@@ -4947,18 +4947,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    else</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="52">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  # Only allow a list of trusted parameters through.</code>
+            
+
+            <code class="ruby">      @hour.destroy</code>
           </li>
         </div>
       
@@ -4969,18 +4969,18 @@
 
             
 
-            <code class="ruby">  def hour_params</code>
+            <code class="ruby">      redirect_to hours_url, notice: &quot;Hour was successfully destroyed.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="54">
-            <span class="hits">8</span>
+          <li class="never" data-hits="" data-linenumber="54">
+            
             
 
             
 
-            <code class="ruby">    params.require(:hour).permit(:day, :start_time, :end_time)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -5013,34 +5013,12 @@
 
             
 
-            <code class="ruby">  def get_current_user</code>
+            <code class="ruby">  private</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="21" data-linenumber="58">
-            <span class="hits">21</span>
-            
-
-            
-
-            <code class="ruby">    @current_user ||= User.find_by(user_id: session[:user_id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 
@@ -5051,29 +5029,40 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">  # Only allow a list of trusted parameters through.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="60">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  def redirect_if_logged_out</code>
+            <code class="ruby">  def hour_params</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="62">
-            <span class="hits">22</span>
+          <li class="covered" data-hits="8" data-linenumber="61">
+            <span class="hits">8</span>
             
 
             
 
-            <code class="ruby">    redirect_to login_url if @current_user.nil?</code>
+            <code class="ruby">    params.require(:hour).permit(:day, :start_time, :end_time)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="never" data-hits="" data-linenumber="62">
             
             
 
@@ -5084,7 +5073,95 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="64">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  def get_current_user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="21" data-linenumber="65">
+            <span class="hits">21</span>
+            
+
+            
+
+            <code class="ruby">    @current_user ||= User.find_by(user_id: session[:user_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="68">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  def redirect_if_logged_out</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="22" data-linenumber="69">
+            <span class="hits">22</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to login_url if @current_user.nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -9503,8 +9580,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="28">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="8" data-linenumber="28">
+            <span class="hits">8</span>
             
 
             
