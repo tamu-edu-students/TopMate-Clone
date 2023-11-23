@@ -155,7 +155,7 @@
           62,
           62,
           null,
-          7,
+          6,
           null,
           null,
           1,
@@ -865,30 +865,9 @@
           1,
           null
         ]
-      },
-      "/home/ubuntu/.ashup99/TAMU/Fall 23/Assignments/SE/TopMate-Clone/app/models/appointments.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1700685910
+    "timestamp": 1700697773
   },
   "Cucumber Features": {
     "coverage": {
@@ -1760,6 +1739,6 @@
         }
       }
     },
-    "timestamp": 1700697492
+    "timestamp": 1700697835
   }
 }
