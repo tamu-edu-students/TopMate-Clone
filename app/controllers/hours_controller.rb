@@ -43,20 +43,13 @@ class HoursController < ApplicationController
     day_of_week = @hour.day
     start_time = @hour.start_time
     end_time = @hour.end_time
-    puts "day_of_week: #{day_of_week}"
-    puts "Start Time: #{start_time}"
-    puts "End Time: #{end_time}"
-    
-
     # Find all appointments for the same day of the week as the hour
     appointments = Appointment.where("EXTRACT(DOW FROM startdatetime::date) = ? AND status = ?", day_of_week, "Booked")
 
     if appointments.any? { |appointment| appointment.startdatetime.strftime("%H:%M") >= @hour.start_time.strftime("%H:%M") && appointment.enddatetime.strftime("%H:%M") <= @hour.end_time.strftime("%H:%M") }
-      puts "Appointments exist!"
       redirect_to hours_url, error: "Cannot delete hours for which appointments are booked"
     else
       @hour.destroy
-      puts "Hour destroyed!"
       redirect_to hours_url, notice: "Hour was successfully destroyed."
     end
   end
