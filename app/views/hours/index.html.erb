@@ -9,6 +9,11 @@
   </div>
   </div>
 
+<% if flash[:error] %>
+  <div class="error-message">
+    <%= flash[:error] %>
+  </div>
+<% end %>
 
 <div id="days" class="days-container">
   <% [0, 1, 2, 3, 4, 5, 6].each do |day| %>
