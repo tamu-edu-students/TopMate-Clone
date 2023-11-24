@@ -99,7 +99,7 @@ RSpec.describe HoursController, type: :controller do
 
       it 'redirects to the hour show page' do
         post :create, params: valid_params
-        expect(response).to redirect_to(hours_url(assigns(:hour)))
+        expect(response).to redirect_to(hours_url)
       end
     end
 

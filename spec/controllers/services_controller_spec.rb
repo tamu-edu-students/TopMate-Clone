@@ -67,7 +67,7 @@ RSpec.describe ServicesController, type: :controller do
 
         it 'sets a success notice' do
           post :create, params: valid_params
-          expect(flash[:notice]).to eq('Service was successfully created.')
+          expect(flash[:success]).to eq('Service was successfully created.')
         end
       end
 
@@ -223,8 +223,8 @@ RSpec.describe ServicesController, type: :controller do
       it 'sets a flash error message and redirects back' do
         allow_any_instance_of(Service).to receive(:update).and_return(false)
         put :togglepublish, params: { id: service.id }
-        expect(flash[:error]).to eq('Failed to update service')
-        expect(response).to redirect_to(root_path)
+        expect(flash[:error]).to eq('Failed to publish service.')
+        expect(response).to redirect_to(servicesindex_url)
       end
     end
     end
@@ -289,8 +289,7 @@ describe 'POST #submit_edit' do
       it 'redirects back with a flash error message' do
         allow_any_instance_of(Service).to receive(:update).and_return(false)
         post :submit_edit, params: { token: service.id, service: { name: 'Updated Service' } }
-        expect(flash[:error]).to eq('Failed to update service')
-        expect(response).to redirect_to(root_path)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end

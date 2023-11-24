@@ -83,7 +83,7 @@ RSpec.describe Hour, type: :model do
     it 'validates end_time' do
       hour = Hour.new(start_time: Time.new(2023, 1, 1, 12, 15), end_time: Time.new(2023, 1, 1, 12, 00))
       hour.valid?
-      expect(hour.errors[:end_time]).to include('must be greater than the start time')
+      expect(hour.errors[:end_time]).to include('must at least 30 minutes after start time')
     end
 
     it 'validates times must be fifteen minute intervals' do

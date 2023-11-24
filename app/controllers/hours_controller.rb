@@ -26,11 +26,10 @@ class HoursController < ApplicationController
     dayObject = Struct.new(:id, :day)
     @days = Date::DAYNAMES.map.with_index { |day, index| dayObject.new(index, day) }
     @hour = @current_user.hours.new(hour_params)
-    respond_to do |format|
-      if @hour.save
-        format.html { redirect_to hours_url(@hour), notice: 'Hour was successfully created.' }
-        format.json { render :show, status: :created, location: @hour }
-      else
+    if @hour.save
+      redirect_to hours_url, success: 'Time slot successfully added!'
+    else
+      respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @hour.errors, status: :unprocessable_entity }
       end
@@ -47,10 +46,13 @@ class HoursController < ApplicationController
     appointments = Appointment.where("EXTRACT(DOW FROM startdatetime::date) = ? AND status = ?", day_of_week, "Booked")
 
     if appointments.any? { |appointment| appointment.startdatetime.strftime("%H:%M") >= @hour.start_time.strftime("%H:%M") && appointment.enddatetime.strftime("%H:%M") <= @hour.end_time.strftime("%H:%M") }
-      redirect_to hours_url, error: "Cannot delete hours for which appointments are booked"
+      redirect_to hours_url, error: "Cannot delete time slots for which appointments are booked"
     else
-      @hour.destroy
-      redirect_to hours_url, notice: "Hour was successfully destroyed."
+      if @current_user.hours.find(params[:id]).destroy
+        redirect_to hours_url, success: 'Time slot successfully deleted!'
+      else
+        redirect_to hours_url, error: 'Time slot failed to delete.'
+      end
     end
   end
 

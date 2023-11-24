@@ -33,19 +33,17 @@ RSpec.describe EditPublicPageController, type: :controller do
       expect(User).to receive(:find_by).with(user_id: user.user_id).and_return(user)
       expect(user).to receive(:update).and_return(true)
       post :update, params: { user: { fname: 'John' } }
-      expect(response).to redirect_to(edit_public_page_path)
+      expect(response).to redirect_to(dashboard_path)
       expect(flash[:error]).to be_nil
-      expect(flash[:notice]).to eq('Public page was successfully updated.')
+      expect(flash[:success]).to eq('Public page was successfully updated.')
     end
 
-    it 'handles update failure and sets flash error message' do
+    it 'handles update failure' do
       session[:user_id] = user.user_id # Simulate being logged in
       expect(User).to receive(:find_by).with(user_id: user.user_id).and_return(user)
       expect(user).to receive(:update).and_return(false)
       post :update, params: { user: { fname: 'John' } }
-      expect(response).to redirect_to(edit_public_page_path)
-      expect(flash[:error]).to eq(user.errors.full_messages.to_sentence)
-      expect(flash[:notice]).to be_nil
+      expect(response).to have_http_status(:unprocessable_entity)
     end
   end
 end

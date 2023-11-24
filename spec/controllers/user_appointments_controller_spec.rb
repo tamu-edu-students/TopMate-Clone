@@ -2,7 +2,7 @@
 
 RSpec.describe UserAppointmentsController, type: :controller do
   describe '#show' do
-  let(:user) { create(:user) }
+  let(:user) { create(:user, username: 'testuser') }
   let(:service) { create(:service, hidden: false, is_published: true) }
   let(:appointment) { create(:appointment, service_id: service.id, user_id: user.user_id) }
 

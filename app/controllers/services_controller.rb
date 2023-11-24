@@ -11,11 +11,10 @@ class ServicesController < ApplicationController
   def create
     @service = @current_user.services.new(service_params)
     @service.user_id = @current_user.user_id
-    respond_to do |format|
-      if @service.save
-        format.html { redirect_to servicesindex_path, notice: 'Service was successfully created.' }
-        format.json { render :show, status: :created, location: @service }
-      else
+    if @service.save
+      redirect_to servicesindex_path, success: 'Service was successfully created.'
+    else
+      respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @service.errors, status: :unprocessable_entity }
       end
@@ -37,10 +36,12 @@ class ServicesController < ApplicationController
       flash[:error] = 'Service not found'
       render plain: 'Service does not exist.'
     elsif @service.update(service_params)
-      redirect_to servicesindex_url
+      redirect_to servicesindex_url, success: "Successfully edited service #{@service.name}."
     else
-      flash[:error] = 'Failed to update service'
-      redirect_back(fallback_location: root_path)
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -49,12 +50,13 @@ class ServicesController < ApplicationController
     if @service.nil?
       flash[:error] = 'Service not found'
       render plain: 'Service does not exist.'
-    elsif @service.update(is_published: !@service.is_published)
+    elsif
       # Toggle publish status
-      redirect_to servicesindex_url
-    else
-      flash[:error] = 'Failed to update service'
-      redirect_back(fallback_location: root_path)
+      if @service.update(is_published: !@service.is_published)
+        redirect_to servicesindex_url
+      else
+        redirect_to servicesindex_url, error: "Failed to publish service."
+      end
     end
   end
 
@@ -75,8 +77,12 @@ class ServicesController < ApplicationController
 
   def hide
     @service = @current_user.services.find_by(id: params[:id])
-    @service.update(hidden: true) # Add a 'hidden' boolean column to the 'services' table
-    redirect_to servicesindex_path, notice: 'Service deleted successfully.'
+    
+    if @service.update(hidden: true)  # Add a 'hidden' boolean column to the 'services' table
+      redirect_to servicesindex_path, notice: 'Service deleted successfully.'
+    else
+      redirect_to servicesindex_path, notice: 'Service failed to delete.'
+    end
   end
 
   private

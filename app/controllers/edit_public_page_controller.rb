@@ -6,10 +6,12 @@ class EditPublicPageController < ApplicationController
 
   def update
     if @current_user.update(user_params)
-      redirect_to edit_public_page_path, notice: 'Public page was successfully updated.'
+      redirect_to dashboard_path, success: 'Public page was successfully updated.'
     else
-      flash.now[:error] = @current_user.errors.full_messages.to_sentence
-      redirect_to edit_public_page_path
+      respond_to do |format|
+        format.html { render :index, status: :unprocessable_entity }
+        format.json { render json: @current_user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
