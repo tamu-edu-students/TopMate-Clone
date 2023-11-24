@@ -2,8 +2,6 @@
 
 class AppointmentsController < ApplicationController
   include AppointmentsHelper
-  def new; end
-
   def index
     @username = params[:username]
     @user = User.find_by(username: params[:username])
@@ -72,7 +70,7 @@ class AppointmentsController < ApplicationController
       dummy_slots_data_start_datetime.push(DateTime.parse(api_data[i]['start_date_time'].to_s))
       dummy_slots_data_end_datetime.push(DateTime.parse(api_data[i]['end_date_time'].to_s))
     end
-    @slots_data_start_datetime = dummy_slots_data_start_datetime
+    @slots_data_start_datetime = dummy_slots_data_start_datetime.map { |dt| dt.strftime('%Y-%m-%d %H:%M') }
     @slots_data_end_datetime = dummy_slots_data_end_datetime
 
       render :edit
@@ -88,8 +86,9 @@ class AppointmentsController < ApplicationController
     get_next_seven_day_time_slots(@user, Date.today)
 
     @service = Service.find_by(id: @appointment.service_id)
-    @appointment.enddatetime = @appointment.startdatetime + @service.duration.minutes
-    if @appointment.update(update_params)
+    start_dtime = DateTime.parse(update_params[:startdatetime])
+    end_dtime = start_dtime + @service.duration.minutes
+    if @appointment.update(fname: update_params[:fname], lname: update_params[:lname], startdatetime: start_dtime, enddatetime: end_dtime)
       redirect_to public_page_path(@user.username), success: 'Appointment updated successfully!'
     else
       render :edit

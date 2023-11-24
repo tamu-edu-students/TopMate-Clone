@@ -32,7 +32,7 @@ module AppointmentsHelper
     return nil if user.nil?
 
     hours = user.hours.where(day:)
-    appts = user.appointments.where('date(startdatetime) = ?', date)
+    appts = user.appointments.where('date(startdatetime) = ? AND status = \'Booked\'', date)
     remove_appts_from_hours(hours, appts)
   end
 
@@ -48,7 +48,7 @@ module AppointmentsHelper
       free_start_time = hour.start_time.strftime('%T')
       free_end_time = hour.end_time.strftime('%T')
 
-      appts.each do |appt|
+      appts.sort_by { |appt| appt[:startdatetime] }.each do |appt|
         taken_start_time = appt.startdatetime.to_time.strftime('%T')
         taken_end_time = appt.enddatetime.to_time.strftime('%T')
 
