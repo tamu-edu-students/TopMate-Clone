@@ -12,11 +12,7 @@ class UserAppointmentsController < ApplicationController
     else
       @services = Service.where(hidden: false, is_published: true)
       @appointments = Appointment.where(user_id: User.find_by(username: @username).id)
-      # puts "appointments are here"
-      # puts @services.name
-      # puts @appointments.fname
       render 'user_appointments/index'
-
     end
   end
 end

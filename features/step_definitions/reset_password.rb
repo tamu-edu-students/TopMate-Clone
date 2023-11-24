@@ -9,3 +9,26 @@ Given('I am on {string} page') do |_page|
   session.save!
   visit '/reset/5abb5ecc-5e93-11ee-8c99-0242ac120002'
 end
+
+
+Given('a user with email {string}') do |string|
+  @user = User.create(email: string, password: 'Hello@#1999', fname: 'Jack', lname: 'Hill',
+                      username: 'jackhill', about: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum')
+  @user.save!
+end
+
+Given('I am on forgot password page') do
+  visit submitemail_path
+end
+
+When('the user requests to reset their password for {string}') do |string|
+  fill_in "email", with: string
+end
+
+When('I click on {string} to submit a reset password form') do |string|
+  click_button string
+end
+
+Then('a success message should come {string}') do |string|
+ expect(page).to have_content(string)
+end

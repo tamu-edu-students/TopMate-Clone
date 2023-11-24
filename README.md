@@ -57,13 +57,20 @@ Current Coverage: 84.88%
 - Improved usability of dashboard and hours pages
 - Improved time selections when creating appointment
 
-## Dev Team
-[Dalton Avery](https://github.com/dalton-avery)\
-[Ashutosh Punyani](https://github.com/ashutoshspunyani99-tamu)\
-[Braeden Smith](https://github.com/BraedenSmith29)\
-[Geetesh Challur](https://github.com/geeteshtamu)\
-[Zepu Ma](https://github.com/zepuma-tamu)\
-[Sudhanva Rajesh](https://github.com/sudhanvarajesh-tamu)
+## Contact
+
+If you have any questions, feedback, or encounter issues, feel free to reach out to our development team. We're here to help!
+
+### Dev Team Contacts
+
+- [Dalton Avery](https://github.com/dalton-avery) - dalton.avery@tamu.edu
+- [Ashutosh Punyani](https://github.com/ashutoshspunyani99-tamu) - ashutoshspunyani99@tamu.edu
+- [Braeden Smith](https://github.com/BraedenSmith29) - braedensmith29@tamu.edu
+- [Geetesh Challur](https://github.com/geeteshtamu) - geeteshch@tamu.edu
+- [Zepu Ma](https://github.com/zepuma-tamu) - zepuma@tamu.edu
+- [Sudhanva Rajesh](https://github.com/sudhanvarajesh-tamu) - sudhanvarajesh@tamu.edu
+
+Feel free to contact any of us individually, and we'll get back to you as soon as possible.
 
 Under the direction of:
 

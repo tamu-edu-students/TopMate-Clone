@@ -2,9 +2,13 @@
 
 FactoryBot.define do
   factory :service do
-    name { 'MyString' }
-    information { 'MyText' }
-    duration { 1 }
-    user { nil }
+    association :user
+    name { 'Test Service' }
+    description { 'Test service description' }
+    price { 120 }
+    duration { 10 }
+    is_published { false }
+    hidden { false }
+    short_description { 'Test short description' }
   end
 end

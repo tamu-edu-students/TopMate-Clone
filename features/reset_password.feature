@@ -24,3 +24,10 @@ Feature: Password Reset
     When I fill in "password-field" with "ValidP@ssw0rd1"
     And I fill in "password-confirmation-field" with "ValidP@ssw0rd2"
     Then I should see "Passwords do not match"
+
+  Scenario: User requests password reset
+    Given a user with email "test@example.com"
+    And I am on forgot password page
+    When the user requests to reset their password for "test@example.com"
+    And I click on "Send Email" to submit a reset password form
+    Then a success message should come "Email to reset password has been sent!"
