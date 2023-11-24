@@ -7,15 +7,19 @@ development:
   <<: *default
   database: topmate_clone_development
 
-  username: postgres
-  password: postgres
+  host: <%= ENV["TOPMATE_DB_DEV_HOST"] %>
+  port: <%= ENV["TOPMATE_DB_DEV_PORT"] %>
+  username: <%= ENV["TOPMATE_DB_DEV_USER"] %>
+  password: <%= ENV["TOPMATE_DB_DEV_PASS"] %>
 
 test:
   <<: *default
   database: topmate_clone_test
 
-  username: postgres
-  password: postgres
+  host: <%= ENV["TOPMATE_DB_DEV_HOST"] %>
+  port: <%= ENV["TOPMATE_DB_DEV_PORT"] %>
+  username: <%= ENV["TOPMATE_DB_DEV_USER"] %>
+  password: <%= ENV["TOPMATE_DB_DEV_PASS"] %>
 
 production:
   <<: *default
