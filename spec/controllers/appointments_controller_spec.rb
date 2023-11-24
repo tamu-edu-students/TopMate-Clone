@@ -175,7 +175,7 @@ RSpec.describe AppointmentsController, type: :controller do
   end
 
   describe 'GET #edit' do
-    let(:user) { create(:user) }
+    let(:user) { create(:user, username: 'testuser') }
     let(:service) { create(:service) }
     let(:appointment) { create(:appointment, user_id: user.user_id, service_id: service.id ) }
     let(:api_data) { [{ 'start_date_time' => '2023-11-22T10:00:00Z', 'end_date_time' => '2023-11-22T11:00:00Z' }] }
@@ -206,7 +206,7 @@ RSpec.describe AppointmentsController, type: :controller do
   end
 
   describe "PATCH #update" do
-    let(:user) { create(:user) }
+    let(:user) { create(:user, username: 'testuser') }
     let(:service) { create(:service) }
     let(:appointment) { create(:appointment, user_id: user.id, service_id: service.id) }
 
