@@ -14,7 +14,7 @@ end
 
 Then('I should see the {string} page') do |string|
   if string == 'user not found'
-    expect(page).to have_content('User jdoe does not have a public page set up.')
+    expect(page).to have_content('User jdoe does not exist or does not have a public page set up.')
   else
     expect(page).to have_content(@user.lname)
   end
