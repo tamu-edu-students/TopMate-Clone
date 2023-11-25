@@ -8,8 +8,8 @@
         <h1>Edit Appointment</h1>
         <h3>Service: <%= @service.name%></h3>
         <h4>User: <%= @user.fname%> <%= @user.lname%></h4>
-        <h4>Current Start Time: <%= @user.fname%> <%= @user.lname%></h4>
-        <h4>Current End Time: <%= @user.fname%> <%= @user.lname%></h4>
+        <h4>Current Start Time: <%= @appointment.startdatetime.strftime('%Y-%m-%d %H:%M') %></h4>
+        <h4>Current End Time: <%= @appointment.enddatetime.strftime('%Y-%m-%d %H:%M') %></h4>
         <h4>Duration: <%= @service.duration%> minutes</h4>
 
         <%= form_for @appointment, url: update_appointment_path(@appointment.id), method: :patch do |form| %>
