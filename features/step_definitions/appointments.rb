@@ -132,3 +132,45 @@ Then('The appointment should be updated with available time on {int} day from to
 Then('I click the {string} button to update appointment data') do |string|
   click_button string
 end
+
+
+Given('I am logged in') do
+  @user = User.create(
+    fname: 'John',
+    lname: 'Doe',
+    email: 'test@example.com',
+    password: 'password',
+    username: 'jdoe'
+  )
+  visit login_path
+  fill_in 'Email', with: 'test@example.com'
+  fill_in 'Password', with: 'password'
+  click_button 'Login'
+  visit(new_hour_path)
+  click_button "Create Availability"
+  visit public_page_path(@user.username)
+end
+
+Given('I am on the appointment creation page') do
+  click_link('Interview prep'.gsub(' ', '_'))
+  click_link("Purchase")
+end
+
+When('I fill in with info') do 
+  fill_in 'Email', with: 'test123@example.com'
+  fill_in 'First Name', with: 'tom'
+  fill_in 'Last Name', with: 'hanks'
+  select '2023-11-26', from: 'Appointment Date'
+  select_box = find(:select, 'Consultation Start Time')
+  options = select_box.all(:option)
+  options[0].select_option
+  
+
+  
+
+  click_button "Create Appointment"
+end
+
+Then("I should see the correct response") do 
+  expect(page).to have_content('Appointment Created successfully')
+end

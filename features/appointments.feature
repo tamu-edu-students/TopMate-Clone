@@ -24,3 +24,10 @@ Feature: Appointment Creation
     Then I should redirected back to public page 
     And The appointment should be updated with available time on 2 day from today in database
     And I should see a success message "Appointment updated successfully!"
+
+
+  Scenario: Successfully creating an appointment
+    Given I am logged in
+    And I am on the appointment creation page
+    When I fill in with info
+    Then I should see the correct response
