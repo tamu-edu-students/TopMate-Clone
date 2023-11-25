@@ -88,7 +88,12 @@ class AppointmentsController < ApplicationController
     @service = Service.find_by(id: @appointment.service_id)
     start_dtime = DateTime.parse(update_params[:startdatetime])
     end_dtime = start_dtime + @service.duration.minutes
-    if @appointment.update(fname: update_params[:fname], lname: update_params[:lname], startdatetime: start_dtime, enddatetime: end_dtime)
+
+    new_data = { startdatetime: start_dtime, enddatetime: end_dtime }
+    new_data[:fname] = update_params[:fname] unless update_params[:fname].nil?
+    new_data[:lname] = update_params[:lname] unless update_params[:lname].nil?
+
+    if @appointment.update(new_data)
       redirect_to public_page_path(@user.username), success: 'Appointment updated successfully!'
     else
       render :edit

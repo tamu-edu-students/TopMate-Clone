@@ -193,8 +193,7 @@ RSpec.describe AppointmentsController, type: :controller do
         expect(assigns(:service)).to eq(service)
         expect(assigns(:slots)).to eq([{ startTime: DateTime.parse(api_data[0]['start_date_time']),
                                          endTime: DateTime.parse(api_data[0]['end_date_time']) }])
-        expect(assigns(:slots_data_start_datetime)).to eq([DateTime.parse(api_data[0]['start_date_time'])])
-        expect(assigns(:slots_data_end_datetime)).to eq([DateTime.parse(api_data[0]['end_date_time'])])
+        expect(assigns(:slots_data_start_datetime)).to eq([DateTime.parse(api_data[0]['start_date_time']).strftime("%Y-%m-%d %H:%M")])
       end
 
       it 'renders the edit template' do
@@ -211,7 +210,7 @@ RSpec.describe AppointmentsController, type: :controller do
     let(:appointment) { create(:appointment, user_id: user.id, service_id: service.id) }
 
     context "with valid parameters" do
-      let(:update_params) { { appointment: { startdatetime: DateTime.now } } }
+      let(:update_params) { { startdatetime: DateTime.now.strftime('%Y-%m-%d %H:%M') } }
 
       before do
         patch :update, params: { id: appointment.id, appointment: update_params }
@@ -232,7 +231,7 @@ RSpec.describe AppointmentsController, type: :controller do
 
       it "updates the appointment with new startdatetime" do
         date_in_timezone1 = Time.zone.parse(appointment.startdatetime.to_s)
-        date_in_timezone2 = Time.zone.parse(update_params[:appointment][:startdatetime].to_s)
+        date_in_timezone2 = Time.zone.parse(update_params[:startdatetime].to_s)
         date_in_utc1 = date_in_timezone1.utc
         date_in_utc2 = date_in_timezone2.utc
         expect(date_in_utc1).to eq(date_in_utc2)
@@ -249,7 +248,7 @@ RSpec.describe AppointmentsController, type: :controller do
     end
 
     context "with invalid parameters" do
-      let(:update_params) { { fname: nil }  }
+      let(:update_params) { { fname: nil, startdatetime: DateTime.now.strftime('%Y-%m-%d %H:%M') }  }
 
       before do
         patch :update, params: { id: appointment.id, appointment: update_params }

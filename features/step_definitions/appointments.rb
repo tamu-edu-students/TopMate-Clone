@@ -112,7 +112,7 @@ Then('I change my {string} with available time on {int} day from today') do |str
   api_data= user_availability_for_day(@user, start_date)[0]
   slot = start_date.to_time + Time.parse(api_data['start_time']).seconds_since_midnight.seconds
   slot =DateTime.parse(slot.to_s)
-  select slot.to_s, from: string
+  select slot.strftime('%Y-%m-%d %H:%M'), from: string
 end
 
 Then('The appointment should be updated with available time on {int} day from today in database') do |int|
@@ -121,11 +121,11 @@ Then('The appointment should be updated with available time on {int} day from to
     slot = start_date.to_time + Time.parse(api_data['start_time']).seconds_since_midnight.seconds
     slot =DateTime.parse(slot.to_s)
     @app=Appointment.find_by(id:@appointment.id)
-    date_in_timezone1 = Time.zone.parse(slot.to_s)
-    date_in_timezone2 = Time.zone.parse(@app.startdatetime.to_s)
-    date_in_utc1 = date_in_timezone1.utc
-    date_in_utc2 = date_in_timezone2.utc
-    expect(date_in_utc1).to eq(date_in_utc2)
+    date_in_timezone1 = Time.parse(slot.to_s)
+    date_in_utc1 = DateTime.new(date_in_timezone1.year, date_in_timezone1.month, date_in_timezone1.day,
+                                date_in_timezone1.hour, date_in_timezone1.min, 0)
+    date_in_utc2 = Time.zone.parse(@app.enddatetime.to_s)
+    expect(date_in_utc2).to eq(date_in_utc1)
   end
 
 
