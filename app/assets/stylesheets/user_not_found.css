@@ -1,10 +1,38 @@
+body {
+  display: block;
+  margin: 20px;
+  border: 0;
+  padding: 0;
+  align-items: center; /* Center align the content horizontally */
+  background-color: white;
+}
+
+/* Styles for the navigation bar at the top */
+.navbar {
+  background-color: #e35869;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar h1 {
+  margin: 10px 0px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px; /* Add margin to create space between links */
+}
 .return-to-dash-link {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
+    color:#007bff;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
-    margin: 2% auto;
-    font-size: 20px;
   }
